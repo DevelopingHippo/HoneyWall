@@ -1,0 +1,18 @@
+To Do:
+
+Fix docker-compose.yml file:
+- change default ports for MySQL
+- Decide on which route to take (1 Database for both applications, or 2 separate databases)
+
+
+MySQL Database:
+- Create database layout for Website
+- Create database layout for Application
+- Create username and passwords for both and figure out a proper way to store them through Docker secrets
+
+
+
+Website:
+Decide on platform (Apache + MySQL & PHP & JS modules || NodeJS)
+Layout for Website Directories
+Generate LetsEncrypt pem + key on startup
