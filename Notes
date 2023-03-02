@@ -1,4 +1,4 @@
-To Do:
+Infrastructure:
 
 Fix docker-compose.yml file:
 - change default ports for MySQL
@@ -13,6 +13,18 @@ MySQL Database:
 
 
 Website:
-Decide on platform (Apache + MySQL & PHP & JS modules || NodeJS)
-Layout for Website Directories
-Generate LetsEncrypt pem + key on startup
+- Decide on platform (Apache + MySQL & PHP & JS modules || NodeJS)
+- Layout for Website Directories
+- Generate LetsEncrypt pem + key on startup
+
+
+
+
+
+
+
+
+Website and Application Uses:
+
+Website:
+- https://www.youtube.com/watch?v=hRoiG4ZIzeM (Creating a Dynamic Geographic Map in Javascript)

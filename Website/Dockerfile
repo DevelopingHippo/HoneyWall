@@ -5,7 +5,6 @@ RUN apt-get update && apt-get upgrade -y
 
 
 # Add MySQLi extension to PHP
-RUN a2enmod mysqli
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
 
