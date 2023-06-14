@@ -8,7 +8,7 @@ WORKDIR /app
 # where available (npm@5+)
 COPY package*.json /app
 
-RUN npm install http fs
+RUN npm install
 # If you are building your code for production
 # RUN npm ci --omit=dev
 
@@ -17,4 +17,4 @@ COPY ./app /app
 
 EXPOSE 8080
 
-CMD [ "node", "/app/src/server.js" ]
+CMD [ "node", "/app/public/server.js" ]
