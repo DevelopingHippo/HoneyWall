@@ -2,7 +2,7 @@ const http = require("http");
 const fs = require('fs').promises;
 
 // Constants
-const port = process.env.PORT || "8000";
+const port = process.env.PORT || "8080";
 const host = '0.0.0.0';
 
 const requestListener = function (req, res) {
