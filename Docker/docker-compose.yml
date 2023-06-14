@@ -3,7 +3,7 @@ services:
   application_honey:
     container_name: application_honey
     build:
-      context: ./TalesOfAdventure
+      context: ../Application
       dockerfile: Dockerfile
     ports:
       - "2777:2777"
@@ -32,13 +32,13 @@ services:
   web_honey:
     container_name: web_honey
     build:
-      context: ./Website
+      context: ../Website
       dockerfile: Dockerfile
     ports:
       - "8442:80"
       - "8443:443"
     volumes:
-      - "./Website/www/:/var/www/html"
+      - "../Website/app/:/app"
     networks:
       - honeywall
     restart: unless-stopped

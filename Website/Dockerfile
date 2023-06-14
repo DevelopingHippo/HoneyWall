@@ -1,21 +1,21 @@
-FROM php:8.0-apache
+FROM node:18
 
-# Update the image
-RUN apt-get update && apt-get upgrade -y
+# Create app directory
+WORKDIR /app
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+
+RUN npm install
+# If you are building your code for production
+# RUN npm ci --omit=dev
+
+# Bundle app source
+COPY ./app /app
 
 
-# Add MySQLi extension to PHP
-RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+EXPOSE 8080
 
-
-
-# Create SSL Cert Directory and Import Certificates
-RUN mkdir -p /etc/apache2/ssl
-COPY ./config/certs/honeywall.key /etc/apache2/ssl/honeywall.key
-COPY ./config/certs/honeywall.pem /etc/apache2/ssl/honeywall.pem
-COPY ./config/honeywall-apache.conf /etc/apache2/sites-available/000-default.conf
-
-
-RUN a2enmod ssl
-RUN a2enmod rewrite
-RUN a2enmod
+CMD [ "node", "server.js" ]
