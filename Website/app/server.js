@@ -10,10 +10,10 @@ const path = require("path");
 const router = express.Router();
 
 router.get('/', function(req, res){
-    res.sendFile(path.join(__dirname+"/html/index.html"));
+    res.sendFile(path.join(__dirname+"/www/html/index.html"));
 });
 
-app.use(express.static('www'))
+app.use(express.static('/app/www/'))
 app.use('/', router)
 app.listen(PORT, HOST, () => {
     console.log(`Running on http://${HOST}:${PORT}`);
