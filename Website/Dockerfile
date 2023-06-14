@@ -17,4 +17,4 @@ COPY ./app /app
 
 EXPOSE 8080
 
-CMD [ "node", "/app/www/server.js" ]
+CMD [ "node", "/app/server.js" ]
