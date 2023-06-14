@@ -8,7 +8,7 @@ WORKDIR /app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN npm install
+RUN npm install http fs
 # If you are building your code for production
 # RUN npm ci --omit=dev
 
