@@ -1,17 +1,24 @@
-'use strict';
-
-const express = require('express');
+const http = require("http");
+const fs = require('fs').promises;
 
 // Constants
-const PORT = 8080;
-const HOST = '0.0.0.0';
+const port = process.env.PORT || "8000";
+const host = '0.0.0.0';
 
-// App
-const app = express();
-app.get('/', (req, res) => {
-    res.send('Hello World');
-});
+const requestListener = function (req, res) {
+    fs.readFile(__dirname + "/html/index.html")
+        .then(contents => {
+            res.setHeader("Content-Type", "text/html");
+            res.writeHead(200);
+            res.end(contents);
+        })
+        .catch(err => {
+            res.writeHead(500);
+            res.end(err);
+        });
+};
 
-app.listen(PORT, HOST, () => {
-    console.log(`Running on http://${HOST}:${PORT}`);
+const server = http.createServer(requestListener);
+server.listen(port, host, () => {
+    console.log(`Server is running on http://${host}:${port}`);
 });
