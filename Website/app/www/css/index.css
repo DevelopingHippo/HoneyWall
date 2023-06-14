@@ -49,7 +49,7 @@ h2{
     transition: .5s;
 }
 input:focus ~ label,
-input:focus ~ label{
+input:valid ~ label{
     top: -5px
 }
 
