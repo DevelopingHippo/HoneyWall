@@ -4,6 +4,7 @@ FROM php:8.0-apache
 WORKDIR /var/www/
 
 # Update the Container
+RUN apt-get install nodejs npm -y
 RUN apt-get update && apt-get upgrade -y
 
 # Setup the Website
@@ -17,10 +18,9 @@ COPY ./config/honeywall-apache.conf /etc/apache2/sites-available/000-default.con
 # Setup the NodeJS App
 RUN mkdir /var/www/app
 COPY package*.json /var/www/app
+RUN npm install
 COPY ./app /var/www/app
 
 EXPOSE 8081
-
-RUN apt-get install nodejs npm -y
 CMD [ "node", "/var/www/app/server.js" ]
 
