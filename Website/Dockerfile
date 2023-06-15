@@ -24,5 +24,6 @@ RUN npm install
 COPY ./app /var/www/app
 
 EXPOSE 443
+EXPOSE 3000
 CMD [ "node", "/var/www/app/server.js" ]
 
