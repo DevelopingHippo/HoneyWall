@@ -25,7 +25,7 @@ WORKDIR /var/www/node
 RUN npm install
 COPY ./node /var/www/node
 
-EXPOSE 443
+EXPOSE 8080
 EXPOSE 3000
 EXPOSE 80
 CMD [ "node", "/var/www/node/server.js" ]
