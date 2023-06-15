@@ -4,6 +4,7 @@ FROM php:8.0-apache
 WORKDIR /var/www/
 
 # Update the Container
+RUN apt-get update && apt-get upgrade -y
 RUN apt-get install nodejs npm -y
 RUN apt-get update && apt-get upgrade -y
 
