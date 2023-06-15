@@ -1,7 +1,7 @@
 FROM php:8.0-apache
 
-# Create and work from the /www directory
-WORKDIR /var/www/
+# Create and work from the /apache directory
+WORKDIR /var/www/apache
 
 # Update the Container
 RUN apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
@@ -17,13 +17,14 @@ COPY ./config/certs/honeywall.pem /etc/apache2/ssl/honeywall.pem
 COPY ./config/honeywall-apache.conf /etc/apache2/sites-available/000-default.conf
 
 # Setup the NodeJS App
-RUN mkdir /var/www/app
-COPY package*.json /var/www/app
-WORKDIR /var/www/app
+RUN mkdir /var/www/node
+RUN mkdir /var/www/apache
+COPY package*.json /var/www/node
+WORKDIR /var/www/node
 RUN npm install
-COPY ./app /var/www/app
+COPY ./node /var/www/node
 
 EXPOSE 443
 EXPOSE 3000
-CMD [ "node", "/var/www/app/server.js" ]
+CMD [ "node", "/var/www/node/server.js" ]
 
