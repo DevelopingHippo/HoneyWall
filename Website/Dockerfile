@@ -18,7 +18,6 @@ COPY ./config/honeywall-apache.conf /etc/apache2/sites-available/000-default.con
 
 # Setup the NodeJS App
 RUN mkdir /var/www/node
-RUN mkdir /var/www/apache
 COPY package*.json /var/www/node
 WORKDIR /var/www/node
 RUN npm install
