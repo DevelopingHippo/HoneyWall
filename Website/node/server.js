@@ -1,20 +1,17 @@
-// Constants
+'use strict';
+
 const express = require('express');
 
-const PORT = 3000;
-const HOST = '127.0.0.1';
+// Constants
+const PORT = 8080;
+const HOST = '0.0.0.0';
 
 // App
 const app = express();
-const path = require("path");
-const router = express.Router();
-
-router.get('/', function(req, res){
-    res.sendFile(path.join(__dirname+"index.html"));
+app.get('/', (req, res) => {
+    res.send('Hello World');
 });
 
-app.use(express.static('/var/www/node/'))
-app.use('/', router)
 app.listen(PORT, HOST, () => {
     console.log(`Running on http://${HOST}:${PORT}`);
 });
