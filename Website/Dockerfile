@@ -23,6 +23,6 @@ WORKDIR /var/www/app
 RUN npm install
 COPY ./app /var/www/app
 
-EXPOSE 8081
+EXPOSE 443
 CMD [ "node", "/var/www/app/server.js" ]
 
