@@ -1,7 +1,7 @@
 FROM php:8.0-apache
 
 # Create and work from the /apache directory
-WORKDIR /var/www/apache
+WORKDIR /var/www/html
 
 # Update the Container
 RUN apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y
@@ -12,7 +12,7 @@ RUN apt-get update && apt-get upgrade -y
 RUN a2enmod ssl && a2enmod rewrite && a2enmod proxy
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 RUN mkdir -p /etc/apache2/ssl
-COPY ./apache /var/www/apache
+COPY ./apache /var/www/html
 COPY ./config/certs/honeywall.key /etc/apache2/ssl/honeywall.key
 COPY ./config/certs/honeywall.pem /etc/apache2/ssl/honeywall.pem
 COPY ./config/honeywall-apache.conf /etc/apache2/sites-available/honeywall-apache.conf
