@@ -16,7 +16,7 @@ RUN mkdir /var/www/app
 COPY ./app /var/www/app
 COPY package*.json /var/www/app
 
-COPY ./config/certs/store.key /etc/apache2/ssl/store.key
-COPY ./config/certs/store.pem /etc/apache2/ssl/store.pem
+COPY ./config/certs/honeywall.key /etc/apache2/ssl/honeywall.key
+COPY ./config/certs/honeywall.pem /etc/apache2/ssl/honeywall.pem
 COPY ./config/honeywall-apache.conf /etc/apache2/sites-available/000-default.conf
 
