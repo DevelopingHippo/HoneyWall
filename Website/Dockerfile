@@ -11,8 +11,6 @@ RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
 RUN mkdir -p /etc/apache2/ssl
 
-
-
 RUN apt-get install nodejs npm
 RUN mkdir /var/www/app
 COPY ./app /var/www/app
