@@ -33,12 +33,13 @@ services:
     container_name: web_honey
     build:
       context: ../Website
-      dockerfile: ../Website/node-docker
+      dockerfile: ../Website/Dockerfile
     ports:
       - "8442:80"
       - "8443:443"
     volumes:
-      - "../Website/app/:/app"
+      - "../Website/node/:/var/www/node"
+      - "../Website/apache:/var/www/html"
     networks:
       - honeywall
     restart: unless-stopped
