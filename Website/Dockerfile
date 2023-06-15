@@ -22,5 +22,5 @@ COPY package*.json /var/www/app
 EXPOSE 443
 
 RUN apt-get install nodejs npm -y
-CMD [ "node", "/app/server.js" ]
+CMD [ "node", "/var/www/app/server.js" ]
 

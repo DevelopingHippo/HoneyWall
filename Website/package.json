@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Honeywall Web Application",
   "author": "Thad Sander, Aston Purdom, Ethan Brinks",
-  "main": "/app/www/server.js",
+  "main": "/var/www/app/server.js",
   "scripts": {
-    "start": "node /app/www/server.js"
+    "start": "node /var/www/app/server.js"
   },
   "dependencies": {
     "express": "^4.16.1"
