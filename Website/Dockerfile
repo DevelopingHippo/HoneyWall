@@ -19,7 +19,7 @@ RUN mkdir /var/www/app
 COPY ./app /var/www/app
 COPY package*.json /var/www/app
 
-EXPOSE 8080
+EXPOSE 443
 
 RUN apt-get install nodejs npm -y
 CMD [ "node", "/app/server.js" ]
