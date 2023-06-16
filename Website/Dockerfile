@@ -32,4 +32,4 @@ EXPOSE 443
 EXPOSE 3000
 EXPOSE 80
 
-RUN node /var/www/node/server.js
+#CMD [ "node", "/var/www/node/server.js"]
