@@ -1,39 +1,21 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/index.css">
-    <title>HoneyWall - Login</title>
+  <title>Our Display Test</title>
+  <script src=”modules_control.js” type=”text/javascript”></script>
+  <script type=”text/javascript”>AddModule(“dynamic_display.js”);</script>
 </head>
 <body>
-    <section>
-        <div class="form-box">
-            <div class="form-value">
-                <form action="">
-                    <h2>Login</h2>
-                    <div class="inputbox">
-                        <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" required>
-                        <label for="">Email</label>
-                    </div>
-                    <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" required>
-                        <label for="">Password</label>
-                    </div>
-                    <div class="forget">
-                        <label for=""><input type="checkbox">Remember Me?</label>
-                        <a href="#">Forgot Password</a>
-                    </div>
-                    <button>Log In</button>
-                    <div class="register">
-                    <p>Don't have an account? <a href="#">Register</a></p>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <div class=”dBackgroundBox” id=”bgModBox”>
+    <p><a onclick=”ModifyBGColor(‘bgModBox’,’#FF0000′);”>Click here to modify the background color!</a></p>
+  </div>
+  <div class=”dColorBox” id=”cModBox”>
+    <p><a onclick=”ModifyTextColor(‘cModBox’,’#00FF00′);”>Click here to modify the text color!</a></p>
+  </div>
+  <div class=”dSizeBox” id=”szModBox”>
+    <p><a onclick=”ModifyBoxSize(‘szModBox’,’900px’, ‘100px’);”>Click here to modify the box size!</a></p>
+  </div>
+  <div class=”dPositionBox” id=”pModBox”>
+    <p><a onclick=”ModifyBoxPosition(‘pModBox’,’100px’, ‘100px’);”>Click here to modify the box position!</a></p>
+  </div>
 </body>
 </html>
