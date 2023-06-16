@@ -11,11 +11,11 @@ const router = express.Router();
 
 // Index Page
 router.get('/', function(req, res){
-    res.sendFile(path.join(__dirname+"app/index.html"));
+    res.sendFile(path.join(__dirname+"app/index.php"));
 });
 // Dashboard
 router.get('/', function(req, res){
-    res.sendFile(path.join(__dirname+"app/index.html"));
+    res.sendFile(path.join(__dirname+"app/index.php"));
 });
 
 
