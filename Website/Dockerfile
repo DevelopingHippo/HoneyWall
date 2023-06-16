@@ -7,7 +7,7 @@ RUN apt-get update && apt-get upgrade -y
 
 # Setup the Website
 WORKDIR /var/www/apache
-RUN a2enmod ssl && a2enmod rewrite && a2enmod proxy
+RUN a2enmod ssl && a2enmod rewrite && a2enmod proxy && a2enmod proxy_http && a2enmod proxy_balancer
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 RUN mkdir -p /etc/apache2/ssl
 COPY ./apache /var/www/apache
@@ -32,4 +32,4 @@ EXPOSE 443
 EXPOSE 3000
 EXPOSE 80
 
-#CMD [ "node", "/var/www/node/server.js"]
+CMD node /var/www/node/server.js && service apache2 start
