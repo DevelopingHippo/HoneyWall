@@ -23,11 +23,9 @@ RUN npm install
 COPY ./node /var/www/node
 
 RUN chown -R www-data:www-data /var/www/
-RUN service apache2 start
-RUN service apache2 reload
-
 
 EXPOSE 443
 EXPOSE 3000
 EXPOSE 80
+CMD [ "service", "apache2", "start"]
 CMD [ "node", "/var/www/node/server.js" ]
