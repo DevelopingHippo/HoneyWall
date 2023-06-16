@@ -33,7 +33,7 @@ services:
     container_name: web_honey
     build:
       context: ../Website
-      dockerfile: ../Website/apache-docker
+      dockerfile: ../Website/Dockerfile
     ports:
       - "8442:80"
       - "8443:443"
