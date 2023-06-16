@@ -22,10 +22,11 @@ COPY package*.json /var/www/node
 RUN npm install
 COPY ./node /var/www/node
 
-RUN chown -R www-data:www-data /var/www/
+RUN chown -R www-data:www-data /var/www/apache
+RUN chown -R www-data:www-data /var/www/node/app
 
 EXPOSE 443
 EXPOSE 3000
 EXPOSE 80
-CMD [ "service", "apache2", "start"]
+CMD [ "service", "apache2 start"]
 CMD [ "node", "/var/www/node/server.js" ]
