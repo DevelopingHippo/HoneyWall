@@ -13,7 +13,7 @@ RUN npm install
 # RUN npm ci --omit=dev
 
 # Bundle app source
-COPY ./app /app
+COPY ./node /app
 
 EXPOSE 3000
 
