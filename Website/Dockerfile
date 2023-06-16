@@ -14,13 +14,18 @@ COPY ./apache /var/www/apache
 COPY ./config/certs/honeywall.key /etc/apache2/ssl/honeywall.key
 COPY ./config/certs/honeywall.pem /etc/apache2/ssl/honeywall.pem
 COPY ./config/honeywall-apache.conf /etc/apache2/sites-available/honeywall-apache.conf
-RUN service apache2 start a2dissite 000-default && a2ensite honeywall-apache && service apache2 reload
+RUN a2dissite 000-default && a2ensite honeywall-apache
 
 # Setup the NodeJS App
 WORKDIR /var/www/node
 COPY package*.json /var/www/node
 RUN npm install
 COPY ./node /var/www/node
+
+RUN chown -R www-data:www-data /var/www/
+RUN service apache2 start
+RUN service apache2 reload
+
 
 EXPOSE 443
 EXPOSE 3000
