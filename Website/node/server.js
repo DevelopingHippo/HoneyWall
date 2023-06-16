@@ -9,9 +9,16 @@ const app = express();
 const path = require("path");
 const router = express.Router();
 
+// Index Page
 router.get('/', function(req, res){
     res.sendFile(path.join(__dirname+"app/index.html"));
 });
+// Dashboard
+router.get('/', function(req, res){
+    res.sendFile(path.join(__dirname+"app/index.html"));
+});
+
+
 
 app.use(express.static('/var/www/node/app'))
 app.use('/', router)
