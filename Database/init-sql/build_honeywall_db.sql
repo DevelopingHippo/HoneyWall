@@ -1,13 +1,21 @@
 # clear out current database tables
 
-CREATE DATABASE [IF NOT EXISTS] honeywall;
+CREATE DATABASE IF NOT EXISTS honeywall;
 use honeywall;
 
 
-# example table
+# Connections Table
 create table connections(
-    data_id VARCHAR(10),
-	src_ip VARCHAR(15),
+    id INT NOT NULL,
     dst_ip VARCHAR(15),
-    primary key (data_id)
+    dst_port INT,
+    src_ip VARCHAR(15),
+    src_port INT,
+    protocol VARCHAR(3),
+    time TIME,
+    date DATE,
+    service VARCHAR(30),
+    location VARCHAR(2),
+    packets INT,
+    primary key (id)
 );

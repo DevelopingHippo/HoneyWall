@@ -23,7 +23,7 @@ Setting up for Docker Launch for Website Testing:
 git clone https://github.com/DevelopingHippo/HoneyWall
 cd HoneyWall/Website/
 docker build -t web-test .
-docker run -p 8080:8080 -d web-test
+docker run -p 443:443 -d web-test
 
 
 

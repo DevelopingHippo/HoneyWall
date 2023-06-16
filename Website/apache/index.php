@@ -6,8 +6,6 @@
     <title>HoneyWall - Login</title>
 </head>
 <body>
-<?php echo "<h1>PHP TEST</h1>" ?>
-
     <section>
         <div class="form-box">
             <div class="form-value">
