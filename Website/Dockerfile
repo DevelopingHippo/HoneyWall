@@ -32,4 +32,4 @@ EXPOSE 443
 EXPOSE 3000
 EXPOSE 80
 
-CMD node /var/www/node/server.js && service apache2 start
+CMD service apache2 start && node /var/www/node/server.js
