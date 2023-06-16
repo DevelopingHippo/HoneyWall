@@ -15,7 +15,7 @@ COPY ./config/certs/honeywall.key /etc/apache2/ssl/honeywall.key
 COPY ./config/certs/honeywall.pem /etc/apache2/ssl/honeywall.pem
 COPY ./config/honeywall-apache.conf /etc/apache2/sites-available/honeywall-apache.conf
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
-RUN a2dissite 000-default && a2ensite honeywall-apache && service apache2 start
+RUN a2dissite 000-default && a2ensite honeywall-apache
 
 
 
@@ -32,4 +32,4 @@ EXPOSE 443
 EXPOSE 3000
 EXPOSE 80
 
-CMD [ "node", "/var/www/node/server.js", "&&", "service", "apache2", "start" ]
+RUN node /var/www/node/server.js
