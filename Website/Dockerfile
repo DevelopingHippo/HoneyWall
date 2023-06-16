@@ -15,6 +15,8 @@ COPY ./config/certs/honeywall.key /etc/apache2/ssl/honeywall.key
 COPY ./config/certs/honeywall.pem /etc/apache2/ssl/honeywall.pem
 COPY ./config/honeywall-apache.conf /etc/apache2/sites-available/honeywall-apache.conf
 RUN a2dissite 000-default && a2ensite honeywall-apache
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
 
 # Setup the NodeJS App
 WORKDIR /var/www/node
@@ -28,5 +30,5 @@ RUN chown -R www-data:www-data /var/www/node/app
 EXPOSE 443
 EXPOSE 3000
 EXPOSE 80
-CMD [ "service", "apache2 start"]
+
 CMD [ "node", "/var/www/node/server.js" ]
