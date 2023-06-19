@@ -1,8 +1,8 @@
 <?php
 session_start();
-if (!isset($_SESSION["type"]))
+if (!isset($_SESSION["loggedIn"]))
 {
-    $_SESSION["type"] = "";
+    $_SESSION["loggedIn"] = "";
 }
 require_once "../php/database_functions.php";
 
@@ -19,8 +19,7 @@ else # redirect the user to Login page with status message
 
 $sql = "SELECT admin FROM users WHERE username='".$username."' AND password='".$password."';";
 $result = queryDatabase($sql);
-
-if ($result->num_rows > 0) # If query comes back with results
+if (mysqli_num_rows($result) > 0) # If query comes back with results
 {
     $row = $result->fetch_assoc();
     $_SESSION["uid"] = $username;
