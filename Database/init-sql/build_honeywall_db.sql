@@ -1,4 +1,4 @@
-CREATE DATABASE honeywall;
+CREATE DATABASE IF NOT EXISTS honeywall;
 use honeywall;
 
 # Connections Table
