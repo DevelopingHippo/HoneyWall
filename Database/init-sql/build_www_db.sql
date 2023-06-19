@@ -3,13 +3,14 @@ use www;
 
 # CREATE web USER THAT ONLY HAS ACCESS TO R/W TO WWW DATABASE AND R FROM honeywall DATABASE
 
-
 # Connections Table
 create table users(
     username VARCHAR(25) NOT NULL,
-    password VARCHAR(32) NOT NULL,
+    password VARCHAR(64) NOT NULL,
     email VARCHAR(50),
     isAdmin BOOLEAN,
+    first_name VARCHAR(20),
+    last_name VARCHAR(20),
     primary key (username)
 );
 
@@ -24,5 +25,4 @@ create table config(
 );
 
 
-
-insert into users VALUES ("username","password","user@email.com",true);
+insert into users VALUES ("username","password","user@email.com",true, "John", "Smith");

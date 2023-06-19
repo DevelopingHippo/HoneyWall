@@ -9,7 +9,8 @@ require_once "../php/database_functions.php";
 if(!empty($_POST["username"]) && !empty($_POST["password"])) # If Username and Password NOT empty
 {
     $username = inputSanitize($_POST["username"]);
-    $password = inputSanitize($_POST["password"]);
+    $password = hash('sha256', $_POST["password"]);
+    $password = inputSanitize($password);
 }
 else # redirect the user to Login page with status message
 {
