@@ -21,10 +21,10 @@ services:
       MYSQL_USER: web
       MYSQL_PASSWORD: P@ssw0rd
     volumes:
-      - "./Database/data:/var/lib/mysql"
-#      - "./Database/init-sql/build_honeywall_db.sql:/docker-entrypoint-initdb.d/1.sql"
-      - "./Database/init-sql/build_www_db.sql:/docker-entrypoint-initdb.d/1.sql"
-      - "./Database/init-sql/permissions.sql:/docker-entrypoint-initdb.d/2.sql"
+      - "../Database/data:/var/lib/mysql"
+      - "../Database/init-sql/build_honeywall_db.sql:/docker-entrypoint-initdb.d/1.sql"
+      - "../Database/init-sql/build_www_db.sql:/docker-entrypoint-initdb.d/2.sql"
+      - "../Database/init-sql/permissions.sql:/docker-entrypoint-initdb.d/3.sql"
     ports:
       - "3306:3306"
  #   networks:
