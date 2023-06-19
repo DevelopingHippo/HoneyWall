@@ -9,7 +9,7 @@ services:
       - "2777:2777"
     depends_on:
       - db_honey
-    restart: unless-stopped
+    #restart: unless-stopped
 
   db_honey:
     container_name: db_honey
@@ -30,7 +30,7 @@ services:
       - "3306:3306"
     networks:
       - web_data
-    restart: unless-stopped
+    #restart: unless-stopped
 
   web_honey:
     container_name: web_honey
