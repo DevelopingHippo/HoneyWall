@@ -40,11 +40,13 @@ if (!isset($_SESSION["loggedIn"]))
                         <label for="">Email</label>
                     </div>
                     <div class="inputbox">
-                        <ion-icon name="person-circle-outline"></ion-icon>                        <input type="text" name="first_name" required>
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        <input type="text" name="first_name" required>
                         <label for="">First Name</label>
                     </div>
                     <div class="inputbox">
-                        <ion-icon name="person-circle-outline"></ion-icon>                        <input type="text" name="last_name" required>
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        <input type="text" name="last_name" required>
                         <label for="">Last Name</label>
                     </div>
                     <button type="submit" formaction="register_auth.php">Submit</button>
