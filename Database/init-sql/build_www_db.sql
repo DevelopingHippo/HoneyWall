@@ -8,9 +8,9 @@ create table users(
     username VARCHAR(25) NOT NULL,
     password VARCHAR(64) NOT NULL,
     email VARCHAR(50),
-    isAdmin BOOLEAN,
     first_name VARCHAR(20),
     last_name VARCHAR(20),
+    isAdmin BOOLEAN,
     primary key (username)
 );
 

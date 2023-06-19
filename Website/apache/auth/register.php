@@ -18,7 +18,7 @@ if (!isset($_SESSION["loggedIn"]))
         <div class="form-box">
             <div class="form-value">
                 <form action="login_auth.php" method="POST">
-                    <h2>Login</h2>
+                    <h2>Register</h2>
                     <div class="inputbox">
                         <ion-icon name="person-outline"></ion-icon>
                         <input type="text" name="username" required>
@@ -35,18 +35,19 @@ if (!isset($_SESSION["loggedIn"]))
                         <label for="">Confirm Password</label>
                     </div>
                     <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <ion-icon name="mail-outline"></ion-icon>
                         <input type="email" name="email" required>
                         <label for="">Email</label>
                     </div>
-                    <div class="forget">
-                        <label for=""><input type="checkbox" id="remember" name="remember" value="true">Remember Me?</label>
-                        <a href="ADD A LINK HERE FOR SOMETHING">Forgot Password</a>
+                    <div class="inputbox">
+                        <ion-icon name="person-circle-outline"></ion-icon>                        <input type="text" name="first_name" required>
+                        <label for="">First Name</label>
                     </div>
-                    <button type="submit" formaction="login_auth.php">Log In</button>
-                    <div class="register">
-                    <p>Don't have an account? <a href="register.php">Register</a></p>
+                    <div class="inputbox">
+                        <ion-icon name="person-circle-outline"></ion-icon>                        <input type="text" name="last_name" required>
+                        <label for="">Last Name</label>
                     </div>
+                    <button type="submit" formaction="register_auth.php">Submit</button>
                 </form>
             </div>
         </div>
