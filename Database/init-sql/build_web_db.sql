@@ -3,6 +3,8 @@
 CREATE DATABASE IF NOT EXISTS www;
 use www;
 
+# CREATE web USER THAT ONLY HAS ACCESS TO R/W TO WWW DATABASE AND R FROM honeywall DATABASE
+
 
 # Connections Table
 create table users(

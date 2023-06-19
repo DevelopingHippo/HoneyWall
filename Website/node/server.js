@@ -18,8 +18,6 @@ router.get('/', function(req, res){
     res.sendFile(path.join(__dirname+"app/index.php"));
 });
 
-
-
 app.use(express.static('/var/www/node/app'))
 app.use('/', router)
 app.listen(PORT, HOST, () => {

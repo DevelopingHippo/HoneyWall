@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   application_honey:
-    container_name: application_honey
+    container_name: app_honey
     build:
       context: ../Application
       dockerfile: Dockerfile
@@ -38,9 +38,9 @@ services:
     ports:
       - "8442:80"
       - "8443:443"
-#    volumes:
-#      - "../Website/node/:/var/www/node"
-#      - "../Website/apache:/var/www/html"
+    volumes:
+      - "../Website/node/:/var/www/node"
+      - "../Website/apache:/var/www/apache"
     networks:
       - honeywall
     restart: unless-stopped

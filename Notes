@@ -13,8 +13,6 @@ MySQL Database:
 
 
 Website:
-- Decide on platform (Apache + MySQL & PHP & JS modules || NodeJS)
-- Layout for Website Directories
 - Generate LetsEncrypt pem + key on startup
 
 
