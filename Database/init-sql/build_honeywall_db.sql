@@ -1,6 +1,4 @@
-# clear out current database tables
-
-CREATE DATABASE IF NOT EXISTS honeywall;
+CREATE DATABASE honeywall;
 use honeywall;
 
 # Connections Table
