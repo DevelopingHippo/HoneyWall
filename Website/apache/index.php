@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION["type"])) {
+    $_SESSION["type"] = "";
+    header("location: /html/login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
