@@ -3,8 +3,6 @@
 CREATE DATABASE IF NOT EXISTS honeywall;
 use honeywall;
 
-# CREATE HONEYWALL USER THAT ONLY HAS ACCESS TO WRITE TO THIS DATABASE
-
 # Connections Table
 create table connections(
     id INT NOT NULL,

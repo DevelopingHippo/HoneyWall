@@ -23,3 +23,6 @@ create table config(
   default_page VARCHAR(25)
 );
 
+
+
+insert into users VALUES ("username","password","user@email.com",true);

@@ -24,12 +24,11 @@ services:
       - "./Database/data:/var/lib/mysql"
       - "./Database/init-sql/build_honeywall_db.sql:/docker-entrypoint-initdb.d/1.sql"
       - "./Database/init-sql/build_www_db.sql:/docker-entrypoint-initdb.d/2.sql"
-      - "./Database/init-sql/load_www_data.sql:/docker-entrypoint-initdb.d/3.sql"
       - "./Database/init-sql/permissions.sql:/docker-entrypoint-initdb.d/4.sql"
     ports:
       - "3306:3306"
-    networks:
-      - web_data
+ #   networks:
+ #     - web_data
     #restart: unless-stopped
 
   web_honey:
@@ -43,11 +42,11 @@ services:
     volumes:
       - "../Website/node/:/var/www/node"
       - "../Website/apache:/var/www/apache"
-    networks:
-      - web_data
+#    networks:
+#      - web_data
     restart: unless-stopped
     depends_on:
       - db_honey
-networks:
-  web_data:
-    driver: bridge
+#networks:
+#  web_data:
+#    driver: bridge
