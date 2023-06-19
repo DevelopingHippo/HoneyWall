@@ -1,5 +1,3 @@
-# clear out current database tables
-
 CREATE DATABASE IF NOT EXISTS www;
 use www;
 
@@ -24,3 +22,4 @@ create table user_pref(
 create table config(
   default_page VARCHAR(25)
 );
+

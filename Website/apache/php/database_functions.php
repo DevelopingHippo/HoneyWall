@@ -1,7 +1,7 @@
 <?php
 function queryDatabase($sql)
 {
-    $conn = mysqli_connect("db_honeywall","web","P@ssw0rd", "web");
+    $conn = mysqli_connect("db_honey","web","P@ssw0rd", "www");
     $result = $conn->query($sql);
     $conn->close();
     return $result;
@@ -10,6 +10,6 @@ function queryDatabase($sql)
 # Sanitize input before being added to SQL query
 function inputSanitize($input): string
 {
-    $conn = new mysqli("db_honeywall","web","P@ssw0rd", "web");
+    $conn = new mysqli("db_honey","web","P@ssw0rd", "www");
     return mysqli_real_escape_string($conn, $input);
 }
