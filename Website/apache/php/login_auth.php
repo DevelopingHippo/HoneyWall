@@ -17,7 +17,7 @@ else # redirect the user to Login page with status message
     exit();
 }
 
-$sql = "SELECT admin FROM users WHERE username='".$username."' AND password='".$password."';";
+$sql = "SELECT isAdmin FROM users WHERE username='".$username."' AND password='".$password."';";
 $result = queryDatabase($sql);
 if (mysqli_num_rows($result) > 0) # If query comes back with results
 {
