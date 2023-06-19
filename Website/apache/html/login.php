@@ -10,7 +10,7 @@ if (!isset($_SESSION["type"]))
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/login.css">
     <title>HoneyWall - Login</title>
 </head>
 <body>
@@ -20,7 +20,7 @@ if (!isset($_SESSION["type"]))
                 <form action="../php/login_auth.php" method="POST">
                     <h2>Login</h2>
                     <div class="inputbox">
-                        <ion-icon name="mail-outline"></ion-icon>
+                        <ion-icon name="person-outline"></ion-icon>
                         <input type="text" name="username" required>
                         <label for="">Username</label>
                     </div>
@@ -30,12 +30,12 @@ if (!isset($_SESSION["type"]))
                         <label for="">Password</label>
                     </div>
                     <div class="forget">
-                        <label for=""><input type="checkbox">Remember Me?</label>
-                        <a href="#">Forgot Password</a>
+                        <label for=""><input type="checkbox" id="remember" name="remember" value="true">Remember Me?</label>
+                        <a href="ADD A LINK HERE FOR SOMETHING">Forgot Password</a>
                     </div>
-                    <input type="submit" name="submit" value="<button>Log In</button>"
+                    <button type="submit" formaction="../php/login_auth">Log In</button>
                     <div class="register">
-                    <p>Don't have an account? <a href="#">Register</a></p>
+                    <p>Don't have an account? <a href="register.php">Register</a></p>
                     </div>
                 </form>
             </div>
