@@ -13,39 +13,29 @@ if(!empty($_POST["username"]) && !empty($_POST["password"])) # If Username and P
 }
 else # redirect the user to Login page with status message
 {
-    header("location: /auth/login.php?status=loginfail");
+    header("location: /html/login.php?status=loginfail");
     exit();
 }
 
-$sql = "SELECT type,admin FROM users WHERE username='".$username."' AND password='".$password."';";
+$sql = "SELECT admin FROM users WHERE username='".$username."' AND password='".$password."';";
 $result = queryDatabase($sql);
 
 if ($result->num_rows == 1) # If query comes back with results
 {
     $row = $result->fetch_assoc();
-    if($row["type"] == "customer") # If user is a Customer set SESSION values and redirect to Customer Profile page
+    $_SESSION["uid"] = $username;
+    if($row["isAdmin"] == "1")
     {
-        $_SESSION["uid"] = $username;
-        $_SESSION["type"] = "customer";
-        header("location: /customer/profile.php");
+        $_SESSION["admin"] = "true";
     }
-    else if($row["type"] == "employee") # If user is an Employee set SESSION values and redirect to Employee Panel page
+    else
     {
-        $_SESSION["uid"] = $username;
-        $_SESSION["type"] = "employee";
-        if($row["admin"] == "1")
-        {
-            $_SESSION["admin"] = "true";
-        }
-        else
-        {
-            $_SESSION["admin"] = "false";
-        }
-        header("location: /employee/panel.php");
+        $_SESSION["admin"] = "false";
     }
+    header("location: /app/dashboard.html");
 }
 else # redirect the user to Login page with status message
 {
-    header("location: /auth/login.php?status=loginfail");
+    header("location: /html/login.php?status=loginfail");
 }
 exit();

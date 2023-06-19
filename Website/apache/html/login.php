@@ -1,8 +1,8 @@
 <?php
 session_start();
-if (!isset($_SESSION["type"]))
+if (!isset($_SESSION["loggedIn"]))
 {
-    $_SESSION["type"] = "";
+    $_SESSION["loggedIn"] = "";
 }
 ?>
 

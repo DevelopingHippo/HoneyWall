@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!isset($_SESSION["type"])) {
-    $_SESSION["type"] = "";
+if (!isset($_SESSION["loggedIn"])) {
+    $_SESSION["loggedIn"] = "";
     header("location: /html/login.php");
     exit();
 }
