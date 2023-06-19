@@ -39,9 +39,9 @@ services:
     ports:
       - "8442:80"
       - "8443:443"
-#    volumes:
-#      - "../Website/node/:/var/www/node"
-#      - "../Website/apache:/var/www/apache"
+    volumes:
+      - "../Website/node/app:/var/www/node/app/"
+      - "../Website/apache:/var/www/apache"
     networks:
       - web_data
     restart: unless-stopped
