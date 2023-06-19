@@ -1,10 +1,11 @@
 <?php
 session_start();
-if (!isset($_SESSION["loggedIn"])) {
-    $_SESSION["loggedIn"] = "";
-    header("location: /html/login.php");
-    exit();
-}
+if (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] == "false")
+ {
+     $_SESSION["loggedIn"] = "false";
+     header("location: /html/login.php");
+     exit();
+ }
 ?>
 
 <!DOCTYPE html>

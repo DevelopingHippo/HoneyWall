@@ -33,7 +33,7 @@ if (!isset($_SESSION["loggedIn"]))
                         <label for=""><input type="checkbox" id="remember" name="remember" value="true">Remember Me?</label>
                         <a href="ADD A LINK HERE FOR SOMETHING">Forgot Password</a>
                     </div>
-                    <button type="submit" formaction="../php/login_auth">Log In</button>
+                    <button type="submit" formaction="../php/login_auth.php">Log In</button>
                     <div class="register">
                     <p>Don't have an account? <a href="register.php">Register</a></p>
                     </div>
