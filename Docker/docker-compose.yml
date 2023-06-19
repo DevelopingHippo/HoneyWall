@@ -29,7 +29,7 @@ services:
     ports:
       - "3306:3306"
     networks:
-      - honeywall
+      - web_data
     restart: unless-stopped
 
   web_honey:
@@ -44,10 +44,10 @@ services:
       - "../Website/node/:/var/www/node"
       - "../Website/apache:/var/www/apache"
     networks:
-      - honeywall
+      - web_data
     restart: unless-stopped
     depends_on:
       - db_honey
 networks:
-  honeywall:
+  web_data:
     driver: bridge
