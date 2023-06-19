@@ -25,4 +25,4 @@ create table config(
 );
 
 
-insert into users VALUES ("username","password","user@email.com",true, "John", "Smith");
+insert into users VALUES ("username","password","user@email.com","John", "Smith",true);
