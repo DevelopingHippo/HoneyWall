@@ -1,3 +1,5 @@
+const mysql = require('mysql');
+
 function queryDatabase() {
     const con = mysql.createConnection({
         host: "db_honey",
@@ -10,7 +12,7 @@ function queryDatabase() {
         if (err) throw err;
         con.query("SELECT * FROM users", function (err, result, fields) {
             if (err) throw err;
-            console.log(result);
+            console.log("Result: " + result);
         });
     });
 }
