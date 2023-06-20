@@ -14,7 +14,10 @@ MySQL Database:
 
 Website:
 - Generate LetsEncrypt pem + key on startup
-
+- Website Layout
+    - Profile Page (Password Reset + Profile Image + etc.)
+    - Dashboard (Javascript Graphs)
+    - Admin Panel
 
 
 Setting up for Docker Launch for Website Testing:
