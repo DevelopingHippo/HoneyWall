@@ -17,7 +17,7 @@ if (!isset($_SESSION["loggedIn"]))
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form action="login_auth.php" method="POST">
+                <form action="register_auth.php" method="POST">
                     <h2>Register</h2>
                     <div class="inputbox">
                         <ion-icon name="person-outline"></ion-icon>
@@ -49,11 +49,26 @@ if (!isset($_SESSION["loggedIn"]))
                         <input type="text" name="last_name" required>
                         <label for="">Last Name</label>
                     </div>
-                    <button type="submit" formaction="register_auth.php">Submit</button>
+                    <button type="submit">Submit</button>
                 </form>
             </div>
         </div>
     </section>
+    <?php
+    $status = $_GET["status"];
+    if($status == "badpassword")
+    {
+        echo "<script>alert('Bad input!');</script>";
+    }
+    else if($status == "userexists")
+    {
+        echo "<script>alert('Username already exists!');</script>";
+    }
+    else if($status == "password_mismatch")
+    {
+        echo "<script>alert('Passwords do not match!');</script>";
+    }
+    ?>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

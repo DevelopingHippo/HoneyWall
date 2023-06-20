@@ -4,7 +4,15 @@ if (!isset($_SESSION["loggedIn"]))
 {
     $_SESSION["type"] = "false";
 }
+
 require_once "../php/database_functions.php";
+
+if($_POST["password1"] != $_POST["password2"])
+{
+    header("location: /auth/register.php?status=password_mismatch");
+    exit();
+}
+
 
 if(empty($_POST["username"]) || empty($_POST["password1"]) || ($_POST["password1"] !=  $_POST["password2"]) || empty($_POST["email"]) || empty($_POST["first_name"]) || empty($_POST["last_name"])) # If user input is empty AND passwords don't match
 {
