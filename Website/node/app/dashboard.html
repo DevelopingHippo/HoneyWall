@@ -3,26 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
+    <script type="text/javascript" src="js/database_functions.js"></script>
 </head>
 <body>
   <h1><b>Dashboard</b></h1>
-    <script>
-        var mysql = require('mysql');
 
-        var con = mysql.createConnection({
-            host: "db_honey",
-            user: "web",
-            password: "P@ssw0rd",
-            database: "honeywall"
-        });
-
-        con.connect(function(err) {
-            if (err) throw err;
-            con.query("SELECT * FROM connections", function (err, result, fields) {
-                if (err) throw err;
-                console.log(result);
-            });
-        });
-    </script>
 </body>
 </html>
