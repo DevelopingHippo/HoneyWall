@@ -16,3 +16,8 @@ create table connections(
     packets INT,
     primary key (id)
 );
+
+
+
+#Test Data
+insert into connections VALUES (1, "10.0.1.1", 443, "172.2.1.2", 444, "tcp", null, null, "https", "US", 4232);
