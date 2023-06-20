@@ -1,5 +1,7 @@
 const mysql = require('mysql');
 
+alert("The database page loaded")
+
 var con = mysql.createConnection({
     host: "db_honey",
     user: "web",
