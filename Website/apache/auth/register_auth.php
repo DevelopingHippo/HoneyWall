@@ -22,14 +22,14 @@ if(empty($_POST["username"]) || empty($_POST["password1"]) || ($_POST["password1
 }
 
 
-$username = inputSanitize($_POST["username"]);
-$password = inputSanitize(hash("sha256", $_POST["password1"]));
-$email = inputSanitize($_POST["email"]);
-$first_name = inputSanitize($_POST["first_name"]);
-$last_name = inputSanitize($_POST["last_name"]);
+$username = inputSanitize_www($_POST["username"]);
+$password = inputSanitize_www(hash("sha256", $_POST["password1"]));
+$email = inputSanitize_www($_POST["email"]);
+$first_name = inputSanitize_www($_POST["first_name"]);
+$last_name = inputSanitize_www($_POST["last_name"]);
 
 $sql = "SELECT username FROM users WHERE username='".$username."';";
-$result = queryDatabase($sql);
+$result = queryDatabase_www($sql);
 
 if(mysqli_num_rows($result) > 0) # If Username already exists
 {
@@ -39,7 +39,7 @@ if(mysqli_num_rows($result) > 0) # If Username already exists
 }
 
 $sql = "INSERT INTO users VALUES ('".$username."','".$password."','".$email."','".$first_name."','".$last_name."',false);";
-$result = queryDatabase($sql);
+$result = queryDatabase_www($sql);
 
 # If everything is successful, redirect to Login page
 header("location: /auth/login.php");

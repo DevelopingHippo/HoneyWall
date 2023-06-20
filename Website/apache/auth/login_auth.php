@@ -8,9 +8,9 @@ require_once "../php/database_functions.php";
 
 if(!empty($_POST["username"]) && !empty($_POST["password"])) # If Username and Password NOT empty
 {
-    $username = inputSanitize($_POST["username"]);
+    $username = inputSanitize_www($_POST["username"]);
     $password = hash('sha256', $_POST["password"]);
-    $password = inputSanitize($password);
+    $password = inputSanitize_www($password);
 }
 else # redirect the user to Login page with status message
 {
@@ -19,7 +19,7 @@ else # redirect the user to Login page with status message
 }
 
 $sql = "SELECT isAdmin FROM users WHERE username='".$username."' AND password='".$password."';";
-$result = queryDatabase($sql);
+$result = queryDatabase_www($sql);
 if (mysqli_num_rows($result) > 0) # If query comes back with results
 {
     $row = $result->fetch_assoc();
@@ -32,7 +32,7 @@ if (mysqli_num_rows($result) > 0) # If query comes back with results
     {
         $_SESSION["admin"] = "false";
     }
-    header("location: /dashboard/dashboard.html");
+    header("location: /dashboard/dashboard.php");
 }
 else # redirect the user to Login page with status message
 {
