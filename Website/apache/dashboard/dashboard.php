@@ -11,8 +11,11 @@
 
 <?php
 require_once "../php/database_functions.php";
-$results = queryDatabase_honeywall("SELECT * FROM connections");
-echo $results;
+$result = queryDatabase_honeywall("SELECT * FROM connections");
+while($row = mysqli_fetch_array($result))
+{
+    print_r($row);
+}
 ?>
 </body>
 </html>
