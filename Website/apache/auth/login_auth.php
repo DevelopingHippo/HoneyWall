@@ -14,7 +14,7 @@ if(!empty($_POST["username"]) && !empty($_POST["password"])) # If Username and P
 }
 else # redirect the user to Login page with status message
 {
-    header("location: /html/login.php?status=loginfail");
+    header("location: /auth/login.php?status=loginfail");
     exit();
 }
 
@@ -36,6 +36,6 @@ if (mysqli_num_rows($result) > 0) # If query comes back with results
 }
 else # redirect the user to Login page with status message
 {
-    header("location: /html/login.php?status=loginfail");
+    header("location: /auth/login.php?status=loginfail");
 }
 exit();
