@@ -1,7 +1,8 @@
-import mysql from "mysql";
+
 
 
 function queryDatabase() {
+    import mysql from "mysql";
     const con = mysql.createConnection({
         host: "db_honey",
         user: "web",
