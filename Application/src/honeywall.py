@@ -16,6 +16,8 @@ def main():
     cur.execute("SELECT max(id) as last_id FROM connections LIMIT 1")
     result = cur.fetchone()
     data_id = int(result) + 1
+    # THIS IS TO TEST
+    query_connection("192.168.53.32", 70, "10.0.1.232", 2422, "tcp", "12:43:24", "2023-07-05", "http", "US", 1232)
     honeywall()
 
 
