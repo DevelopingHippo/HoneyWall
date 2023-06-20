@@ -1,3 +1,5 @@
+export queryDatabase from './database_functions';
+
 const mysql = require('mysql');
 
 function queryDatabase() {

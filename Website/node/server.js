@@ -23,3 +23,10 @@ app.use('/', router)
 app.listen(PORT, HOST, () => {
     console.log(`Running on http://${HOST}:${PORT}`);
 });
+
+
+
+function database(){
+    const database_functions = require('database_functions.js')
+    database_functions.queryDatabase()
+}
