@@ -10,7 +10,7 @@ var con = mysql.createConnection({
 con.connect(function(err) {
     if (err) throw err;
     con.query("SELECT * FROM connections", function (err, result, fields) {
-        if (err) throw err;
+        if (err) console.log(err);
         console.log(result);
     });
 });
