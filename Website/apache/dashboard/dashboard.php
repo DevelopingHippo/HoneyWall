@@ -5,7 +5,7 @@
   <title>Dashboard</title>
   <script src="../js/js_functions.js"></script>
   <script src="../js/d3.v7.js"></script>
-  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <!--<script src="https://d3js.org/d3.v7.min.js"></script>-->
 </head>
 <body>
 <h1><b>Dashboard</b></h1>
