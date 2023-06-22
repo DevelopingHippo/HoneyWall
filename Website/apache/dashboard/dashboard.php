@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Dashboard</title>
   <script src="../js/js_functions.js"></script>
+    <script>src="../js/d3.v7.min.js"</script>
 </head>
 <body>
 <h1><b>Dashboard</b></h1>
