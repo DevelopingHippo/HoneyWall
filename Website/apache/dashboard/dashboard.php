@@ -1,8 +1,7 @@
 <?php
     require_once "../php/php_functions.php";
 ?>
-
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
@@ -73,7 +72,10 @@ printHeader();
 
     </div>
 </section>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </body>
+<?php
+printFooter();
+?>
+
 </html>
