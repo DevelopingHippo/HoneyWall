@@ -1,8 +1,13 @@
+<?php
+    require_once "../php/php_functions.php";
+?>
+
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../css/site-global.css">
     <link rel="stylesheet" href="../js/jvectormap/jquery-jvectormap-2.0.5.css" type="text/css" media="screen"/>
     <script src="../js/js_functions.js"></script>
     <script src="../js/d3.v7.js"></script>
@@ -11,9 +16,10 @@
     <script src="../js/jvectormap/jvectormap-world-mill.js"></script>
     <script src="packetData.js"></script>
 </head>
-<header>
+<?php
+printHeader();
+?>
 
-</header>
 <body>
 <section>
     <div class="stats">
@@ -68,7 +74,4 @@
     </div>
 </section>
 </body>
-<footer>
-
-</footer>
 </html>

@@ -9,7 +9,12 @@ section{
     background-size: cover;
 }
 */
-
+@import url('https://fonts.googleapis.com/css?family=poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins','sans-serif'
+}
 
 .stats {
     display:grid;
