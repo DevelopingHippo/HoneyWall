@@ -29,10 +29,6 @@ if (!isset($_SESSION["loggedIn"]))
                         <input type="password" name="password" required>
                         <label for="">Password</label>
                     </div>
-                    <div class="forget">
-                        <label for=""><input type="checkbox" id="remember" name="remember" value="true">Remember Me?</label>
-                        <a href="ADD A LINK HERE FOR SOMETHING">Forgot Password</a>
-                    </div>
                     <button type="submit" formaction="login_auth.php">Log In</button>
                     <div class="register">
                     <p>Don't have an account? <a href="register.php">Register</a></p>

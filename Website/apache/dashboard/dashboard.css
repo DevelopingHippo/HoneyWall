@@ -1,31 +1,28 @@
-/*
 section{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    background: url('../img/login-bg.jpg') no-repeat center;
+    background-color: #2d3436;
+    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
     background-size: cover;
-}
-*/
-@import url('https://fonts.googleapis.com/css?family=poppins&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'poppins','sans-serif'
 }
 
 .stats {
     display:grid;
     gap: 10px;
     grid-template-columns: auto auto auto auto auto auto auto auto;
-    padding: 10px;
+    color: #fff;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    filter: drop-shadow(10px 10px 10px black);
+
 }
 .stats > div {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
     text-align: center;
-    padding: 10px 0;
     font-size: 30px;
 }
 
@@ -35,37 +32,26 @@ section{
     grid-row: 1;
     grid-column-start: 5;
     grid-column-end: 9;
-    border: 1px solid black;
-    background-color: darkgoldenrod;
-    text-align: center;
 }
 .top-geolocation-vert {
     grid-row: 2;
     grid-column-start: 5;
     grid-column-end: 6;
-    border: 1px solid black;
-    background-color: rebeccapurple;
 }
 .top-ports-vert {
     grid-row: 2;
     grid-column-start: 6;
     grid-column-end: 7;
-    border: 1px solid black;
-    background-color: purple;
 }
 .top-services-vert {
     grid-row: 2;
     grid-column-start: 7;
     grid-column-end: 8;
-    border: 1px solid black;
-    background-color: mediumpurple;
 }
 .top-proto-vert {
     grid-row: 2;
     grid-column-start: 8;
     grid-column-end: 9;
-    border: 1px solid black;
-    background-color: mediumpurple;
 }
 
 
@@ -74,27 +60,19 @@ section{
     grid-row: 1;
     grid-column-start: 1;
     grid-column-end: 3;
-    border: 1px solid black;
-    background-color: greenyellow;
 }
 .top-ports-pie {
     grid-row: 1;
     grid-column-start: 3;
     grid-column-end: 5;
-    border: 1px solid black;
-    background-color: darkgreen;
 }
 .top-usernames-pie {
     grid-row: 2;
     grid-column-start: 1;
     grid-column-end: 3;
-    border: 1px solid black;
-    background-color: darkolivegreen;
 }
 .top-passwords-pie {
     grid-row: 2;
     grid-column-start: 3;
     grid-column-end: 5;
-    border: 1px solid black;
-    background-color: forestgreen;
 }
