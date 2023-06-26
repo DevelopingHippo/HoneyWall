@@ -23,6 +23,14 @@ printHeader();
 <body>
 <section>
     <div class="stats">
+
+        <div class="control-panel">
+            <h1>Control Panel</h1>
+        </div>
+        <script>
+
+        </script>
+
         <script>
             build_bar_chart();
         </script>
