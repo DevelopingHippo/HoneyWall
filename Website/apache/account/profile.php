@@ -1,5 +1,5 @@
 <?php
-    require_once "../php/php_functions.php";
+    require_once "../php/web_functions.php";
 ?>
 <html lang="en">
 <head>
