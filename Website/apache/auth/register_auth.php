@@ -33,7 +33,7 @@ $result = queryDatabase_www($sql);
 
 if(mysqli_num_rows($result) > 0) # If Username already exists
 {
-    # Redict to Register page with Status Message
+    # Redirect to Register page with Status Message
     header("location: /auth/register.php?status=userexists");
     exit();
 }

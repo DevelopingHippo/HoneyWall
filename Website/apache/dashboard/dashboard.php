@@ -41,7 +41,7 @@ printHeader();
             <script>drawPieChart("#top-passwords-svg")</script></div>
 
         <div class="live-map">Map
-            <div id="world-map" style="width: 600px; height: 400px;margin: auto"></div>
+            <div id="world-map" style="width: 600px; height: 400px;margin: auto;border-radius: 20px;"></div>
             <script>
                 document.getElementById("world-map").addEventListener("contextmenu", (event) => {
                     event.preventDefault();
@@ -64,12 +64,52 @@ printHeader();
         </script>
         </div>
 
-        <div class="top-geolocation-vert">Top Geolocation</div>
-        <div class="top-ports-vert">Top Ports</div>
-        <div class="top-services-vert">Top Services</div>
-        <div class="top-proto-vert">Top Protocols</div>
+        <div class="top-geolocation-vert">
+            <h6 class="vert-h6">Top Geolocations</h6>
+            <table>
+                <tr><td>US</td><td class="numbers">1000</td></tr>
+                <tr><td>RU</td><td class="numbers">969</td></tr>
+                <tr><td>CN</td><td class="numbers">420</td></tr>
+                <tr><td>CA</td><td class="numbers">323</td></tr>
+                <tr><td>UK</td><td class="numbers">199</td></tr>
+                <tr><td>MD</td><td class="numbers">10</td></tr>
+            </table>
+        </div>
 
+        <div class="top-ports-vert">
+            <h6 class="vert-h6">Top Ports</h6>
+            <table>
+                <tr><td>US</td><td class="numbers">1000</td></tr>
+                <tr><td>RU</td><td class="numbers">969</td></tr>
+                <tr><td>CN</td><td class="numbers">420</td></tr>
+                <tr><td>CA</td><td class="numbers">323</td></tr>
+                <tr><td>UK</td><td class="numbers">199</td></tr>
+                <tr><td>MD</td><td class="numbers">10</td></tr>
+            </table>
+        </div>
 
+        <div class="top-services-vert">
+            <h6 class="vert-h6">Top Services</h6>
+            <table>
+                <tr><td>US</td><td class="numbers">1000</td></tr>
+                <tr><td>RU</td><td class="numbers">969</td></tr>
+                <tr><td>CN</td><td class="numbers">420</td></tr>
+                <tr><td>CA</td><td class="numbers">323</td></tr>
+                <tr><td>UK</td><td class="numbers">199</td></tr>
+                <tr><td>MD</td><td class="numbers">10</td></tr>
+            </table>
+        </div>
+        <div class="top-proto-vert">
+            <h6 class="vert-h6">Top Protocols</h6>
+            <table>
+                <tr><td>US</td><td class="numbers">1000</td></tr>
+                <tr><td>RU</td><td class="numbers">969</td></tr>
+                <tr><td>CN</td><td class="numbers">420</td></tr>
+                <tr><td>CA</td><td class="numbers">323</td></tr>
+                <tr><td>UK</td><td class="numbers">199</td></tr>
+                <tr><td>MD</td><td class="numbers">10</td></tr>
+            </table>
+        </div>
     </div>
 </section>
 
