@@ -4,55 +4,81 @@ section{
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: black;
+    background-color: #323b44;
     background-size: cover;
 }
 
 .stats {
     display:grid;
     gap: 10px;
+    grid-template-rows: auto auto auto;
     grid-template-columns: auto auto auto auto auto auto auto auto;
     color: #fff;
+    /*
     background: transparent;
-    border: 2px solid yellow;
+    */
     border-radius: 20px;
     filter: drop-shadow(10px 10px 10px black);
     padding: 10px;
     width: 90%;
 }
 .stats > div {
-    background-color: transparent;
     text-align: center;
     font-size: 25px;
+
 }
 
 /* Section for Map and Vertical Stats*/
-
-.live-map {
+.bar-chart {
     grid-row: 1;
     grid-column-start: 5;
     grid-column-end: 9;
+    background-color: #36404a;
+    border-radius: 20px;
+}
+.bar {
+    fill: steelblue;
+}
+.highlight {
+    fill: red;
+}
+
+
+.live-map {
+    grid-row: 2;
+    grid-column-start: 5;
+    grid-column-end: 9;
+    background-color: #36404a;
+    border-radius: 20px;
 }
 .top-geolocation-vert {
-    grid-row: 2;
+    grid-row: 3;
     grid-column-start: 5;
     grid-column-end: 6;
     justify-items: center;
+    background-color: #36404a;
+    border-radius: 20px;
 }
 .top-ports-vert {
-    grid-row: 2;
+    grid-row: 3;
     grid-column-start: 6;
     grid-column-end: 7;
+    background-color: #36404a;
+    border-radius: 20px;
 }
 .top-services-vert {
-    grid-row: 2;
+    grid-row: 3;
     grid-column-start: 7;
     grid-column-end: 8;
+    background-color: #36404a;
+    border-radius: 20px;
 }
 .top-proto-vert {
-    grid-row: 2;
+    grid-row: 3;
     grid-column-start: 8;
     grid-column-end: 9;
+    background-color: #36404a;
+    border-radius: 20px;
 }
 
 .vert-h6 {
@@ -80,22 +106,34 @@ td.numbers {
 
 /* Section for Pie Charts*/
 .top-geolocation-pie {
-    grid-row: 1;
+    grid-row: 2;
     grid-column-start: 1;
     grid-column-end: 3;
+    background-color: #36404a;
+    border-radius: 20px;
+    padding-bottom: 10px;
 }
 .top-ports-pie {
-    grid-row: 1;
+    grid-row: 2;
     grid-column-start: 3;
     grid-column-end: 5;
+    background-color: #36404a;
+    border-radius: 20px;
+    padding-bottom: 10px;
 }
 .top-usernames-pie {
-    grid-row: 2;
+    grid-row: 3;
     grid-column-start: 1;
     grid-column-end: 3;
+    background-color: #36404a;
+    border-radius: 20px;
+    padding-bottom: 10px;
 }
 .top-passwords-pie {
-    grid-row: 2;
+    grid-row: 3;
     grid-column-start: 3;
     grid-column-end: 5;
+    background-color: #36404a;
+    border-radius: 20px;
+    padding-bottom: 10px;
 }

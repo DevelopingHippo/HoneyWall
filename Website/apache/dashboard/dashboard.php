@@ -1,5 +1,6 @@
 <?php
     require_once "../php/web_functions.php";
+    loginCheck();
 ?>
 <html lang="en">
 <head>
@@ -22,6 +23,9 @@ printHeader();
 <body>
 <section>
     <div class="stats">
+        <script>
+            build_bar_chart();
+        </script>
         <script>
             build_geo_pie();
             build_port_pie();
