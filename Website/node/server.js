@@ -8,14 +8,20 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 const path = require("path");
+var cors = require('cors');
+
+var corsOptions = {
+    origin: 'http://localhost:63342', // this domain is allowed to make API calls
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 
 // Index Page
-app.get('/', function(req, res){
+app.get('/', cors(corsOptions), function(req, res){
     res.sendFile(path.join(__dirname+"/api/junk.html"));
 });
 // Dashboard
-app.get('/get-map-data', function(req, res){
-    let result = queryDatabase("SELECT location, SUM(packets) AS total_packets FROM connections GROUP BY location");
+app.get('/get-map-data', cors(corsOptions), function(req, res){
+    //let result = queryDatabase("SELECT location, SUM(packets) AS total_packets FROM connections GROUP BY location");
 
     res.setHeader('Content-Type', 'application/json');
     res.json(

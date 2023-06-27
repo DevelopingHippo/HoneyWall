@@ -115,31 +115,7 @@ function build_bar_chart()
 
 
 
-function build_map()
-{
-    document.write('<div class="live-map">\n'+
-        '<div id="world-map" style="width: 750px; height: 325px;margin: auto;padding: 10px"></div></div>')
 
-    document.getElementById("world-map").addEventListener("contextmenu", (event) => {
-        event.preventDefault();
-    });
-
-    let mapData = apiCall("/api/get-map-data");
-
-    $('#world-map').vectorMap({
-        map: 'world_mill',
-        series: {
-            regions: [{
-                values: mapData,
-                scale: ['#C8EEFF', '#0071A4'],
-                normalizeFunction: 'polynomial'
-            }]
-        },
-        onRegionTipShow: function(e, el, code){
-            el.html(el.html()+' (Packets - '+mapData[code]+')');
-        }
-    });
-}
 
 function build_geo_pie()
 {
@@ -431,7 +407,33 @@ function build_protocols_vert()
 }
 
 
-function apiCall(url){
-    const response = fetch(url);
+async function build_map() {
+    document.write('<div class="live-map">\n' +
+        '<div id="world-map" style="width: 750px; height: 325px;margin: auto;padding: 10px"></div></div>')
+
+    document.getElementById("world-map").addEventListener("contextmenu", (event) => {
+        event.preventDefault();
+    });
+
+    let mapData = await apiCall("http://localhost:3000/get-map-data");
+
+    $('#world-map').vectorMap({
+        map: 'world_mill',
+        series: {
+            regions: [{
+                values: mapData,
+                scale: ['#C8EEFF', '#0071A4'],
+                normalizeFunction: 'polynomial'
+            }]
+        },
+        onRegionTipShow: function (e, el, code) {
+            el.html(el.html() + ' (Packets - ' + mapData[code] + ')');
+        }
+    });
+}
+
+
+async function apiCall(url) {
+    const response = await fetch(url);
     return response.json();
 }
