@@ -2,6 +2,7 @@
     require_once "../php/web_functions.php";
     loginCheck();
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

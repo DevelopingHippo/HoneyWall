@@ -125,7 +125,7 @@ function build_map()
     });
 
 
-    var mapData = fetch('/api')
+    var mapData = fetch('/api/get-map-data')
         .then(response => {
             return response;
         });
