@@ -24,8 +24,7 @@ async function build_bar_chart() {
             "translate(" + margin.left + "," + margin.top + ")");
 
     // get the data
-    //d3.json("/api/get-chart-data").then(function (data) { // THIS IS FOR PROD
-    d3.json("http://localhost:3000/get-chart-data").then(function (data) { // THIS IS FOR TESTING
+    d3.json("/api/get-chart-data").then(function (data) {
         // format the data
         data.forEach(function (d) {
             d.packet_number = +d.packet_number;
@@ -143,7 +142,7 @@ async function build_map() {
         event.preventDefault();
     });
 
-    let mapData = await apiCall("http://localhost:3000/get-map-data");
+    let mapData = await apiCall("/api/get-map-data");
 
     $('#world-map').vectorMap({
         map: 'world_mill',
