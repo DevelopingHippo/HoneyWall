@@ -128,8 +128,10 @@ function build_map()
     fetch('/api/get-map-data')
         .then(response => {
             mapData = response.json();
-        });
-    console.log(mapData);
+        })
+        .then(mapData => {
+            console.log(mapData)
+        })
 
     $('#world-map').vectorMap({
         map: 'world_mill',
