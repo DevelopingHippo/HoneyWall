@@ -130,6 +130,8 @@ function build_map()
             return response;
         });
 
+    console.log(mapData);
+
     $('#world-map').vectorMap({
         map: 'world_mill',
         series: {

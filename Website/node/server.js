@@ -11,7 +11,7 @@ const path = require("path");
 
 // Index Page
 app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname+"api/junk.html"));
+    res.sendFile(path.join(__dirname+"/api/junk.html"));
 });
 // Dashboard
 app.get('/get-map-data', function(req, res){
@@ -19,7 +19,7 @@ app.get('/get-map-data', function(req, res){
 
     res.setHeader('Content-Type', 'application/json');
     res.json( {
-            "UZ": 37.72,
+            "US": 1000,
             "VU": 0.72,
             "VE": 285.21,
             "VN": 101.99,
