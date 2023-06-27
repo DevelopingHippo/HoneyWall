@@ -12,10 +12,10 @@ const router = express.Router();
 
 // Index Page
 router.get('/', function(req, res){
-    res.sendFile(path.join(__dirname+"/api/junk.html"));
+    res.sendFile(path.join(__dirname+"api/junk.html"));
 });
 // Dashboard
-router.get('/get-map-data', function(req, res){
+router.get('get-map-data', function(req, res){
     let result = queryDatabase("SELECT location, SUM(packets) AS total_packets FROM connections GROUP BY location")
     res.send( {
             "UZ": 37.72,
