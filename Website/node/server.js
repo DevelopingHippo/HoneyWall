@@ -15,8 +15,8 @@ router.get('/', function(req, res){
     res.sendFile(path.join(__dirname+"api/junk.html"));
 });
 // Dashboard
-router.get('get-map-data', function(req, res){
-    let result = queryDatabase("SELECT location, SUM(packets) AS total_packets FROM connections GROUP BY location")
+router.get('/get-map-data', function(req, res){
+    let result = queryDatabase("SELECT location, SUM(packets) AS total_packets FROM connections GROUP BY location");
     res.send( {
             "UZ": 37.72,
             "VU": 0.72,
@@ -26,10 +26,10 @@ router.get('get-map-data', function(req, res){
             "ZM": 15.69,
             "ZW": 5.57
     }
-    )
+    );
 });
 
-app.use(express.static('/var/www/node/api'))
+app.use(express.static('/var/www/node/api/'))
 app.use('/', router)
 app.listen(PORT, HOST, () => {
     console.log(`Running on http://${HOST}:${PORT}`);
