@@ -124,14 +124,7 @@ function build_map()
         event.preventDefault();
     });
 
-    let mapData;
-    fetch('/api/get-map-data')
-        .then(response => {
-            mapData = response.json();
-        })
-        .then(mapData => {
-            console.log(mapData)
-        })
+    let mapData = apiCall("/api/get-map-data");
 
     $('#world-map').vectorMap({
         map: 'world_mill',
@@ -435,4 +428,10 @@ function build_protocols_vert()
         '                <tr><td>MD</td><td class="numbers">10</td></tr>\n' +
         '            </table>\n' +
         '        </div>');
+}
+
+
+function apiCall(url){
+    const response = fetch(url);
+    return response.json();
 }
