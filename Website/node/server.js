@@ -20,13 +20,15 @@ app.get('/', cors(corsOptions), function(req, res){
     res.sendFile(path.join(__dirname+"/api/junk.html"));
 });
 
-app.get('geo-pie-data', cors(corsOptions), function(req, res){
+app.get('/geo-pie-data', cors(corsOptions), function(req, res){
     res.setHeader('Content-Type', 'application/json');
-    res.json([{name: "Alex", share: 20.70},
+    res.json([
+        {name: "Alex", share: 20.70},
         {name: "Shelly", share: 30.92},
         {name: "Clark", share: 15.42},
         {name: "Matt", share: 13.65},
-        {name: "Jolene", share: 19.31}]
+        {name: "Jolene", share: 19.31}
+    ]
 );
 });
 
