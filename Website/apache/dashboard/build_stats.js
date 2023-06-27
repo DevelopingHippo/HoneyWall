@@ -26,7 +26,7 @@ function build_bar_chart()
             "translate(" + margin.left + "," + margin.top + ")");
 
     // get the data
-    d3.csv("test-data.csv").then(function(data) {
+    d3.csv("../test/test-data/bar-chart-data.csv").then(function(data) {
 
         // format the data
         data.forEach(function(d) {
@@ -123,6 +123,12 @@ function build_map()
     document.getElementById("world-map").addEventListener("contextmenu", (event) => {
         event.preventDefault();
     });
+
+
+    var mapData = fetch('/api')
+        .then(response => {
+            return response;
+        });
 
     $('#world-map').vectorMap({
         map: 'world_mill',

@@ -9,12 +9,11 @@
     <link rel="stylesheet" href="dashboard.css">
     <link rel="stylesheet" href="../css/site-global.css">
     <link rel="stylesheet" href="../js/jvectormap/jquery-jvectormap-2.0.5.css" type="text/css" media="screen"/>
-    <script src="../js/js_functions.js"></script>
     <script src="../js/d3.v7.js"></script>
     <script src="../js/jvectormap/jquery-3.7.0.js"></script>
     <script src="../js/jvectormap/jquery-jvectormap-2.0.5.min.js"></script>
     <script src="../js/jvectormap/jvectormap-world-mill.js"></script>
-    <script src="packetData.js"></script>
+    <script src="../test/test-data/map-data.js"></script>
     <script src="build_stats.js"></script>
 </head>
 <?php

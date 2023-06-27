@@ -8,8 +8,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y && apt autor
 #WORKDIR /opt
 #RUN git clone "https://github.com/DevelopingHippo/HoneyWall.git"
 #RUN cd ./HoneyWall/Application/
-#RUN mkdir -p /app
-#RUN mv /opt/HoneyWall/Application/src /app
+#RUN mkdir -p /api
+#RUN mv /opt/HoneyWall/Application/src /api
 #RUN rm -r /opt/HoneyWall/
 
 #COPY ./requirements.txt ./opt
