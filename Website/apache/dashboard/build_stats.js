@@ -127,7 +127,7 @@ function build_map()
     let mapData;
     fetch('/api/get-map-data')
         .then(response => {
-            mapData = response;
+            mapData = response.json();
         });
     console.log(mapData);
 

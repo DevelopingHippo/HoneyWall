@@ -19,7 +19,9 @@ app.get('/get-map-data', function(req, res){
 
     res.setHeader('Content-Type', 'application/json');
     res.json( {
-            "US": 1000,
+            "US": 14624.18,
+            "UY": 40.71,
+            "UZ": 37.72,
             "VU": 0.72,
             "VE": 285.21,
             "VN": 101.99,
