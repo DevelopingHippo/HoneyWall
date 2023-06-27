@@ -14,7 +14,6 @@
     <script src="../js/jvectormap/jquery-3.7.0.js"></script>
     <script src="../js/jvectormap/jquery-jvectormap-2.0.5.min.js"></script>
     <script src="../js/jvectormap/jvectormap-world-mill.js"></script>
-    <script src="../test/test-data/map-data.js"></script>
     <script src="build_stats.js"></script>
 </head>
 <?php
