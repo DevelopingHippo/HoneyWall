@@ -22,7 +22,6 @@ printHeader();
 <body>
 <section>
     <div class="stats">
-
         <div class="control-panel">
             <h1>Control Panel</h1>
         </div>
@@ -46,10 +45,8 @@ printHeader();
             build_services_vert()
             build_protocols_vert()
         </script>
-
     </div>
 </section>
-
 </body>
 <?php
 printFooter();
