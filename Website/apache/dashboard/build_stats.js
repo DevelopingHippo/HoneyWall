@@ -134,13 +134,13 @@ function build_map()
         map: 'world_mill',
         series: {
             regions: [{
-                values: gdpData,
+                values: mapData,
                 scale: ['#C8EEFF', '#0071A4'],
                 normalizeFunction: 'polynomial'
             }]
         },
         onRegionTipShow: function(e, el, code){
-            el.html(el.html()+' (GDP - '+gdpData[code]+')');
+            el.html(el.html()+' (Packets - '+mapData[code]+')');
         }
     });
 }
