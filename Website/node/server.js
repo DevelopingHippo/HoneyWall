@@ -27,8 +27,8 @@ app.get('/get-map-data', function(req, res){
             "TN": 43.86,
             "TR": 729.05,
             "TM": 1000,
-            "UG": 17.12,
-            "UA": 136.56
+            "UA": 136.56,
+            "UG": 17.12
             }
     );
 });
