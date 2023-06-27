@@ -18,7 +18,8 @@ app.get('/get-map-data', function(req, res){
     let result = queryDatabase("SELECT location, SUM(packets) AS total_packets FROM connections GROUP BY location");
 
     res.setHeader('Content-Type', 'application/json');
-    res.json( {
+    res.json(
+        {
             "US": 14624.18,
             "UY": 40.71,
             "UZ": 37.72,
@@ -28,7 +29,7 @@ app.get('/get-map-data', function(req, res){
             "YE": 30.02,
             "ZM": 15.69,
             "ZW": 5.57
-    }
+            }
     );
 });
 
