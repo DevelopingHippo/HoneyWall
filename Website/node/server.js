@@ -8,16 +8,17 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 const path = require("path");
-const router = express.Router();
 
 // Index Page
-router.get('/', function(req, res){
+app.get('/', function(req, res){
     res.sendFile(path.join(__dirname+"api/junk.html"));
 });
 // Dashboard
-router.get('/get-map-data', function(req, res){
+app.get('/get-map-data', function(req, res){
     let result = queryDatabase("SELECT location, SUM(packets) AS total_packets FROM connections GROUP BY location");
-    res.send( {
+
+    res.setHeader('Content-Type', 'application/json');
+    res.json( {
             "UZ": 37.72,
             "VU": 0.72,
             "VE": 285.21,
@@ -29,11 +30,15 @@ router.get('/get-map-data', function(req, res){
     );
 });
 
-app.use(express.static('/var/www/node/api/'))
-app.use('/', router)
 app.listen(PORT, HOST, () => {
     console.log(`Running on http://${HOST}:${PORT}`);
 });
+
+
+
+
+
+
 
 
 
