@@ -124,12 +124,11 @@ function build_map()
         event.preventDefault();
     });
 
-
-    var mapData = fetch('/api/get-map-data')
+    let mapData;
+    fetch('/api/get-map-data')
         .then(response => {
-            return response;
+            mapData = response;
         });
-
     console.log(mapData);
 
     $('#world-map').vectorMap({
