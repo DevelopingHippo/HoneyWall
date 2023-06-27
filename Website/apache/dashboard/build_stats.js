@@ -1,6 +1,4 @@
-function build_bar_chart()
-{
-
+async function build_bar_chart() {
     document.write('<div class="bar-chart">' +
         '<svg id="bar-chart" width="600" height="500"></svg></div>');
 
@@ -26,26 +24,36 @@ function build_bar_chart()
             "translate(" + margin.left + "," + margin.top + ")");
 
     // get the data
-    d3.csv("../test/test-data/bar-chart-data.csv").then(function(data) {
-
+    //d3.json("/api/get-chart-data").then(function (data) { // THIS IS FOR PROD
+    d3.json("http://localhost:3000/get-chart-data").then(function (data) { // THIS IS FOR TESTING
         // format the data
-        data.forEach(function(d) {
+        data.forEach(function (d) {
             d.packet_number = +d.packet_number;
         });
 
         // Scale the range of the data in the domains
-        x.domain(data.map(function(d) { return d.month; }));
-        y.domain([0, d3.max(data, function(d) { return d.packet_number; })]);
+        x.domain(data.map(function (d) {
+            return d.month;
+        }));
+        y.domain([0, d3.max(data, function (d) {
+            return d.packet_number;
+        })]);
 
         // append the rectangles for the bar chart
         svg.selectAll(".bar")
             .data(data)
             .enter().append("rect")
             .attr("class", "bar")
-            .attr("x", function(d) { return x(d.month); })
+            .attr("x", function (d) {
+                return x(d.month);
+            })
             .attr("width", x.bandwidth())
-            .attr("y", function(d) { return y(d.packet_number); })
-            .attr("height", function(d) { return height - y(d.packet_number); });
+            .attr("y", function (d) {
+                return y(d.packet_number);
+            })
+            .attr("height", function (d) {
+                return height - y(d.packet_number);
+            });
 
         // add the x Axis
         svg.append("g")
@@ -62,8 +70,12 @@ function build_bar_chart()
             .attr("class", "bar")
             .on("mouseover", onMouseOver) //Add listener for the mouseover event
             .on("mouseout", onMouseOut)   //Add listener for the mouseout event
-            .attr("x", function(d) { return x(d.year); })
-            .attr("y", function(d) { return y(d.value); })
+            .attr("x", function (d) {
+                return x(d.year);
+            })
+            .attr("y", function (d) {
+                return y(d.value);
+            })
             .attr("width", x.bandwidth())
             .transition()
             .ease(d3.easeLinear)
@@ -71,7 +83,9 @@ function build_bar_chart()
             .delay(function (d, i) {
                 return i * 50;
             })
-            .attr("height", function(d) { return height - y(d.value); });
+            .attr("height", function (d) {
+                return height - y(d.value);
+            });
 
     });
 
@@ -81,19 +95,23 @@ function build_bar_chart()
             .transition()     // adds animation
             .duration(400)
             .attr('width', x.bandwidth() + 5)
-            .attr("y", function(d) { return y(d.value) - 10; })
-            .attr("height", function(d) { return height - y(d.value) + 10; });
+            .attr("y", function (d) {
+                return y(d.value) - 10;
+            })
+            .attr("height", function (d) {
+                return height - y(d.value) + 10;
+            });
 
         g.append("text")
             .attr('class', 'val')
-            .attr('x', function() {
+            .attr('x', function () {
                 return x(d.year);
             })
-            .attr('y', function() {
+            .attr('y', function () {
                 return y(d.value) - 15;
             })
-            .text(function() {
-                return [ '$' +d.value];  // Value of the text
+            .text(function () {
+                return ['$' + d.value];  // Value of the text
             });
     }
 
@@ -105,8 +123,12 @@ function build_bar_chart()
             .transition()     // adds animation
             .duration(400)
             .attr('width', x.bandwidth())
-            .attr("y", function(d) { return y(d.value); })
-            .attr("height", function(d) { return height - y(d.value); });
+            .attr("y", function (d) {
+                return y(d.value);
+            })
+            .attr("height", function (d) {
+                return height - y(d.value);
+            });
 
         d3.selectAll('.val')
             .remove()
