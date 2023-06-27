@@ -12,6 +12,7 @@ var cors = require('cors');
 
 var corsOptions = {
     origin: 'http://localhost:63342', // this domain is allowed to make API calls
+    origin: 'http://localhost:8443',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
