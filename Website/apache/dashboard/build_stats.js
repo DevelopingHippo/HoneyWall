@@ -63,7 +63,7 @@ async function build_bar_chart() {
         svg.append("g")
             .call(d3.axisLeft(y));
 
-        g.selectAll(".bar")
+        svg.selectAll(".bar")
             .data(data)
             .enter().append("rect")
             .attr("class", "bar")
