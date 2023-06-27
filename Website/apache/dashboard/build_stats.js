@@ -161,8 +161,7 @@ async function build_map() {
 
 
 
-function build_geo_pie()
-{
+async function build_geo_pie() {
     document.write('<div class="top-geolocation-pie"><h4>Top Geolocations</h4>\n' +
         '<svg id="geolocation-svg" width="275" height="275"></svg></div>');
 
@@ -172,7 +171,7 @@ function build_geo_pie()
         radius = width / 2;
 
     // Step 1
-    var data = apiCall("/api/geo-pie-data");
+    var data = await apiCall("/api/geo-pie-data");
 
     var g = svg.append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
@@ -180,10 +179,10 @@ function build_geo_pie()
     // Step 4
     var ordScale = d3.scaleOrdinal()
         .domain(data)
-        .range(['#ffd384','#94ebcd','#fbaccc','#d3e0ea','#fa7f72']);
+        .range(['#ffd384', '#94ebcd', '#fbaccc', '#d3e0ea', '#fa7f72']);
 
     // Step 5
-    var pie = d3.pie().value(function(d) {
+    var pie = d3.pie().value(function (d) {
         return d.share;
     });
 
@@ -198,7 +197,9 @@ function build_geo_pie()
 
     arc.append("path")
         .attr("d", path)
-        .attr("fill", function(d) { return ordScale(d.data.name); });
+        .attr("fill", function (d) {
+            return ordScale(d.data.name);
+        });
 
     // Step 7
     var label = d3.arc()
@@ -206,16 +207,17 @@ function build_geo_pie()
         .innerRadius(0);
 
     arc.append("text")
-        .attr("transform", function(d) {
+        .attr("transform", function (d) {
             return "translate(" + label.centroid(d) + ")";
         })
-        .text(function(d) { return d.data.name; })
+        .text(function (d) {
+            return d.data.name;
+        })
         .style("font-family", "arial")
         .style("font-size", 15);
 }
 
-function build_port_pie()
-{
+async function build_port_pie() {
     document.write('        <div class="top-ports-pie"><h4>Top Ports</h4>\n' +
         '            <svg id="top-ports-svg" width="275" height="275"></svg></div>');
 
@@ -225,7 +227,7 @@ function build_port_pie()
         radius = width / 2;
 
     // Step 1
-    var data = apiCall("/api/geo-pie-data");
+    var data = await apiCall("/api/geo-pie-data");
 
     var g = svg.append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
@@ -233,10 +235,10 @@ function build_port_pie()
     // Step 4
     var ordScale = d3.scaleOrdinal()
         .domain(data)
-        .range(['#ffd384','#94ebcd','#fbaccc','#d3e0ea','#fa7f72']);
+        .range(['#ffd384', '#94ebcd', '#fbaccc', '#d3e0ea', '#fa7f72']);
 
     // Step 5
-    var pie = d3.pie().value(function(d) {
+    var pie = d3.pie().value(function (d) {
         return d.share;
     });
 
@@ -251,7 +253,9 @@ function build_port_pie()
 
     arc.append("path")
         .attr("d", path)
-        .attr("fill", function(d) { return ordScale(d.data.name); });
+        .attr("fill", function (d) {
+            return ordScale(d.data.name);
+        });
 
     // Step 7
     var label = d3.arc()
@@ -259,16 +263,17 @@ function build_port_pie()
         .innerRadius(0);
 
     arc.append("text")
-        .attr("transform", function(d) {
+        .attr("transform", function (d) {
             return "translate(" + label.centroid(d) + ")";
         })
-        .text(function(d) { return d.data.name; })
+        .text(function (d) {
+            return d.data.name;
+        })
         .style("font-family", "arial")
         .style("font-size", 15);
 }
 
-function build_username_pie()
-{
+async function build_username_pie() {
     document.write('        <div class="top-usernames-pie"><h4>Top Usernames</h4>\n' +
         '            <svg id="top-usernames-svg" width="275" height="275"></svg></div>');
 
@@ -278,7 +283,7 @@ function build_username_pie()
         radius = width / 2;
 
     // Step 1
-    var data = apiCall("/api/geo-pie-data");
+    var data = await apiCall("/api/geo-pie-data");
 
     var g = svg.append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
@@ -286,10 +291,10 @@ function build_username_pie()
     // Step 4
     var ordScale = d3.scaleOrdinal()
         .domain(data)
-        .range(['#ffd384','#94ebcd','#fbaccc','#d3e0ea','#fa7f72']);
+        .range(['#ffd384', '#94ebcd', '#fbaccc', '#d3e0ea', '#fa7f72']);
 
     // Step 5
-    var pie = d3.pie().value(function(d) {
+    var pie = d3.pie().value(function (d) {
         return d.share;
     });
 
@@ -304,7 +309,9 @@ function build_username_pie()
 
     arc.append("path")
         .attr("d", path)
-        .attr("fill", function(d) { return ordScale(d.data.name); });
+        .attr("fill", function (d) {
+            return ordScale(d.data.name);
+        });
 
     // Step 7
     var label = d3.arc()
@@ -312,17 +319,18 @@ function build_username_pie()
         .innerRadius(0);
 
     arc.append("text")
-        .attr("transform", function(d) {
+        .attr("transform", function (d) {
             return "translate(" + label.centroid(d) + ")";
         })
-        .text(function(d) { return d.data.name; })
+        .text(function (d) {
+            return d.data.name;
+        })
         .style("font-family", "arial")
         .style("font-size", 15);
 }
 
 
-function build_password_pie()
-{
+async function build_password_pie() {
     document.write('        <div class="top-passwords-pie"><h4>Top Passwords</h4>\n' +
         '<svg id="top-passwords-svg" width="275" height="275"></svg></div>');
 
@@ -332,7 +340,7 @@ function build_password_pie()
         radius = width / 2;
 
     // Step 1
-    var data = apiCall("/api/geo-pie-data");
+    var data = await apiCall("/api/geo-pie-data");
 
     var g = svg.append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
@@ -340,10 +348,10 @@ function build_password_pie()
     // Step 4
     var ordScale = d3.scaleOrdinal()
         .domain(data)
-        .range(['#ffd384','#94ebcd','#fbaccc','#d3e0ea','#fa7f72']);
+        .range(['#ffd384', '#94ebcd', '#fbaccc', '#d3e0ea', '#fa7f72']);
 
     // Step 5
-    var pie = d3.pie().value(function(d) {
+    var pie = d3.pie().value(function (d) {
         return d.share;
     });
 
@@ -358,7 +366,9 @@ function build_password_pie()
 
     arc.append("path")
         .attr("d", path)
-        .attr("fill", function(d) { return ordScale(d.data.name); });
+        .attr("fill", function (d) {
+            return ordScale(d.data.name);
+        });
 
     // Step 7
     var label = d3.arc()
@@ -366,10 +376,12 @@ function build_password_pie()
         .innerRadius(0);
 
     arc.append("text")
-        .attr("transform", function(d) {
+        .attr("transform", function (d) {
             return "translate(" + label.centroid(d) + ")";
         })
-        .text(function(d) { return d.data.name; })
+        .text(function (d) {
+            return d.data.name;
+        })
         .style("font-family", "arial")
         .style("font-size", 15);
 }
