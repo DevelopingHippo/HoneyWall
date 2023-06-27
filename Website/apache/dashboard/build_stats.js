@@ -172,11 +172,7 @@ function build_geo_pie()
         radius = width / 2;
 
     // Step 1
-    var data = [{name: "Alex", share: 20.70},
-        {name: "Shelly", share: 30.92},
-        {name: "Clark", share: 15.42},
-        {name: "Matt", share: 13.65},
-        {name: "Jolene", share: 19.31}];
+    var data = apiCall("/api/geo-pie-data");
 
     var g = svg.append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
@@ -229,11 +225,7 @@ function build_port_pie()
         radius = width / 2;
 
     // Step 1
-    var data = [{name: "Alex", share: 20.70},
-        {name: "Shelly", share: 30.92},
-        {name: "Clark", share: 15.42},
-        {name: "Matt", share: 13.65},
-        {name: "Jolene", share: 19.31}];
+    var data = apiCall("/api/geo-pie-data");
 
     var g = svg.append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
@@ -286,11 +278,7 @@ function build_username_pie()
         radius = width / 2;
 
     // Step 1
-    var data = [{name: "Alex", share: 20.70},
-        {name: "Shelly", share: 30.92},
-        {name: "Clark", share: 15.42},
-        {name: "Matt", share: 13.65},
-        {name: "Jolene", share: 19.31}];
+    var data = apiCall("/api/geo-pie-data");
 
     var g = svg.append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
@@ -344,11 +332,7 @@ function build_password_pie()
         radius = width / 2;
 
     // Step 1
-    var data = [{name: "Alex", share: 20.70},
-        {name: "Shelly", share: 30.92},
-        {name: "Clark", share: 15.42},
-        {name: "Matt", share: 13.65},
-        {name: "Jolene", share: 19.31}];
+    var data = apiCall("/api/geo-pie-data");
 
     var g = svg.append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
