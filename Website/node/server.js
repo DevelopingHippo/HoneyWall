@@ -145,7 +145,7 @@ function queryDatabase(query) {
         if (err) throw err;
         con.query(query, function (err, result, fields) {
             if (err) throw err;
-            json_result = JSON.stringify(result);
+            json_result = result;
         });
     });
     return json_result;
