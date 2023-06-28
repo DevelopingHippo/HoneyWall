@@ -38,30 +38,35 @@ app.get('/get-map-data', cors(corsOptions), function(req, res){
     //let result = queryDatabase("SELECT location, SUM(packets) AS total_packets FROM connections GROUP BY location");
 
     res.setHeader('Content-Type', 'application/json');
-    res.json(
-        {
-            "AF": 16.63,
-            "AL": 11.58,
-            "DZ": 158.97,
-            "AO": 85.81,
-            "AG": 1.1,
-            "AR": 351.02,
-            "AM": 8.83,
-            "AU": 1219.72,
-            "AT": 366.26,
-            "AZ": 52.17,
-            "BS": 7.54,
-            "BH": 21.73,
-            "BD": 105.4,
-            "BB": 3.96,
-            "BY": 52.89,
-            "BE": 461.33
-        }
-    );
+
+    console.log(queryDatabase("SELECT location AS '', sum(packets) AS '' FROM connections GROUP BY location;"));
+    res.json(queryDatabase("SELECT location AS '', sum(packets) AS '' FROM connections GROUP BY location;"));
+
+    // res.json(
+    //     {
+    //         "AF": 16.63,
+    //         "AL": 11.58,
+    //         "DZ": 158.97,
+    //         "AO": 85.81,
+    //         "AG": 1.1,
+    //         "AR": 351.02,
+    //         "AM": 8.83,
+    //         "AU": 1219.72,
+    //         "AT": 366.26,
+    //         "AZ": 52.17,
+    //         "BS": 7.54,
+    //         "BH": 21.73,
+    //         "BD": 105.4,
+    //         "BB": 3.96,
+    //         "BY": 52.89,
+    //         "BE": 461.33
+    //     }
+    // );
 });
 
 app.get('/get-chart-data', cors(corsOptions), function(req, res){
     res.setHeader('Content-Type', 'application/json');
+
     res.json([
             {
                 "month": "January",

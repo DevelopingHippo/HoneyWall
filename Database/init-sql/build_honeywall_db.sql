@@ -47,7 +47,7 @@ create table ftp(
 insert into connections VALUES (0, "10.0.1.1", 443, "172.21.24.111", 20300, "tcp", "2023-06-29 23:15:10.232", "https", "US", 1000);
 insert into connections VALUES (1, "10.0.1.1", 3389, "4.21.39.252", 60285, "tcp", "2023-06-29 23:12:34.04148744448255", "RDP", "MH", 812);
 insert into connections VALUES (2, "10.0.1.1", 3306, "210.41.238.88", 34698, "tcp", "2023-06-29 4:49:18.19488462128945", "MySQL", "TM", 752);
-insert into connections VALUES (3, "10.0.1.1", 21, "190.234.240.81", 9843, "tcp", "2023-06-29 17:50:31.188564237814475", "ftp", "JE", 365);
+insert into connections VALUES (3, "10.0.1.1", 21, "190.234.240.81", 9843, "tcp", "2023-06-29 17:50:31.doc", "ftp", "JE", 365);
 insert into connections VALUES (4, "10.0.1.1", 445, "50.77.242.84", 55546, "tcp", "2023-06-29 7:44:57.80104773978821", "smb", "HU", 352);
 insert into connections VALUES (5, "10.0.1.1", 80, "117.105.54.221", 37970, "tcp", "2023-06-29 13:10:43.242471189829935", "http", "ER", 217);
 insert into connections VALUES (6, "10.0.1.1", 443, "190.234.240.81", 778, "tcp", "2023-06-29 9:6:25.43018434702762", "https", "CX", 975);
