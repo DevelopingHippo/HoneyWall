@@ -37,9 +37,7 @@ app.get('/geo-pie-data', cors(corsOptions), function(req, res){
 app.get('/get-map-data', cors(corsOptions), function(req, res){
 
     res.setHeader('Content-Type', 'application/json');
-    let query = "SELECT location AS '', sum(packets) AS '' FROM connections GROUP BY location;";
-    let json_result;
-
+    let query = "SELECT location, sum(packets) AS total_packets FROM connections GROUP BY location;";
 
     const con = mysql.createConnection({
         host: "db_honey",
@@ -52,6 +50,7 @@ app.get('/get-map-data', cors(corsOptions), function(req, res){
         con.query(query, function (err, result) {
             if (err) throw err;
             else {
+                result =
                 res.json(result);
             }
         });
