@@ -39,7 +39,6 @@ app.get('/get-map-data', cors(corsOptions), function(req, res){
 
     res.setHeader('Content-Type', 'application/json');
 
-    console.log(queryDatabase("SELECT location AS '', sum(packets) AS '' FROM connections GROUP BY location;"));
     res.json(queryDatabase("SELECT location AS '', sum(packets) AS '' FROM connections GROUP BY location;"));
 
     // res.json(
