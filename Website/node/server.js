@@ -48,10 +48,15 @@ app.get('/get-map-data', cors(corsOptions), function(req, res){
     con.connect(function(err) {
         if (err) throw err;
         con.query(query, function (err, result) {
+            let formatted_result = "{";
             if (err) throw err;
             else {
-                result =
-                res.json(result);
+                for (var i = 0; i < result.length; i++) {
+                    formatted_result += result[i][0] + ":" + result[i][1] + ",";
+                }
+                formatted_result += "}";
+
+                res.json(formatted_result);
             }
         });
     });
