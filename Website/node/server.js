@@ -38,9 +38,11 @@ app.get('/get-map-data', cors(corsOptions), function(req, res){
     //let result = queryDatabase("SELECT location, SUM(packets) AS total_packets FROM connections GROUP BY location");
 
     res.setHeader('Content-Type', 'application/json');
-
-    res.json(queryDatabase("SELECT location AS '', sum(packets) AS '' FROM connections GROUP BY location;"));
-
+    let data = 'query didnt work';
+    queryDatabase("SELECT location AS '', sum(packets) AS '' FROM connections GROUP BY location;", function(result) {
+        data = result;
+        res.json(data);
+    });
     // res.json(
     //     {
     //         "AF": 16.63,
@@ -133,8 +135,8 @@ app.listen(PORT, HOST, () => {
 
 
 
-function queryDatabase(query) {
-    let json_result = "";
+function queryDatabase(query, callback) {
+    let json_result;
     const con = mysql.createConnection({
         host: "db_honey",
         user: "web",
@@ -143,10 +145,11 @@ function queryDatabase(query) {
     });
     con.connect(function(err) {
         if (err) throw err;
-        con.query(query, function (err, result, fields) {
-            if (err) throw err;
-            json_result = result;
+        con.query(query, function (err, result) {
+            if (err){
+                throw err;
+            }
+            return callback(result);
         });
     });
-    return json_result;
 }
