@@ -54,13 +54,13 @@ app.get('/get-map-data', cors(corsOptions), function(req, res){
                 for (var i = 0; i < result.length - 1; i++) {
                     formatted_result += '"' + result[i]['location'] + '":' + result[i]['total_packets'] + ',';
                 }
-                formatted_result += '"' + result[result.length - 1]['location'] + '":' + result[result.length - 1]['total_packets'];
-                formatted_result += "}";
+                formatted_result += '"' + result[result.length - 1]['location'] + '":' + result[result.length - 1]['total_packets'] + "}";
                 let json_format = JSON.parse(formatted_result);
                 res.json(json_format);
             }
         });
     });
+    con.close();
 
     // res.json(
     //     {
