@@ -48,14 +48,14 @@ app.get('/get-map-data', cors(corsOptions), function(req, res){
     con.connect(function(err) {
         if (err) throw err;
         con.query(query, function (err, result) {
-            let formatted_result = "[{";
+            let formatted_result = "{";
             if (err) throw err;
             else {
                 for (var i = 0; i < result.length; i++) {
                     formatted_result += '"' + result[i]['location'] + '":' + result[i]['total_packets'] + ',';
                 }
-                formatted_result += "}]";
-                var json_format = JSON.parse(formatted_result);
+                formatted_result += "}";
+                const json_format = JSON.parse(formatted_result);
                 res.json(json_format);
             }
         });
