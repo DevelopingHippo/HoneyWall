@@ -35,14 +35,26 @@ app.get('/geo-pie-data', cors(corsOptions), function(req, res){
 
 
 app.get('/get-map-data', cors(corsOptions), function(req, res){
-    //let result = queryDatabase("SELECT location, SUM(packets) AS total_packets FROM connections GROUP BY location");
 
     res.setHeader('Content-Type', 'application/json');
-    query_honeywall_database("SELECT location AS '', sum(packets) AS '' FROM connections GROUP BY location;", function(result){
-        result = result.toJSON();
-        res.json(result);
-    });
+    let query = "SELECT location AS '', sum(packets) AS '' FROM connections GROUP BY location;";
+    let json_result;
 
+
+    const con = mysql.createConnection({
+        host: "db_honey",
+        user: "web",
+        password: "P@ssw0rd",
+        database: "honeywall"
+    });
+    con.connect(function(err) {
+        if (err) throw err;
+        con.query(query, function (err, result) {
+            if (err) throw err;
+            json_result = result.toJSON();
+        });
+    });
+    res.json(json_result);
 
     // res.json(
     //     {
