@@ -52,7 +52,7 @@ app.get('/get-map-data', cors(corsOptions), function(req, res){
             if (err) throw err;
             else {
                 for (var i = 0; i < result.length; i++) {
-                    formatted_result += result[i]['location'] + ":" + result[i]['total_packets'] + ",";
+                    formatted_result += "\"" + result[i]['location'] + "\":" + result[i]['total_packets'] + ",";
                 }
                 formatted_result += "}";
 
