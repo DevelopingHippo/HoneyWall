@@ -51,10 +51,11 @@ app.get('/get-map-data', cors(corsOptions), function(req, res){
         if (err) throw err;
         con.query(query, function (err, result) {
             if (err) throw err;
-            json_result = result.toJSON();
+            else {
+                res.json(result);
+            }
         });
     });
-    res.send({json_result});
 
     // res.json(
     //     {
