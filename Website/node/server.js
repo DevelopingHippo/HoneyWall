@@ -55,7 +55,7 @@ app.get('/get-map-data', cors(corsOptions), function(req, res){
                     formatted_result += '"' + result[i]['location'] + '":' + result[i]['total_packets'] + ',';
                 }
                 formatted_result += "}";
-                let json_format = JSON.parse(formatted_result);
+                //let json_format = JSON.parse(formatted_result);
                 res.json(formatted_result);
             }
         });
