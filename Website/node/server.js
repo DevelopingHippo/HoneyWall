@@ -54,7 +54,7 @@ app.get('/get-map-data', cors(corsOptions), function(req, res){
             json_result = result.toJSON();
         });
     });
-    res.json(json_result);
+    res.send({json_result});
 
     // res.json(
     //     {
