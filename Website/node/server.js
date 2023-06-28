@@ -57,10 +57,10 @@ app.get('/get-map-data', cors(corsOptions), function(req, res){
                 formatted_result += '"' + result[result.length - 1]['location'] + '":' + result[result.length - 1]['total_packets'] + "}";
                 let json_format = JSON.parse(formatted_result);
                 res.json(json_format);
+                con.end();
             }
         });
     });
-    //con.end();
 });
 
 app.get('/get-chart-data', cors(corsOptions), function(req, res){
