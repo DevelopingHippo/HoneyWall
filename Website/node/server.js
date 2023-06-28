@@ -41,8 +41,8 @@ app.get('/get-map-data', cors(corsOptions), function(req, res){
     let data = 'query didnt work';
     queryDatabase("SELECT location AS '', sum(packets) AS '' FROM connections GROUP BY location;", function(result) {
         data = result;
-        res.json(data);
     });
+    res.json(data);
     // res.json(
     //     {
     //         "AF": 16.63,
