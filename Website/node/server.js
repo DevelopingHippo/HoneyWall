@@ -39,8 +39,6 @@ app.get('/get-map-data', cors(corsOptions), function(req, res){
 
     res.setHeader('Content-Type', 'application/json');
     query_honeywall_database("SELECT location AS '', sum(packets) AS '' FROM connections GROUP BY location;", function(result){
-        result = result.toString();
-        result.slice(1,result.length - 1);
         result = result.toJSON();
         res.json(result);
     });
