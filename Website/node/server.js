@@ -60,7 +60,7 @@ app.get('/get-map-data', cors(corsOptions), function(req, res){
             }
         });
     });
-    con.end();
+    //con.end();
 });
 
 app.get('/get-chart-data', cors(corsOptions), function(req, res){
