@@ -40,6 +40,7 @@ app.get('/get-map-data', cors(corsOptions), function(req, res){
     res.setHeader('Content-Type', 'application/json');
     let data = {"query":"didnt work"};
     data = query_honeywall_database("SELECT location AS '', sum(packets) AS '' FROM connections GROUP BY location;");
+    data.slice(1,data.length - 1)
     res.json(data);
     // res.json(
     //     {
@@ -133,7 +134,7 @@ app.listen(PORT, HOST, () => {
 
 
 
-function query_honeywall_database(query, callback) {
+function query_honeywall_database(query) {
     let json_result;
     const con = mysql.createConnection({
         host: "db_honey",
