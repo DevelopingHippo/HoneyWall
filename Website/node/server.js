@@ -38,12 +38,14 @@ app.get('/get-map-data', cors(corsOptions), function(req, res){
     //let result = queryDatabase("SELECT location, SUM(packets) AS total_packets FROM connections GROUP BY location");
 
     res.setHeader('Content-Type', 'application/json');
-    let data;
-    data = query_honeywall_database("SELECT location AS '', sum(packets) AS '' FROM connections GROUP BY location;");
-    data = data.toString();
-    data.slice(1,data.length - 1);
-    data = data.toJSON();
-    res.json(data);
+    query_honeywall_database("SELECT location AS '', sum(packets) AS '' FROM connections GROUP BY location;", function(result){
+        result = result.toString();
+        result.slice(1,result.length - 1);
+        result = result.toJSON();
+        res.json(result);
+    });
+
+
     // res.json(
     //     {
     //         "AF": 16.63,
@@ -136,7 +138,7 @@ app.listen(PORT, HOST, () => {
 
 
 
-function query_honeywall_database(query) {
+function query_honeywall_database(query, callback) {
     let json_result;
     const con = mysql.createConnection({
         host: "db_honey",
@@ -148,8 +150,7 @@ function query_honeywall_database(query) {
         if (err) throw err;
         con.query(query, function (err, result) {
             if (err) throw err;
-            json_result = result;
+            callback(result);
         });
     });
-    return json_result;
 }
