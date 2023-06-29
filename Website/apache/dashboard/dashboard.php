@@ -42,8 +42,10 @@ printPreloader();
         </script>
         <script>build_map();</script>
         <script>
-            build_geo_vert();
             build_vert_2();
+        </script>
+        <script>
+            build_geo_vert();
             build_services_vert();
             build_protocols_vert();
         </script>
