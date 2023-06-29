@@ -119,22 +119,11 @@ app.get('/get-chart-data', cors(corsOptions), function(req, res){
     );
 });
 
+app.get('/get-port-data', cors(corsOptions), function(req, res){
 
-app.listen(PORT, HOST, () => {
-    console.log(`Running on http://${HOST}:${PORT}`);
-});
+    res.setHeader('Content-Type', 'application/json');
+    let query = "select dst_port as port,COUNT(*) as total_count from connections GROUP BY dst_port ORDER BY total_count DESC LIMIT 8;";
 
-
-
-
-
-
-
-
-
-
-function query_honeywall_database(query, callback) {
-    let json_result;
     const con = mysql.createConnection({
         host: "db_honey",
         user: "web",
@@ -144,8 +133,24 @@ function query_honeywall_database(query, callback) {
     con.connect(function(err) {
         if (err) throw err;
         con.query(query, function (err, result) {
+            let formatted_result = '{';
             if (err) throw err;
-            callback(result);
+            else {
+                for (var i = 0; i < result.length - 1; i++) {
+                    formatted_result += '"' + result[i]['port'] + '":' + result[i]['total_count'] + ',';
+                }
+                formatted_result += '"' + result[result.length - 1]['port'] + '":' + result[result.length - 1]['total_count'] + "}";
+                let json_format = JSON.parse(formatted_result);
+                res.json(json_format);
+                con.end();
+            }
         });
     });
-}
+});
+
+
+
+
+app.listen(PORT, HOST, () => {
+    console.log(`Running on http://${HOST}:${PORT}`);
+});

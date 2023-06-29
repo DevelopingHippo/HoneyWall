@@ -388,60 +388,73 @@ async function build_password_pie() {
 
 function build_geo_vert()
 {
-    document.write('        <div class="top-geolocation-vert">\n' +
+    document.write('        <div class="top-vert-1">\n' +
         '            <h6 class="vert-h6">Top Geolocations</h6>\n' +
         '            <table>\n' +
-        '                <tr><td>US</td><td class="numbers">1000</td></tr>\n' +
-        '                <tr><td>RU</td><td class="numbers">969</td></tr>\n' +
-        '                <tr><td>CN</td><td class="numbers">420</td></tr>\n' +
-        '                <tr><td>CA</td><td class="numbers">323</td></tr>\n' +
-        '                <tr><td>UK</td><td class="numbers">199</td></tr>\n' +
-        '                <tr><td>MD</td><td class="numbers">10</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
+        '                <tr><td>RU</td><td id="numbers">969</td></tr>\n' +
+        '                <tr><td>CN</td><td id="numbers">420</td></tr>\n' +
+        '                <tr><td>CA</td><td id="numbers">323</td></tr>\n' +
+        '                <tr><td>UK</td><td id="numbers">199</td></tr>\n' +
+        '                <tr><td>MD</td><td id="numbers">10</td></tr>\n' +
         '            </table>\n' +
         '        </div>');
 }
 
-function build_ports_vert()
+async function build_ports_vert()
 {
-    document.write('        <div class="top-ports-vert">\n' +
+    let data = await apiCall("/api/get-port-data");
+
+    let table = '';
+
+
+    for (var i = 0; i < data.length(); i++)
+    {
+        table += '<tr><td>${table[i][1]}</td><td id="numbers">${}}</td></tr>\n';
+    }
+
+
+
+
+    document.write(' <div class="top-vert-2">\n' +
         '            <h6 class="vert-h6">Top Ports</h6>\n' +
         '            <table>\n' +
-        '                <tr><td>US</td><td class="numbers">1000</td></tr>\n' +
-        '                <tr><td>RU</td><td class="numbers">969</td></tr>\n' +
-        '                <tr><td>CN</td><td class="numbers">420</td></tr>\n' +
-        '                <tr><td>CA</td><td class="numbers">323</td></tr>\n' +
-        '                <tr><td>UK</td><td class="numbers">199</td></tr>\n' +
-        '                <tr><td>MD</td><td class="numbers">10</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">${}}</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
         '            </table>\n' +
         '        </div>');
 }
 
 function build_services_vert()
 {
-    document.write('        <div class="top-services-vert">\n' +
+    document.write('        <div class="top-vert-3">\n' +
         '            <h6 class="vert-h6">Top Services</h6>\n' +
         '            <table>\n' +
-        '                <tr><td>US</td><td class="numbers">1000</td></tr>\n' +
-        '                <tr><td>RU</td><td class="numbers">969</td></tr>\n' +
-        '                <tr><td>CN</td><td class="numbers">420</td></tr>\n' +
-        '                <tr><td>CA</td><td class="numbers">323</td></tr>\n' +
-        '                <tr><td>UK</td><td class="numbers">199</td></tr>\n' +
-        '                <tr><td>MD</td><td class="numbers">10</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
         '            </table>\n' +
         '        </div>');
 }
 
 function build_protocols_vert()
 {
-    document.write('        <div class="top-proto-vert">\n' +
+    document.write('        <div class="top-vert-4">\n' +
         '            <h6 class="vert-h6">Top Protocols</h6>\n' +
         '            <table>\n' +
-        '                <tr><td>US</td><td class="numbers">1000</td></tr>\n' +
-        '                <tr><td>RU</td><td class="numbers">969</td></tr>\n' +
-        '                <tr><td>CN</td><td class="numbers">420</td></tr>\n' +
-        '                <tr><td>CA</td><td class="numbers">323</td></tr>\n' +
-        '                <tr><td>UK</td><td class="numbers">199</td></tr>\n' +
-        '                <tr><td>MD</td><td class="numbers">10</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
+        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
         '            </table>\n' +
         '        </div>');
 }

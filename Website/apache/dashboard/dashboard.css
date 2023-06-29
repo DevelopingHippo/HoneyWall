@@ -60,7 +60,7 @@ section{
     background-color: #36404a;
     border-radius: 20px;
 }
-.top-geolocation-vert {
+.top-vert-1 {
     grid-row: 3;
     grid-column-start: 5;
     grid-column-end: 6;
@@ -68,21 +68,21 @@ section{
     background-color: #36404a;
     border-radius: 20px;
 }
-.top-ports-vert {
+.top-vert-2 {
     grid-row: 3;
     grid-column-start: 6;
     grid-column-end: 7;
     background-color: #36404a;
     border-radius: 20px;
 }
-.top-services-vert {
+.top-vert-3 {
     grid-row: 3;
     grid-column-start: 7;
     grid-column-end: 8;
     background-color: #36404a;
     border-radius: 20px;
 }
-.top-proto-vert {
+.top-vert-4 {
     grid-row: 3;
     grid-column-start: 8;
     grid-column-end: 9;
@@ -106,7 +106,7 @@ tr {
 td {
     text-align: center;
 }
-td.numbers {
+#numbers {
     font-size: 20px;
 }
 
