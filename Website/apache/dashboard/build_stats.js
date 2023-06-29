@@ -386,25 +386,21 @@ async function build_password_pie() {
         .style("font-size", 15);
 }
 
-function build_geo_vert()
-{
-    document.write('        <div class="top-vert-1">\n' +
-        '            <h6 class="vert-h6">Top Geolocations</h6>\n' +
-        '            <table>\n' +
-        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
-        '                <tr><td>RU</td><td id="numbers">969</td></tr>\n' +
-        '                <tr><td>CN</td><td id="numbers">420</td></tr>\n' +
-        '                <tr><td>CA</td><td id="numbers">323</td></tr>\n' +
-        '                <tr><td>UK</td><td id="numbers">199</td></tr>\n' +
-        '                <tr><td>MD</td><td id="numbers">10</td></tr>\n' +
-        '            </table>\n' +
-        '        </div>');
+async function build_vert_1() {
+    let vert_data = await apiCall("/api/get-vert-data?type=geo");
+    let top_vert_1 = document.getElementById("vert-1-table")
+    for (let key in vert_data) {
+        var row = top_vert_1.insertRow(-1);
+        var c1 = row.insertCell(0);
+        var c2 = row.insertCell(1);
+        c1.innerText = key;
+        c2.innerText = vert_data[key];
+    }
 }
 
 async function build_vert_2()
 {
-    let vert_data = await apiCall("/api/get-port-data");
-    let table = '';
+    let vert_data = await apiCall("/api/get-vert-data?type=ports");
     let top_vert_2 = document.getElementById("vert-2-table")
     for(let key in vert_data)
     {
@@ -414,37 +410,30 @@ async function build_vert_2()
         c1.innerText = key;
         c2.innerText = vert_data[key];
     }
-
 }
 
-function build_services_vert()
-{
-    document.write('        <div class="top-vert-3">\n' +
-        '            <h6 class="vert-h6">Top Services</h6>\n' +
-        '            <table>\n' +
-        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
-        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
-        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
-        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
-        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
-        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
-        '            </table>\n' +
-        '        </div>');
+async function build_vert_3() {
+    let vert_data = await apiCall("/api/get-vert-data?type=services");
+    let top_vert_3 = document.getElementById("vert-3-table")
+    for (let key in vert_data) {
+        var row = top_vert_3.insertRow(-1);
+        var c1 = row.insertCell(0);
+        var c2 = row.insertCell(1);
+        c1.innerText = key;
+        c2.innerText = vert_data[key];
+    }
 }
 
-function build_protocols_vert()
-{
-    document.write('        <div class="top-vert-4">\n' +
-        '            <h6 class="vert-h6">Top Protocols</h6>\n' +
-        '            <table>\n' +
-        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
-        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
-        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
-        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
-        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
-        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
-        '            </table>\n' +
-        '        </div>');
+async function build_vert_4() {
+    let vert_data = await apiCall("/api/get-vert-data?type=ip");
+    let top_vert_4 = document.getElementById("vert-4-table")
+    for (let key in vert_data) {
+        var row = top_vert_4.insertRow(-1);
+        var c1 = row.insertCell(0);
+        var c2 = row.insertCell(1);
+        c1.innerText = key;
+        c2.innerText = vert_data[key];
+    }
 }
 
 

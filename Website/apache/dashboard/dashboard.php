@@ -42,18 +42,33 @@ printPreloader();
         </script>
         <script>build_map();</script>
 
+        <div class="top-vert-1">
+            <h6 class="vert-h6">Top Geolocations</h6>
+            <table id="vert-1-table">
+            </table>
+        </div>
         <div class="top-vert-2">
             <h6 class="vert-h6">Top Ports</h6>
            <table id="vert-2-table">
            </table>
         </div>
+        <div class="top-vert-3">
+            <h6 class="vert-h6">Top Services</h6>
+            <table id="vert-3-table">
+            </table>
+        </div>
+        <div class="top-vert-4">
+            <h6 class="vert-h6">Top IP</h6>
+            <table id="vert-4-table">
+            </table>
+        </div>
+
+
         <script>
+            build_vert_1();
             build_vert_2();
-        </script>
-        <script>
-            build_geo_vert();
-            build_services_vert();
-            build_protocols_vert();
+            build_vert_3();
+            build_vert_4();
         </script>
     </div>
     </section>
