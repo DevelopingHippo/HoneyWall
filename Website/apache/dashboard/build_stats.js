@@ -403,18 +403,18 @@ function build_geo_vert()
 
 async function build_vert_2()
 {
-    var data = await apiCall("/api/get-port-data");
+    let data = await apiCall("/api/get-port-data");
     let table = '';
-    document.write(' <div class="top-vert-2">\n' +
-    '            <h6 class="vert-h6">Top Ports</h6>\n' +
-    '            <table>\n');
 
     for(let key in data)
     {
-        document.write('<tr><td>' + key + '</td><td id="numbers">' + data[key] +'</td></tr>\n');
+        table += '<tr><td>' + key + '</td><td id="numbers">' + data[key] +'</td></tr>\n';
     }
-    document.write('</table>\n' +
-        '        </div>\n');
+    document.write(' <div class="top-vert-2">\n' +
+        '            <h6 class="vert-h6">Top Ports</h6>\n' +
+        '            <table>\n' + table +
+        '            </table>\n' +
+        '        </div>');
 }
 
 function build_services_vert()
