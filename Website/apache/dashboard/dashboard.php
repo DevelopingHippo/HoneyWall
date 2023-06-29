@@ -19,8 +19,10 @@
 <?php
 printHeader();
 ?>
-<body>
-<section>
+<?php
+printPreloader();
+?>
+    <section>
     <div class="stats">
         <div class="control-panel">
             <h1>Control Panel</h1>
@@ -46,7 +48,8 @@ printHeader();
             build_protocols_vert()
         </script>
     </div>
-</section>
+    </section>
+
 </body>
 <?php
 printFooter();

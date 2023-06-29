@@ -18,7 +18,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 99;
+    z-index: 10;
 }
 .logo {
     font-size: 2em;
@@ -69,14 +69,61 @@ header {
     color: black;
 }
 
-footer {
-    height: 100%;
+.loader-wrapper {
     width: 100%;
-    padding: 32px 100px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #242f3f;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 99;
+    z-index: 20;
+}
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #fff;
+    animation: loader 2s infinite ease;
+}
+.loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    25%, 50% {
+        transform: rotate(180deg);
+    }
+    75%, 100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader-inner {
+    0%, 25%, 100% {
+        height: 0;
+    }
+    50%, 75% {
+        height: 100%;
+    }
+}
+
+footer {
+    display: flex;
+    padding: 32px 100px;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
     background-color: black;
     background-size: cover;
 }
