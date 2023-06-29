@@ -403,7 +403,7 @@ function build_geo_vert()
 
 async function build_vert_2()
 {
-    let data = await apiCall("/api/get-port-data");
+    var data = await apiCall("/api/get-port-data");
     let table = '';
     document.write(' <div class="top-vert-2">\n' +
     '            <h6 class="vert-h6">Top Ports</h6>\n' +
