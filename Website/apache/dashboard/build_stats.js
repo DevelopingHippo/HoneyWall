@@ -410,26 +410,10 @@ async function build_vert_2()
     {
         table += '<tr><td>' + key + '</td><td id="numbers">' + vert_data[key] +'</td></tr>\n';
     }
-    // Create a new div element
-    let divElement = document.createElement('div');
-    divElement.classList.add('top-vert-2');
-
-    // Create an h6 element
-    let h6Element = document.createElement('h6');
-    h6Element.classList.add('vert-h6');
-    h6Element.textContent = 'Top Ports';
-
-    // Create a table element
-    let tableElement = document.createElement('table');
-    tableElement.innerHTML = table;
-
-    // Append the elements to the div
-    divElement.appendChild(h6Element);
-    divElement.appendChild(tableElement);
-
-    // Find the container element and append the div
-    let containerElement = document.getElementById('container');
-    containerElement.appendChild(divElement);
+    let div = document.createElement('div');
+    div.classList.add('top-vert-2');
+    div.innerHTML = '<h6 class="vert-h6">Top Ports</h6><table class="top-vert-2">' + table + '</table>';
+    document.body.appendChild(div);
 }
 
 function build_services_vert()
