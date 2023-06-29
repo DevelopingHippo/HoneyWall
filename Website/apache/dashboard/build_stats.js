@@ -408,9 +408,9 @@ async function build_ports_vert()
     let table = '';
 
 
-    for (var i = 0; i < data.length(); i++)
+    for(let key in data)
     {
-        table += '<tr><td>${table[i][1]}</td><td id="numbers">${}}</td></tr>\n';
+        table += '<tr><td>' + key + '</td><td id="numbers">' + data[key] +'</td></tr>\n';
     }
 
 
