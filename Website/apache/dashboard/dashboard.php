@@ -43,7 +43,7 @@ printPreloader();
         <script>build_map();</script>
 
         <div class="top-vert-2">
-            <h6 class="vert-h6">Top Services</h6>
+            <h6 class="vert-h6">Top Ports</h6>
            <table id="vert-2-table">
            </table>
         </div>

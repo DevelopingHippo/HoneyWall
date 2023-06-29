@@ -408,11 +408,9 @@ async function build_vert_2()
     let top_vert_2 = document.getElementById("vert-2-table")
     for(let key in vert_data)
     {
-
-        var row = table.insertRow(-1);
+        var row = top_vert_2.insertRow(-1);
         var c1 = row.insertCell(0);
         var c2 = row.insertCell(1);
-
         c1.innerText = key;
         c2.innerText = vert_data[key];
     }
