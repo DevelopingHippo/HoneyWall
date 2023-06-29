@@ -401,21 +401,14 @@ function build_geo_vert()
         '        </div>');
 }
 
-async function build_ports_vert()
+async function build_vert_2()
 {
     let data = await apiCall("/api/get-port-data");
-
     let table = '';
-
-
     for(let key in data)
     {
         table += '<tr><td>' + key + '</td><td id="numbers">' + data[key] +'</td></tr>\n';
     }
-
-
-
-
     document.write(' <div class="top-vert-2">\n' +
         '            <h6 class="vert-h6">Top Ports</h6>\n' +
         '            <table>\n' + table +

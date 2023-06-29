@@ -1,8 +1,8 @@
-<?php
-    require_once "../php/web_functions.php";
-    loginCheck();
-?>
 <!DOCTYPE html>
+<?php
+require_once "../php/web_functions.php";
+loginCheck();
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -40,19 +40,19 @@ printPreloader();
             build_username_pie();
             build_password_pie();
         </script>
-        <script>build_map()</script>
+        <script>build_map();</script>
         <script>
-            build_geo_vert()
-            build_ports_vert()
-            build_services_vert()
-            build_protocols_vert()
+            build_geo_vert();
+            build_vert_2();
+            build_services_vert();
+            build_protocols_vert();
         </script>
     </div>
     </section>
-
-</body>
 <?php
 printFooter();
 ?>
+</body>
+
 
 </html>
