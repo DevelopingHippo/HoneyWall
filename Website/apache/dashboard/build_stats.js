@@ -418,13 +418,7 @@ async function build_ports_vert()
 
     document.write(' <div class="top-vert-2">\n' +
         '            <h6 class="vert-h6">Top Ports</h6>\n' +
-        '            <table>\n' +
-        '                <tr><td>US</td><td id="numbers">${}}</td></tr>\n' +
-        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
-        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
-        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
-        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
-        '                <tr><td>US</td><td id="numbers">1000</td></tr>\n' +
+        '            <table>\n' + table +
         '            </table>\n' +
         '        </div>');
 }
