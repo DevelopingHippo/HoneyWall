@@ -157,19 +157,6 @@ app.get('/get-pie-data', cors(corsOptions), function(req, res){
             }
         });
     });
-
-
-    res.setHeader('Content-Type', 'application/json');
-    res.json([
-            {name: "Alex", share: 20.70},
-            {name: "Shelly", share: 30.92},
-            {name: "Clark", share: 15.42},
-            {name: "Matt", share: 13.65},
-            {name: "Jolene", share: 9.655},
-            {name: "Test", share: 9.655}
-        ]
-    );
-
 });
 
 
