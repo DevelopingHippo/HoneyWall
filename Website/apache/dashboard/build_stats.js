@@ -405,15 +405,16 @@ async function build_vert_2()
 {
     let data = await apiCall("/api/get-port-data");
     let table = '';
+    document.write(' <div class="top-vert-2">\n' +
+    '            <h6 class="vert-h6">Top Ports</h6>\n' +
+    '            <table>\n');
+
     for(let key in data)
     {
-        table += '<tr><td>' + key + '</td><td id="numbers">' + data[key] +'</td></tr>\n';
+        document.write('<tr><td>' + key + '</td><td id="numbers">' + data[key] +'</td></tr>\n');
     }
-    document.write(' <div class="top-vert-2">\n' +
-        '            <h6 class="vert-h6">Top Ports</h6>\n' +
-        '            <table>\n' + table +
-        '            </table>\n' +
-        '        </div>');
+    document.write('</table>\n' +
+        '        </div>\n');
 }
 
 function build_services_vert()
