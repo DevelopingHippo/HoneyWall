@@ -409,9 +409,9 @@ async function build_vert_2()
     for(let key in vert_data)
     {
 
-        let row = table.insertRow(-1);
-        let c1 = row.insertCell(0);
-        let c2 = row.insertCell(1);
+        var row = table.insertRow(-1);
+        var c1 = row.insertCell(0);
+        var c2 = row.insertCell(1);
 
         c1.innerText = key;
         c2.innerText = vert_data[key];

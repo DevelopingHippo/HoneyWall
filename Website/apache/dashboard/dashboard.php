@@ -46,6 +46,7 @@ printPreloader();
             <h6 class="vert-h6">Top Services</h6>
            <table id="vert-2-table">
            </table>
+        </div>
         <script>
             build_vert_2();
         </script>
