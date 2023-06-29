@@ -406,15 +406,30 @@ async function build_vert_2()
     let vert_data = await apiCall("/api/get-port-data");
     let table = '';
 
-    for(var key in vert_data)
+    for(let key in vert_data)
     {
         table += '<tr><td>' + key + '</td><td id="numbers">' + vert_data[key] +'</td></tr>\n';
     }
-    document.write(' <div class="top-vert-2">\n' +
-        '            <h6 class="vert-h6">Top Ports</h6>\n' +
-        '            <table>\n' + table +
-        '            </table>\n' +
-        '        </div>');
+    // Create a new div element
+    let divElement = document.createElement('div');
+    divElement.classList.add('top-vert-2');
+
+    // Create an h6 element
+    let h6Element = document.createElement('h6');
+    h6Element.classList.add('vert-h6');
+    h6Element.textContent = 'Top Ports';
+
+    // Create a table element
+    let tableElement = document.createElement('table');
+    tableElement.innerHTML = table;
+
+    // Append the elements to the div
+    divElement.appendChild(h6Element);
+    divElement.appendChild(tableElement);
+
+    // Find the container element and append the div
+    let containerElement = document.getElementById('container');
+    containerElement.appendChild(divElement);
 }
 
 function build_services_vert()
