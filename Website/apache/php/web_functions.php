@@ -19,9 +19,25 @@ function printPreloader(): void
     echo
     '<div class="loader-wrapper">
 <span class="loader"><span class="loader-inner"></span></span></div>
-    <script>$(window).on("load", function(){
-    $(".loader-wrapper").fadeOut("slow");
-});</script>';
+    <script>
+    disableScroll();
+    $(window).on("load", function(){
+        $(".loader-wrapper").fadeOut("slow");
+        enableScroll();
+    });
+function disableScroll() {
+    // Get the current page scroll position
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+    // if any scroll is attempted, set this to the previous value
+    window.onscroll = function() {
+        window.scrollTo(scrollLeft, scrollTop);
+    };
+}
+
+function enableScroll() {
+    window.onscroll = function() {};
+}</script>';
 }
 
 
