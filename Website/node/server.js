@@ -145,7 +145,7 @@ app.get('/get-pie-data', cors(corsOptions), function(req, res){
             else {
                 let i;
                 for (i = 0; i < result.length; i++) {
-                    total = total + result[i]['total_count'];
+                    total = total + parseFloat(result[i]['total_count']);
                 }
                 for (i = 0; i < result.length - 1; i++) {
                     formatted_result += '{name: "' + result[i]['data'] + '", share: ' + (parseFloat(result[i]['total_count']) / total) + '},';
