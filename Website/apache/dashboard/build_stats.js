@@ -405,15 +405,18 @@ async function build_vert_2()
 {
     let vert_data = await apiCall("/api/get-port-data");
     let table = '';
-
+    let top_vert_2 = document.getElementById("vert-2-table")
     for(let key in vert_data)
     {
-        table += '<tr><td>' + key + '</td><td id="numbers">' + vert_data[key] +'</td></tr>\n';
+
+        let row = table.insertRow(-1);
+        let c1 = row.insertCell(0);
+        let c2 = row.insertCell(1);
+
+        c1.innerText = key;
+        c2.innerText = vert_data[key];
     }
-    let div = document.createElement('div');
-    div.classList.add('top-vert-2');
-    div.innerHTML = '<h6 class="vert-h6">Top Ports</h6><table class="top-vert-2">' + table + '</table>';
-    document.body.appendChild(div);
+
 }
 
 function build_services_vert()
