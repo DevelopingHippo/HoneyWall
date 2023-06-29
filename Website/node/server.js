@@ -58,19 +58,19 @@ app.get('/get-vert-data', cors(corsOptions), function(req, res){
 
     if(req.query['type'] === "geo")
     {
-        query = "select location as data, count(*) as total_count from connections GROUP BY location ORDER BY total_count DESC LIMIT 8;";
+        query = "select location as data, count(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
     }
     else if(req.query['type'] === "ports")
     {
-        query = "select dst_port as data,COUNT(*) as total_count from connections GROUP BY dst_port ORDER BY total_count DESC LIMIT 8;";
+        query = "select dst_port as data,COUNT(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
     }
     else if(req.query['type'] === "services")
     {
-        query = "select service as data, count(*) as total_count from connections GROUP BY service ORDER BY total_count DESC LIMIT 8;";
+        query = "select service as data, count(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
     }
     else if(req.query['type'] === "ip")
     {
-        query = "select src_ip as data,COUNT(*) as total_count from connections GROUP BY src_ip ORDER BY total_count DESC LIMIT 8;";
+        query = "select src_ip as data,COUNT(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
     }
 
     const con = mysql.createConnection({
@@ -99,6 +99,64 @@ app.get('/get-vert-data', cors(corsOptions), function(req, res){
 
 
 app.get('/get-pie-data', cors(corsOptions), function(req, res){
+
+
+    res.setHeader('Content-Type', 'application/json');
+    let query;
+
+    if(req.query['type'] === "geo")
+    {
+        query = "select location as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
+    }
+    else if(req.query['type'] === "ports")
+    {
+        query = "select dst_port as data,COUNT(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
+    }
+    else if(req.query['type'] === "services")
+    {
+        query = "select service as data, count(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
+    }
+    else if(req.query['type'] === "ip")
+    {
+        query = "select src_ip as data,COUNT(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
+    }
+    else if(req.query['type'] === "username")
+    {
+        query = "select src_ip as data,COUNT(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
+    }
+    else if(req.query['type'] === "password")
+    {
+        query = "select src_ip as data,COUNT(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
+    }
+
+    var total = 0;
+
+    const con = mysql.createConnection({
+        host: "db_honey",
+        user: "web",
+        password: "P@ssw0rd",
+        database: "honeywall"
+    });
+    con.connect(function(err) {
+        if (err) throw err;
+        con.query(query, function (err, result) {
+            let formatted_result = '[';
+            if (err) throw err;
+            else {
+                let i;
+                for (i = 0; i < result.length; i++) {
+                    total = total + result[i]['total_count'];
+                }
+                for (i = 0; i < result.length - 1; i++) {
+                    formatted_result += '{name: "' + result[i]['data'] + '", share: ' + (result[i]['total_count'] / total) + '},';
+                }
+                formatted_result += '{name: "' + result[result.length - 1]['data'] + '", share: ' + (result[result.length - 1]['total_count'] / total) + "}]";
+                let json_format = JSON.parse(formatted_result);
+                res.json(json_format);
+                con.end();
+            }
+        });
+    });
 
 
     res.setHeader('Content-Type', 'application/json');
