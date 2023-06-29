@@ -155,19 +155,19 @@ app.get('/get-vert-data', cors(corsOptions), function(req, res){
 
     if(req.query['type'] === "geo")
     {
-        query = "select location, count(*) as total_count from connections GROUP BY location ORDER BY total_count DESC LIMIT 8;";
+        query = "select location as data, count(*) as total_count from connections GROUP BY location ORDER BY total_count DESC LIMIT 8;";
     }
     else if(req.query['type'] === "ports")
     {
-        query = "select dst_port as port,COUNT(*) as total_count from connections GROUP BY dst_port ORDER BY total_count DESC LIMIT 8;";
+        query = "select dst_port as data,COUNT(*) as total_count from connections GROUP BY dst_port ORDER BY total_count DESC LIMIT 8;";
     }
     else if(req.query['type'] === "services")
     {
-        query = "select service, count(*) as total_count from connections GROUP BY service ORDER BY total_count DESC LIMIT 8;";
+        query = "select service as data, count(*) as total_count from connections GROUP BY service ORDER BY total_count DESC LIMIT 8;";
     }
     else if(req.query['type'] === "ip")
     {
-        query = "select src_ip as port,COUNT(*) as total_count from connections GROUP BY src_ip ORDER BY total_count DESC LIMIT 8;";
+        query = "select src_ip as data,COUNT(*) as total_count from connections GROUP BY src_ip ORDER BY total_count DESC LIMIT 8;";
     }
 
     const con = mysql.createConnection({
@@ -183,7 +183,7 @@ app.get('/get-vert-data', cors(corsOptions), function(req, res){
             if (err) throw err;
             else {
                 for (var i = 0; i < result.length - 1; i++) {
-                    formatted_result += '"' + result[i]['port'] + '":' + result[i]['total_count'] + ',';
+                    formatted_result += '"' + result[i]['data'] + '":' + result[i]['total_count'] + ',';
                 }
                 formatted_result += '"' + result[result.length - 1]['port'] + '":' + result[result.length - 1]['total_count'] + "}";
                 let json_format = JSON.parse(formatted_result);
