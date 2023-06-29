@@ -129,7 +129,7 @@ app.get('/get-pie-data', cors(corsOptions), function(req, res){
         query = "select location as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
     }
 
-    var total = 0;
+    let total = 0.00;
 
     const con = mysql.createConnection({
         host: "db_honey",
@@ -148,9 +148,9 @@ app.get('/get-pie-data', cors(corsOptions), function(req, res){
                     total = total + result[i]['total_count'];
                 }
                 for (i = 0; i < result.length - 1; i++) {
-                    formatted_result += '{name: "' + result[i]['data'] + '", share: ' + (result[i]['total_count'] / total) + '},';
+                    formatted_result += '{name: "' + result[i]['data'] + '", share: ' + (parseFloat(result[i]['total_count']) / total) + '},';
                 }
-                formatted_result += '{name: "' + result[result.length - 1]['data'] + '", share: ' + (result[result.length - 1]['total_count'] / total) + "}]";
+                formatted_result += '{name: "' + result[result.length - 1]['data'] + '", share: ' + (parseFloat(result[result.length - 1]['total_count']) / total) + "}]";
                 let json_format = JSON.parse(formatted_result);
                 res.json(json_format);
                 con.end();
