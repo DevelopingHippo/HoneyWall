@@ -171,7 +171,7 @@ async function build_geo_pie() {
         radius = width / 2;
 
     // Step 1
-    var data = await apiCall("/api/get-pie-data?type=geo");
+    //var data = await apiCall("/api/get-pie-data?type=geo");
 
     var g = svg.append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
@@ -227,7 +227,7 @@ async function build_port_pie() {
         radius = width / 2;
 
     // Step 1
-    var data = await apiCall("/api/get-pie-data?type=port");
+    //var data = await apiCall("/api/get-pie-data?type=port");
 
     var g = svg.append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
@@ -283,7 +283,7 @@ async function build_username_pie() {
         radius = width / 2;
 
     // Step 1
-    var data = await apiCall("/api/get-pie-data?type=username");
+    //var data = await apiCall("/api/get-pie-data?type=username");
 
     var g = svg.append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
