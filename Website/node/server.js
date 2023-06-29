@@ -110,23 +110,23 @@ app.get('/get-pie-data', cors(corsOptions), function(req, res){
     }
     else if(req.query['type'] === "ports")
     {
-        query = "select dst_port as data,COUNT(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
+        query = "select location as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
     }
     else if(req.query['type'] === "services")
     {
-        query = "select service as data, count(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
+        query = "select location as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
     }
     else if(req.query['type'] === "ip")
     {
-        query = "select src_ip as data,COUNT(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
+        query = "select location as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
     }
     else if(req.query['type'] === "username")
     {
-        query = "select src_ip as data,COUNT(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
+        query = "select location as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
     }
     else if(req.query['type'] === "password")
     {
-        query = "select src_ip as data,COUNT(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
+        query = "select location as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
     }
 
     var total = 0;
