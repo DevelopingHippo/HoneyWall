@@ -1,7 +1,4 @@
 async function build_bar_chart() {
-    document.write('<div class="bar-chart">' +
-        '<svg id="bar-chart" width="600" height="500"></svg></div>');
-
     var margin = {top: 20, right: 20, bottom: 30, left: 40},
         width = 1000 - margin.left - margin.right,
         height = 250 - margin.top - margin.bottom;

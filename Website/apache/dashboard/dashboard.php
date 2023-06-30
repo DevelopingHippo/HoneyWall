@@ -28,6 +28,9 @@ printPreloader();
         <div class="control-panel">
             <h1>Control Panel</h1>
         </div>
+        <div class="bar-chart">
+            <svg id="bar-chart" width="600" height="500"></svg>
+        </div>
         <div class="top-vert-1">
             <h6 class="vert-h6">Top Geolocations</h6>
             <table id="vert-1-table">
@@ -83,6 +86,4 @@ printPreloader();
 printFooter();
 ?>
 </body>
-
-
 </html>
