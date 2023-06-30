@@ -16,6 +16,7 @@ loginCheck();
     <script src="../js/jvectormap/jvectormap-world-mill.js"></script>
     <script src="build_stats.js"></script>
 </head>
+<body>
 <?php
 printHeader();
 ?>
@@ -27,21 +28,6 @@ printPreloader();
         <div class="control-panel">
             <h1>Control Panel</h1>
         </div>
-        <script>
-
-        </script>
-
-        <script>
-            build_bar_chart();
-        </script>
-        <script>
-            build_geo_pie();
-            build_port_pie();
-            build_username_pie();
-            build_password_pie();
-        </script>
-        <script>build_map();</script>
-
         <div class="top-vert-1">
             <h6 class="vert-h6">Top Geolocations</h6>
             <table id="vert-1-table">
@@ -62,9 +48,30 @@ printPreloader();
             <table id="vert-4-table">
             </table>
         </div>
+        <div class="top-geolocation-pie"><h4>Top Geolocations</h4>
+            <svg id="geolocation-svg" width="275" height="275"></svg>
+        </div>
+        <div class="top-ports-pie"><h4>Top Ports</h4>
+            <svg id="top-ports-svg" width="275" height="275"></svg>
+        </div>
+        <div class="top-usernames-pie"><h4>Top Usernames</h4>
+            <svg id="top-usernames-svg" width="275" height="275"></svg>
+        </div>
+        <div class="top-passwords-pie"><h4>Top Passwords</h4>
+            <svg id="top-passwords-svg" width="275" height="275"></svg>
+        </div>
 
+        <div class="live-map">
+            <div id="world-map" style="width: 750px; height: 325px;margin: auto;padding: 10px"></div>
+        </div>
 
         <script>
+            build_bar_chart();
+            build_map();
+            build_geo_pie();
+            build_port_pie();
+            build_username_pie();
+            build_password_pie();
             build_vert_1();
             build_vert_2();
             build_vert_3();

@@ -135,9 +135,6 @@ async function build_bar_chart() {
 }
 
 async function build_map() {
-    document.write('<div class="live-map">\n' +
-        '<div id="world-map" style="width: 750px; height: 325px;margin: auto;padding: 10px"></div></div>')
-
     document.getElementById("world-map").addEventListener("contextmenu", (event) => {
         event.preventDefault();
     });
@@ -162,16 +159,13 @@ async function build_map() {
 
 
 async function build_geo_pie() {
-    document.write('<div class="top-geolocation-pie"><h4>Top Geolocations</h4>\n' +
-        '<svg id="geolocation-svg" width="275" height="275"></svg></div>');
-
     var svg = d3.select("#geolocation-svg"),
         width = svg.attr("width"),
         height = svg.attr("height"),
         radius = width / 2;
 
     // Step 1
-    //var data = await apiCall("/api/get-pie-data?type=geo");
+    var data = await apiCall("/api/get-pie-data?type=geo");
 
     var g = svg.append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
@@ -218,9 +212,6 @@ async function build_geo_pie() {
 }
 
 async function build_port_pie() {
-    document.write('        <div class="top-ports-pie"><h4>Top Ports</h4>\n' +
-        '            <svg id="top-ports-svg" width="275" height="275"></svg></div>');
-
     var svg = d3.select("#top-ports-svg"),
         width = svg.attr("width"),
         height = svg.attr("height"),
@@ -274,9 +265,6 @@ async function build_port_pie() {
 }
 
 async function build_username_pie() {
-    document.write('        <div class="top-usernames-pie"><h4>Top Usernames</h4>\n' +
-        '            <svg id="top-usernames-svg" width="275" height="275"></svg></div>');
-
     var svg = d3.select("#top-usernames-svg"),
         width = svg.attr("width"),
         height = svg.attr("height"),
@@ -331,9 +319,6 @@ async function build_username_pie() {
 
 
 async function build_password_pie() {
-    document.write('        <div class="top-passwords-pie"><h4>Top Passwords</h4>\n' +
-        '<svg id="top-passwords-svg" width="275" height="275"></svg></div>');
-
     var svg = d3.select("#top-passwords-svg"),
         width = svg.attr("width"),
         height = svg.attr("height"),
