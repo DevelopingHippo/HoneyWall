@@ -1,6 +1,9 @@
 // Constants
 const express = require('express');
 const mysql = require('mysql');
+//const http2 = require('http2')
+//const { readFileSync } = require('fs')
+
 
 const PORT = 3000;
 const HOST = '0.0.0.0';
@@ -10,6 +13,11 @@ const app = express();
 const path = require("path");
 var cors = require('cors');
 
+// const options = {
+//     key: readFileSync('key.key'),
+//     cert: readFileSync('cert.pem'),
+//     allowHTTP1: true
+// }
 var corsOptions = {
     origin: 'http://localhost:8443',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
@@ -216,7 +224,8 @@ app.get('/get-chart-data', cors(corsOptions), function(req, res){
     );
 });
 
-
+// const server = http2.createSecureServer(options, app)
+// server.listen(PORT)
 app.listen(PORT, HOST, () => {
     console.log(`Running on http://${HOST}:${PORT}`);
 });
