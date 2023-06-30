@@ -218,7 +218,7 @@ async function build_port_pie() {
         radius = width / 2;
 
     // Step 1
-    //var data = await apiCall("/api/get-pie-data?type=port");
+    var data = await apiCall("/api/get-pie-data?type=port");
 
     var g = svg.append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
@@ -271,7 +271,7 @@ async function build_username_pie() {
         radius = width / 2;
 
     // Step 1
-    //var data = await apiCall("/api/get-pie-data?type=username");
+    var data = await apiCall("/api/get-pie-data?type=username");
 
     var g = svg.append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
@@ -372,7 +372,7 @@ async function build_password_pie() {
 }
 
 async function build_vert_1() {
-    //let vert_data = await apiCall("/api/get-vert-data?type=geo");
+    let vert_data = await apiCall("/api/get-vert-data?type=geo");
     let top_vert_1 = document.getElementById("vert-1-table")
     for (let key in vert_data) {
         var row = top_vert_1.insertRow(-1);
@@ -385,7 +385,7 @@ async function build_vert_1() {
 
 async function build_vert_2()
 {
-    //let vert_data = await apiCall("/api/get-vert-data?type=ports");
+    let vert_data = await apiCall("/api/get-vert-data?type=ports");
     let top_vert_2 = document.getElementById("vert-2-table")
     for(let key in vert_data)
     {
@@ -398,7 +398,7 @@ async function build_vert_2()
 }
 
 async function build_vert_3() {
-    //let vert_data = await apiCall("/api/get-vert-data?type=services");
+    let vert_data = await apiCall("/api/get-vert-data?type=services");
     let top_vert_3 = document.getElementById("vert-3-table")
     for (let key in vert_data) {
         var row = top_vert_3.insertRow(-1);
@@ -410,7 +410,7 @@ async function build_vert_3() {
 }
 
 async function build_vert_4() {
-    //let vert_data = await apiCall("/api/get-vert-data?type=ip");
+    let vert_data = await apiCall("/api/get-vert-data?type=ip");
     let top_vert_4 = document.getElementById("vert-4-table")
     for (let key in vert_data) {
         var row = top_vert_4.insertRow(-1);
