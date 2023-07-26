@@ -234,8 +234,9 @@ async function build_pie(type, position){
                 label = "Top Services";
                 break;
         }
-        console.log(pie_label)
+        console.log("Pie Label: " + pie_label)
         pie_label.textContent = label;
+
     });
 }
 
