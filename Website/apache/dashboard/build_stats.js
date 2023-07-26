@@ -172,7 +172,7 @@ async function build_pie(type, position){
     // Step 4
     var ordScale = d3.scaleOrdinal()
         .domain(data)
-        .range(['#ffd384', '#94ebcd', '#fbaccc', '#d3e0ea', '#fa7f72']);
+        .range(['#fc3995', '#5d78ff', '#ffb720', '#40c4ff', '#00b19d']);
 
     // Step 5
     var pie = d3.pie().value(function (d) {
@@ -209,7 +209,6 @@ async function build_pie(type, position){
         .style("font-family", "arial")
         .style("font-size", 15);
 
-
     let pie_label = document.getElementById('pie-label-' + position);
     let pie_label_text = "";
     // Replace the text with your desired content
@@ -233,9 +232,7 @@ async function build_pie(type, position){
             pie_label_text = "Top Services";
             break;
     }
-    console.log("Pie Label: " + pie_label_text)
     pie_label.textContent = pie_label_text;
-
 }
 
 
