@@ -68,7 +68,7 @@ printPreloader();
             <div id="world-map" style="width: 750px; height: 325px;margin: auto;padding: 10px"></div>
         </div>
 
-        <script>
+        <script defer>
             build_bar_chart();
             build_map();
             build_pie("location", 1);
