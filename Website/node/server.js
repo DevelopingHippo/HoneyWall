@@ -98,7 +98,7 @@ app.get('/get-pie-data', cors(corsOptions), async function (req, res) {
             query = "select location as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
         } else if (req.query['type'] === "dst_port") {
             query = "select dst_port as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
-        } else if (req.query['type'] === "service") {
+        } else if (req.query['type'] === "services") {
             query = "select service as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
         } else if (req.query['type'] === "src_ip") {
             query = "select src_ip as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
