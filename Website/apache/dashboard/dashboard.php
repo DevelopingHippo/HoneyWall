@@ -33,23 +33,19 @@ printPreloader();
         </div>
         <div class="top-vert-1">
             <h6 class="vert-h6" id="vert-label-1">Vert Label 1</h6>
-            <table id="vert-table-1">
-            </table>
+            <table id="vert-table-1"></table>
         </div>
         <div class="top-vert-2">
             <h6 class="vert-h6" id="vert-label-2">Vert Label 2</h6>
-           <table id="vert-table-2">
-           </table>
+           <table id="vert-table-2"></table>
         </div>
         <div class="top-vert-3">
             <h6 class="vert-h6" id="vert-label-3">Vert Label 3</h6>
-            <table id="vert-table-3">
-            </table>
+            <table id="vert-table-3"></table>
         </div>
         <div class="top-vert-4">
             <h6 class="vert-h6" id="vert-label-4">Vert Label 4</h6>
-            <table id="vert-table-4">
-            </table>
+            <table id="vert-table-4"></table>
         </div>
         <div class="top-pie-1"><h4 id="pie-label-1">Label 1</h4>
             <svg id="svg-pie-1" width="275" height="275"></svg>

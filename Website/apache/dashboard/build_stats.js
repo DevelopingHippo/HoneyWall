@@ -154,7 +154,6 @@ async function build_map() {
 }
 
 
-
 async function build_pie(type, position){
 
     let position_tag = "#svg-pie-" + position;
@@ -270,44 +269,6 @@ async function build_vert(type, position) {
             break;
     }
     vert_label.textContent = vert_label_text;
-}
-
-async function build_vert_2()
-{
-    let vert_data = await apiCall("/api/get-vert-data?type=ports");
-    let top_vert_2 = document.getElementById("vert-table-" + position)
-    for(let key in vert_data)
-    {
-        var row = top_vert_2.insertRow(-1);
-        var c1 = row.insertCell(0);
-        var c2 = row.insertCell(1);
-        c1.innerText = key;
-        c2.innerText = vert_data[key];
-    }
-}
-
-async function build_vert_3() {
-    let vert_data = await apiCall("/api/get-vert-data?type=services");
-    let top_vert_3 = document.getElementById("vert-3-table")
-    for (let key in vert_data) {
-        var row = top_vert_3.insertRow(-1);
-        var c1 = row.insertCell(0);
-        var c2 = row.insertCell(1);
-        c1.innerText = key;
-        c2.innerText = vert_data[key];
-    }
-}
-
-async function build_vert_4() {
-    let vert_data = await apiCall("/api/get-vert-data?type=ip");
-    let top_vert_4 = document.getElementById("vert-4-table")
-    for (let key in vert_data) {
-        var row = top_vert_4.insertRow(-1);
-        var c1 = row.insertCell(0);
-        var c2 = row.insertCell(1);
-        c1.innerText = key;
-        c2.innerText = vert_data[key];
-    }
 }
 
 
