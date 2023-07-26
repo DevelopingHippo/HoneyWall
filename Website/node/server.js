@@ -63,11 +63,11 @@ app.get('/get-vert-data', cors(corsOptions), async function (req, res) {
         let query;
         if (req.query['type'] === "geo") {
             query = "select location as data, count(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
-        } else if (req.query['type'] === "ports") {
+        } else if (req.query['type'] === "dst_ports") {
             query = "select dst_port as data,COUNT(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
         } else if (req.query['type'] === "services") {
             query = "select service as data, count(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
-        } else if (req.query['type'] === "ip") {
+        } else if (req.query['type'] === "src_ip") {
             query = "select src_ip as data,COUNT(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
         }
 
