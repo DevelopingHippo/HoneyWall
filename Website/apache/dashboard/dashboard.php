@@ -41,8 +41,8 @@ printPreloader();
            <table id="vert-table-2">
            </table>
         </div>
-        <div class="top-vert-3" id="vert-label-3">
-            <h6 class="vert-h6">Vert Label 3</h6>
+        <div class="top-vert-3">
+            <h6 class="vert-h6" id="vert-label-3">Vert Label 3</h6>
             <table id="vert-table-3">
             </table>
         </div>
