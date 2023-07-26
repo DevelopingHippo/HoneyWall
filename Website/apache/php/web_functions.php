@@ -34,7 +34,7 @@ function printHeader(): void
         <nav class="navigation">
             <a href="/auth/logout.php">Sign Out</a>
             <a href="/account/profile.php">Profile</a>
-            <button onclick="location.href = ' + '/dashboard/dashboard.php' + ';class="btnDashboard">Dashboard</button>
+            <button onclick="location.href ='.'/dashboard/dashboard.php"'.';class="btnDashboard">Dashboard</button>
         </nav>
 </header>';
 }
