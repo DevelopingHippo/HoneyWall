@@ -61,7 +61,7 @@ app.get('/get-vert-data', cors(corsOptions), async function (req, res) {
     try {
         res.setHeader('Content-Type', 'application/json');
         let query;
-        if (req.query['type'] === "geo") {
+        if (req.query['type'] === "location") {
             query = "select location as data, count(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
         } else if (req.query['type'] === "dst_ports") {
             query = "select dst_port as data,COUNT(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
