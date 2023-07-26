@@ -209,8 +209,6 @@ async function build_pie(type, position){
         .style("font-family", "arial")
         .style("font-size", 15);
 
-
-
     window.addEventListener('DOMContentLoaded', () => {
         // Get the h4 element using its ID
         let pie_label = document.getElementById('pie-label-' + position);

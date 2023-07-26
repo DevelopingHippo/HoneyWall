@@ -51,17 +51,17 @@ printPreloader();
             <table id="vert-4-table">
             </table>
         </div>
-        <div class="top-pie-1"><h4 id="pie-label-1">Top Geolocations</h4>
+        <div class="top-pie-1"><h4 id="pie-label-1">Label 1</h4>
             <svg id="svg-pie-1" width="275" height="275"></svg>
         </div>
-        <div class="top-pie-2"><h4 id="pie-label-2">Top Ports</h4>
+        <div class="top-pie-2"><h4 id="pie-label-2">Label 2</h4>
             <svg id="svg-pie-2" width="275" height="275"></svg>
         </div>
-        <div class="top-pie-3"><h4 id="pie-label-3">Top Usernames</h4>
-            <svg id="top-usernames-svg" width="275" height="275"></svg>
+        <div class="top-pie-3"><h4 id="pie-label-3">Label 3</h4>
+            <svg id="svg-pie-3" width="275" height="275"></svg>
         </div>
-        <div class="top-passwords-pie"><h4 id="pie-label-4">Top Passwords</h4>
-            <svg id="top-passwords-svg" width="275" height="275"></svg>
+        <div class="top-pie-4"><h4 id="pie-label-4">Label 4</h4>
+            <svg id="svg-pie-4" width="275" height="275"></svg>
         </div>
 
         <div class="live-map">
