@@ -228,7 +228,7 @@ async function build_pie(type, position){
         case "password":
             pie_label_text = "Top Password";
             break;
-        case "services":
+        case "service":
             pie_label_text = "Top Services";
             break;
     }
@@ -265,7 +265,7 @@ async function build_vert(type, position) {
         case "password":
             vert_label_text = "Top Password";
             break;
-        case "services":
+        case "service":
             vert_label_text = "Top Services";
             break;
     }

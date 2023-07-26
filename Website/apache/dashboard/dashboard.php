@@ -74,10 +74,10 @@ printPreloader();
             build_pie("location", 1);
             build_pie("dst_port", 2)
             build_pie("src_ip", 3);
-            build_pie("services", 4);
+            build_pie("service", 4);
             build_vert("location", 1);
             build_vert("dst_port", 2);
-            build_vert("services", 3);
+            build_vert("service", 3);
             build_vert("src_ip", 4);
         </script>
     </div>
