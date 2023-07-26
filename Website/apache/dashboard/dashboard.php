@@ -51,16 +51,16 @@ printPreloader();
             <table id="vert-4-table">
             </table>
         </div>
-        <div class="top-geolocation-pie"><h4>Top Geolocations</h4>
-            <svg id="geolocation-svg" width="275" height="275"></svg>
+        <div class="top-pie-1"><h4 id="pie-label-1">Top Geolocations</h4>
+            <svg id="svg-pie-1" width="275" height="275"></svg>
         </div>
-        <div class="top-ports-pie"><h4>Top Ports</h4>
-            <svg id="top-ports-svg" width="275" height="275"></svg>
+        <div class="top-pie-2"><h4 id="pie-label-2">Top Ports</h4>
+            <svg id="svg-pie-2" width="275" height="275"></svg>
         </div>
-        <div class="top-usernames-pie"><h4>Top Usernames</h4>
+        <div class="top-pie-3"><h4 id="pie-label-3">Top Usernames</h4>
             <svg id="top-usernames-svg" width="275" height="275"></svg>
         </div>
-        <div class="top-passwords-pie"><h4>Top Passwords</h4>
+        <div class="top-passwords-pie"><h4 id="pie-label-4">Top Passwords</h4>
             <svg id="top-passwords-svg" width="275" height="275"></svg>
         </div>
 
@@ -71,10 +71,10 @@ printPreloader();
         <script>
             build_bar_chart();
             build_map();
-            build_geo_pie();
-            build_port_pie();
-            build_username_pie();
-            build_password_pie();
+            build_pie("location", 1);
+            build_pie("dst_port", 2)
+            build_pie("src_ip", 3);
+            build_pie("services", 4);
             build_vert_1();
             build_vert_2();
             build_vert_3();

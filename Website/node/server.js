@@ -94,18 +94,18 @@ app.get('/get-pie-data', cors(corsOptions), async function (req, res) {
         res.setHeader('Content-Type', 'application/json');
         let query;
 
-        if (req.query['type'] === "geo") {
+        if (req.query['type'] === "location") {
             query = "select location as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
-        } else if (req.query['type'] === "ports") {
-            query = "select location as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
-        } else if (req.query['type'] === "services") {
-            query = "select location as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
-        } else if (req.query['type'] === "ip") {
-            query = "select location as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
+        } else if (req.query['type'] === "dst_port") {
+            query = "select dst_port as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
+        } else if (req.query['type'] === "service") {
+            query = "select service as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
+        } else if (req.query['type'] === "src_ip") {
+            query = "select src_ip as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
         } else if (req.query['type'] === "username") {
-            query = "select location as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
+            query = "select username as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
         } else if (req.query['type'] === "password") {
-            query = "select location as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
+            query = "select password as data, count(*) as total_count FROM connections GROUP BY data ORDER BY total_count DESC LIMIT 5;";
         }
         let total = 0.00;
         const result = await db_query(query);

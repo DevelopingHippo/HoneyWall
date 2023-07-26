@@ -155,6 +155,100 @@ async function build_map() {
 
 
 
+async function build_pie(type, position){
+
+    let position_tag = "#top-pie-" + position;
+    var svg = d3.select(position_tag),
+        width = svg.attr("width"),
+        height = svg.attr("height"),
+        radius = width / 2;
+
+    // Step 1
+    var data = await apiCall("/api/get-pie-data?type=" + type);
+
+    var g = svg.append("g")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    // Step 4
+    var ordScale = d3.scaleOrdinal()
+        .domain(data)
+        .range(['#ffd384', '#94ebcd', '#fbaccc', '#d3e0ea', '#fa7f72']);
+
+    // Step 5
+    var pie = d3.pie().value(function (d) {
+        return d.share;
+    });
+
+    var arc = g.selectAll("arc")
+        .data(pie(data))
+        .enter();
+
+    // Step 6
+    var path = d3.arc()
+        .outerRadius(radius)
+        .innerRadius(0);
+
+    arc.append("path")
+        .attr("d", path)
+        .attr("fill", function (d) {
+            return ordScale(d.data.name);
+        });
+
+    // Step 7
+    var label = d3.arc()
+        .outerRadius(radius)
+        .innerRadius(0);
+
+    arc.append("text")
+        .attr("transform", function (d) {
+            return "translate(" + label.centroid(d) + ")";
+        })
+        .text(function (d) {
+            return d.data.name;
+        })
+        .style("font-family", "arial")
+        .style("font-size", 15);
+
+
+
+    window.addEventListener('DOMContentLoaded', () => {
+        // Get the h4 element using its ID
+        let pie_label = document.getElementById('pie-label-' + position);
+        let label = "";
+        // Replace the text with your desired content
+        switch (type) {
+            case "location":
+                label = "Top Geolocations";
+                break;
+            case "dst_port":
+                label = "Top Port";
+                break;
+            case "src_ip":
+                label = "Top IP";
+                break;
+            case "username":
+                label = "Top Username";
+                break;
+            case "password":
+                label = "Top Password";
+                break;
+            case "services":
+                label = "Top Services";
+                break;
+        }
+        pie_label.textContent = label;
+    });
+}
+
+
+
+
+
+
+
+
+
+
 async function build_geo_pie() {
     var svg = d3.select("#geolocation-svg"),
         width = svg.attr("width"),

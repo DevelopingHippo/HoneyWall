@@ -118,7 +118,7 @@ td {
 
 
 /* Section for Pie Charts*/
-.top-geolocation-pie {
+.top-pie-1 {
     grid-row: 2;
     grid-column-start: 1;
     grid-column-end: 3;
@@ -126,7 +126,7 @@ td {
     border-radius: 20px;
     padding-bottom: 10px;
 }
-.top-ports-pie {
+.top-pie-2 {
     grid-row: 2;
     grid-column-start: 3;
     grid-column-end: 5;
@@ -134,7 +134,7 @@ td {
     border-radius: 20px;
     padding-bottom: 10px;
 }
-.top-usernames-pie {
+.top-pie-3 {
     grid-row: 3;
     grid-column-start: 1;
     grid-column-end: 3;
@@ -142,7 +142,7 @@ td {
     border-radius: 20px;
     padding-bottom: 10px;
 }
-.top-passwords-pie {
+.top-pie-4 {
     grid-row: 3;
     grid-column-start: 3;
     grid-column-end: 5;
