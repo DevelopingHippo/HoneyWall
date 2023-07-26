@@ -157,7 +157,7 @@ async function build_map() {
 
 async function build_pie(type, position){
 
-    let position_tag = "#top-pie-" + position;
+    let position_tag = "#svg-pie-" + position;
     var svg = d3.select(position_tag),
         width = svg.attr("width"),
         height = svg.attr("height"),
