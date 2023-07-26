@@ -235,244 +235,47 @@ async function build_pie(type, position){
     pie_label.textContent = pie_label_text;
 }
 
-
-
-
-
-
-
-
-
-
-async function build_geo_pie() {
-    var svg = d3.select("#geolocation-svg"),
-        width = svg.attr("width"),
-        height = svg.attr("height"),
-        radius = width / 2;
-
-    // Step 1
-    var data = await apiCall("/api/get-pie-data?type=geo");
-
-    var g = svg.append("g")
-        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-    // Step 4
-    var ordScale = d3.scaleOrdinal()
-        .domain(data)
-        .range(['#ffd384', '#94ebcd', '#fbaccc', '#d3e0ea', '#fa7f72']);
-
-    // Step 5
-    var pie = d3.pie().value(function (d) {
-        return d.share;
-    });
-
-    var arc = g.selectAll("arc")
-        .data(pie(data))
-        .enter();
-
-    // Step 6
-    var path = d3.arc()
-        .outerRadius(radius)
-        .innerRadius(0);
-
-    arc.append("path")
-        .attr("d", path)
-        .attr("fill", function (d) {
-            return ordScale(d.data.name);
-        });
-
-    // Step 7
-    var label = d3.arc()
-        .outerRadius(radius)
-        .innerRadius(0);
-
-    arc.append("text")
-        .attr("transform", function (d) {
-            return "translate(" + label.centroid(d) + ")";
-        })
-        .text(function (d) {
-            return d.data.name;
-        })
-        .style("font-family", "arial")
-        .style("font-size", 15);
-}
-
-async function build_port_pie() {
-    var svg = d3.select("#top-ports-svg"),
-        width = svg.attr("width"),
-        height = svg.attr("height"),
-        radius = width / 2;
-
-    // Step 1
-    var data = await apiCall("/api/get-pie-data?type=port");
-
-    var g = svg.append("g")
-        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-    // Step 4
-    var ordScale = d3.scaleOrdinal()
-        .domain(data)
-        .range(['#ffd384', '#94ebcd', '#fbaccc', '#d3e0ea', '#fa7f72']);
-
-    // Step 5
-    var pie = d3.pie().value(function (d) {
-        return d.share;
-    });
-
-    var arc = g.selectAll("arc")
-        .data(pie(data))
-        .enter();
-
-    // Step 6
-    var path = d3.arc()
-        .outerRadius(radius)
-        .innerRadius(0);
-
-    arc.append("path")
-        .attr("d", path)
-        .attr("fill", function (d) {
-            return ordScale(d.data.name);
-        });
-
-    // Step 7
-    var label = d3.arc()
-        .outerRadius(radius)
-        .innerRadius(0);
-
-    arc.append("text")
-        .attr("transform", function (d) {
-            return "translate(" + label.centroid(d) + ")";
-        })
-        .text(function (d) {
-            return d.data.name;
-        })
-        .style("font-family", "arial")
-        .style("font-size", 15);
-}
-
-async function build_username_pie() {
-    var svg = d3.select("#top-usernames-svg"),
-        width = svg.attr("width"),
-        height = svg.attr("height"),
-        radius = width / 2;
-
-    // Step 1
-    var data = await apiCall("/api/get-pie-data?type=username");
-
-    var g = svg.append("g")
-        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-    // Step 4
-    var ordScale = d3.scaleOrdinal()
-        .domain(data)
-        .range(['#ffd384', '#94ebcd', '#fbaccc', '#d3e0ea', '#fa7f72']);
-
-    // Step 5
-    var pie = d3.pie().value(function (d) {
-        return d.share;
-    });
-
-    var arc = g.selectAll("arc")
-        .data(pie(data))
-        .enter();
-
-    // Step 6
-    var path = d3.arc()
-        .outerRadius(radius)
-        .innerRadius(0);
-
-    arc.append("path")
-        .attr("d", path)
-        .attr("fill", function (d) {
-            return ordScale(d.data.name);
-        });
-
-    // Step 7
-    var label = d3.arc()
-        .outerRadius(radius)
-        .innerRadius(0);
-
-    arc.append("text")
-        .attr("transform", function (d) {
-            return "translate(" + label.centroid(d) + ")";
-        })
-        .text(function (d) {
-            return d.data.name;
-        })
-        .style("font-family", "arial")
-        .style("font-size", 15);
-}
-
-
-async function build_password_pie() {
-    var svg = d3.select("#top-passwords-svg"),
-        width = svg.attr("width"),
-        height = svg.attr("height"),
-        radius = width / 2;
-
-    // Step 1
-    var data = await apiCall("/api/get-pie-data?type=password");
-
-    var g = svg.append("g")
-        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-    // Step 4
-    var ordScale = d3.scaleOrdinal()
-        .domain(data)
-        .range(['#ffd384', '#94ebcd', '#fbaccc', '#d3e0ea', '#fa7f72']);
-
-    // Step 5
-    var pie = d3.pie().value(function (d) {
-        return d.share;
-    });
-
-    var arc = g.selectAll("arc")
-        .data(pie(data))
-        .enter();
-
-    // Step 6
-    var path = d3.arc()
-        .outerRadius(radius)
-        .innerRadius(0);
-
-    arc.append("path")
-        .attr("d", path)
-        .attr("fill", function (d) {
-            return ordScale(d.data.name);
-        });
-
-    // Step 7
-    var label = d3.arc()
-        .outerRadius(radius)
-        .innerRadius(0);
-
-    arc.append("text")
-        .attr("transform", function (d) {
-            return "translate(" + label.centroid(d) + ")";
-        })
-        .text(function (d) {
-            return d.data.name;
-        })
-        .style("font-family", "arial")
-        .style("font-size", 15);
-}
-
-async function build_vert_1() {
-    let vert_data = await apiCall("/api/get-vert-data?type=geo");
-    let top_vert_1 = document.getElementById("vert-1-table")
+async function build_vert(type, position) {
+    let vert_data = await apiCall("/api/get-vert-data?type=" + type);
+    let top_vert = document.getElementById("vert-table-" + position)
     for (let key in vert_data) {
-        var row = top_vert_1.insertRow(-1);
+        var row = top_vert.insertRow(-1);
         var c1 = row.insertCell(0);
         var c2 = row.insertCell(1);
         c1.innerText = key;
         c2.innerText = vert_data[key];
     }
+
+    let vert_label = document.getElementById('vert-label-' + position);
+    let vert_label_text = "";
+    // Replace the text with your desired content
+    switch (type) {
+        case "location":
+            vert_label_text = "Top Geolocations";
+            break;
+        case "dst_port":
+            vert_label_text = "Top Port";
+            break;
+        case "src_ip":
+            vert_label_text = "Top IP";
+            break;
+        case "username":
+            vert_label_text = "Top Username";
+            break;
+        case "password":
+            vert_label_text = "Top Password";
+            break;
+        case "services":
+            vert_label_text = "Top Services";
+            break;
+    }
+    vert_label.textContent = vert_label_text;
 }
 
 async function build_vert_2()
 {
     let vert_data = await apiCall("/api/get-vert-data?type=ports");
-    let top_vert_2 = document.getElementById("vert-2-table")
+    let top_vert_2 = document.getElementById("vert-table-" + position)
     for(let key in vert_data)
     {
         var row = top_vert_2.insertRow(-1);

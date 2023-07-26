@@ -32,23 +32,23 @@ printPreloader();
             <svg id="bar-chart" width="600" height="500"></svg>
         </div>
         <div class="top-vert-1">
-            <h6 class="vert-h6">Top Geolocations</h6>
-            <table id="vert-1-table">
+            <h6 class="vert-h6" id="vert-label-1">Vert Label 1</h6>
+            <table id="vert-table-1">
             </table>
         </div>
         <div class="top-vert-2">
-            <h6 class="vert-h6">Top Ports</h6>
-           <table id="vert-2-table">
+            <h6 class="vert-h6" id="vert-label-2">Vert Label 2</h6>
+           <table id="vert-table-2">
            </table>
         </div>
-        <div class="top-vert-3">
-            <h6 class="vert-h6">Top Services</h6>
-            <table id="vert-3-table">
+        <div class="top-vert-3" id="vert-label-3">
+            <h6 class="vert-h6">Vert Label 3</h6>
+            <table id="vert-table-3">
             </table>
         </div>
         <div class="top-vert-4">
-            <h6 class="vert-h6">Top IP</h6>
-            <table id="vert-4-table">
+            <h6 class="vert-h6" id="vert-label-4">Vert Label 4</h6>
+            <table id="vert-table-4">
             </table>
         </div>
         <div class="top-pie-1"><h4 id="pie-label-1">Label 1</h4>
@@ -75,10 +75,10 @@ printPreloader();
             build_pie("dst_port", 2)
             build_pie("src_ip", 3);
             build_pie("services", 4);
-            build_vert_1();
-            build_vert_2();
-            build_vert_3();
-            build_vert_4();
+            build_vert("geo", 1);
+            build_vert("dst_port", 2);
+            build_vert("services", 3);
+            build_vert("dst_ip", 4);
         </script>
     </div>
     </section>
