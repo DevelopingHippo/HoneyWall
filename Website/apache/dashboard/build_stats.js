@@ -206,7 +206,7 @@ async function build_pie(type, position){
         .text(function (d) {
             return d.data.name;
         })
-        .style("font-family", "poppins")
+        .style("font-family", "monospace")
         .style("font-size", 5);
 
     let pie_label = document.getElementById('pie-label-' + position);
