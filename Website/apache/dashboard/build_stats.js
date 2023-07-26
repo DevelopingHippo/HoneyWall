@@ -209,35 +209,33 @@ async function build_pie(type, position){
         .style("font-family", "arial")
         .style("font-size", 15);
 
-    window.addEventListener('DOMContentLoaded', () => {
-        // Get the h4 element using its ID
-        let pie_label = document.getElementById('pie-label-' + position);
-        let label = "";
-        // Replace the text with your desired content
-        switch (type) {
-            case "location":
-                label = "Top Geolocations";
-                break;
-            case "dst_port":
-                label = "Top Port";
-                break;
-            case "src_ip":
-                label = "Top IP";
-                break;
-            case "username":
-                label = "Top Username";
-                break;
-            case "password":
-                label = "Top Password";
-                break;
-            case "services":
-                label = "Top Services";
-                break;
-        }
-        console.log("Pie Label: " + pie_label)
-        pie_label.textContent = label;
 
-    });
+    let pie_label = document.getElementById('pie-label-' + position);
+    let pie_label_text = "";
+    // Replace the text with your desired content
+    switch (type) {
+        case "location":
+            pie_label_text = "Top Geolocations";
+            break;
+        case "dst_port":
+            pie_label_text = "Top Port";
+            break;
+        case "src_ip":
+            pie_label_text = "Top IP";
+            break;
+        case "username":
+            pie_label_text = "Top Username";
+            break;
+        case "password":
+            pie_label_text = "Top Password";
+            break;
+        case "services":
+            pie_label_text = "Top Services";
+            break;
+    }
+    console.log("Pie Label: " + pie_label_text)
+    pie_label.textContent = pie_label_text;
+
 }
 
 
