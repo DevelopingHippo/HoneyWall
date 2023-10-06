@@ -19,8 +19,16 @@ loginCheck();
     <link rel="stylesheet" href="../css/site-global.css">
 </head>
 <body>
-</body>
+<?php
+printHeader();
+?>
+
+
+<!-- Content for the actual panel goes here-->
+
+
 <?php
 printFooter();
 ?>
+</body>
 </html>
