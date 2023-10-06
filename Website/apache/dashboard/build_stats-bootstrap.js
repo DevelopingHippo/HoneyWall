@@ -159,18 +159,20 @@ async function build_pie(type, position){
     // Step 1: Gather Data
     let position_tag = "#chart-pie-" + position;
     let data = await apiCall("/api/get-pie-data?type=" + type);
-    data = JSON.parse(data);
 
-    console.log(data)
+    const label_array = Object.keys(data);
+    const data_array = Object.values(data);
+
+
 
     $(document).ready(function() {
         var ctx = position_tag;
         var myLineChart = new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: Object.keys(data),
+                labels: label_array,
                 datasets: [{
-                    data: Object.values(data),
+                    data: data_array,
                     backgroundColor: ["rgba(255, 0, 0, 0.5)", "rgba(100, 255, 0, 0.5)", "rgba(200, 50, 255, 0.5)", "rgba(0, 100, 255, 0.5)", "rgba(0, 255, 255, 0.5)"]
                 }]
             }
