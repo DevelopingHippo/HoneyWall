@@ -160,6 +160,9 @@ async function build_pie(type, position){
     let position_tag = "#chart-pie-" + position;
     let data = await apiCall("/api/get-pie-data?type=" + type);
     data = JSON.parse(data);
+
+    console.log(data)
+
     $(document).ready(function() {
         var ctx = position_tag;
         var myLineChart = new Chart(ctx, {
