@@ -13,14 +13,14 @@ loginCheck();
     <title>Dashboard</title>
 
     <!-- Internal Dependencies -->
-    <link rel="stylesheet" href="dashboard.css">
-    <link rel="stylesheet" href="../css/site-global.css">
+    <link rel="stylesheet" href="dashboard.css" type="text/css">
+    <link rel="stylesheet" href="../css/site-global.css" type="text/css">
     <script src="build_stats-bootstrap.js"></script>
 
     <!-- Pie Graph Dependencies -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" type="text/css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
 
     <!-- Map & Bar Graph Dependencies -->
@@ -63,16 +63,16 @@ printPreloader();
             <table id="vert-table-4"></table>
         </div>
         <div class="top-pie-1"><h4 id="pie-label-1">Label 1</h4>
-            <canvas id="chart-pie-1" width="300" height="200" class="chartjs-render-monitor" style="display: block; width: 299px; height: 200px;"></canvas>
+            <canvas id="chart-pie-1" width="300" height="200" class="chartjs-render-monitor" style="display: block; width: 300px; height: 200px;"></canvas>
         </div>
         <div class="top-pie-2"><h4 id="pie-label-2">Label 2</h4>
-            <canvas id="chart-pie-2" width="300" height="200" class="chartjs-render-monitor" style="display: block; width: 299px; height: 200px;"></canvas>
+            <canvas id="chart-pie-2" width="300" height="200" class="chartjs-render-monitor" style="display: block; width: 300px; height: 200px;"></canvas>
         </div>
         <div class="top-pie-3"><h4 id="pie-label-3">Label 3</h4>
-            <canvas id="chart-pie-3" width="300" height="200" class="chartjs-render-monitor" style="display: block; width: 299px; height: 200px;"></canvas>
+            <canvas id="chart-pie-3" width="300" height="200" class="chartjs-render-monitor" style="display: block; width: 300px; height: 200px;"></canvas>
         </div>
         <div class="top-pie-4"><h4 id="pie-label-4">Label 4</h4>
-            <canvas id="chart-pie-4" width="300" height="200" class="chartjs-render-monitor" style="display: block; width: 299px; height: 200px;"></canvas>
+            <canvas id="chart-pie-4" width="300" height="200" class="chartjs-render-monitor" style="display: block; width: 300px; height: 200px;"></canvas>
         </div>
 
         <div class="live-map">
@@ -119,7 +119,7 @@ printFooter();
     });
 </script>
 
-<canvas id="chart-line" width="300" height="200" class="chartjs-render-monitor" style="display: block; width: 299px; height: 200px;"></canvas>
+<canvas id="chart-line" width="50" height="50" class="chartjs-render-monitor" style="display: block; width: 50px; height: 50px;"></canvas>
 
 
 </body>
