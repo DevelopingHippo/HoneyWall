@@ -30,7 +30,7 @@ function printPreloader(): void
 
 function printHeader(): void
 {
-    if (isset($_SESSION["isAdmin"]) && $_SESSION["isAdmin"] == 1)
+    if (isset($_SESSION["admin"]) && $_SESSION["admin"] == "true")
     {
         echo
         '<header>
