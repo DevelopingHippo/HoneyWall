@@ -163,23 +163,19 @@ async function build_pie(type, position){
     const label_array = Object.keys(data);
     const data_array = Object.values(data);
 
-
-
     $(document).ready(function() {
         var ctx = position_tag;
         var myLineChart = new Chart(ctx, {
             type: 'pie',
             data: {
-                labels: label_array,
+                labels: ["Spring", "Summer", "Fall", "Winter"],
                 datasets: [{
-                    data: data_array,
+                    data: [1200, 1700, 800, 200],
                     backgroundColor: ["rgba(255, 0, 0, 0.5)", "rgba(100, 255, 0, 0.5)", "rgba(200, 50, 255, 0.5)", "rgba(0, 100, 255, 0.5)", "rgba(0, 255, 255, 0.5)"]
                 }]
             }
         });
     });
-
-
 
     let pie_label = document.getElementById('pie-label-' + position);
     let pie_label_text = "";
