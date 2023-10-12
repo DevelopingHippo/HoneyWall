@@ -164,7 +164,7 @@ async function build_pie(type, position){
     const data_array = Object.values(data);
 
     $(document).ready(function() {
-        var ctx = position_tag;
+        var ctx = "#chart-pie-" + position;
         var myLineChart = new Chart(ctx, {
             type: 'pie',
             data: {
