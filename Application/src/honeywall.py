@@ -4,10 +4,10 @@ import mysql.connector
 import time
 
 #setting log path variables
-ssh_logpath = "/var/logs/honeypots/ssh.log"
-http_logpath = "/var/logs/honeypots/http.log"
-https_logpath = "/var/logs/honeypots/https.log"
-telnet_logpath = "/var/logs/honeypots/telnet.log"
+ssh_logpath = "/var/log/honeypots/ssh.log"
+http_logpath = "/var/log/honeypots/http.log"
+https_logpath = "/var/log/honeypots/https.log"
+telnet_logpath = "/var/log/honeypots/telnet.log"
 
 #executing command to start the honeypots
 os.system("sudo -E python3 -m honeypots --setup ssh,http,https,telnet --config honeypotconfig.json")
