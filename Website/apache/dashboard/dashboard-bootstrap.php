@@ -79,7 +79,7 @@ printPreloader();
             <div id="world-map" style="width: 750px; height: 325px;margin: auto;padding: 10px"></div>
         </div>
 
-        <script defer>
+        <script>
             build_bar_chart();
             build_map();
             build_pie("location", 1);
@@ -96,9 +96,5 @@ printPreloader();
 <?php
 printFooter();
 ?>
-
-<canvas id="chart-line" width="50" height="50" class="chartjs-render-monitor" style="display: block; width: 50px; height: 50px;"></canvas>
-
-
 </body>
 </html>
