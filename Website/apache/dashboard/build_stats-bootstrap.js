@@ -158,30 +158,43 @@ async function build_pie(type, position){
 
     // Step 1: Gather Data
     let position_tag = "#chart-pie-" + position;
-    let data = await apiCall("/api/get-pie-data?type=" + type);
+    let data_api = await apiCall("/api/get-pie-data?type=" + type);
 
-    const label_array = Object.keys(data);
-    const data_array = Object.values(data);
+    const label_array = Object.keys(data_api);
+    const data_array = Object.values(data_api);
 
-    $(document).ready(function() {
-        var ctx = $("#chart-line");
-        var myLineChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ["Spring", "Summer", "Fall", "Winter"],
-                datasets: [{
-                    data: [1200, 1700, 800, 200],
-                    backgroundColor: ["rgba(255, 0, 0, 0.5)", "rgba(100, 255, 0, 0.5)", "rgba(200, 50, 255, 0.5)", "rgba(0, 100, 255, 0.5)"]
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: 'Weather'
-                }
+    var canvas = document.getElementById("chart-pie-" + position);
+    var ctx = canvas.getContext('2d');
+
+
+    var options = {
+        title: {
+            display: true,
+            position: 'top'
+        }
+    };
+
+    var data = {
+        labels: ["Taiwan", "China"],
+        datasets: [
+            {
+                fill: true,
+                backgroundColor: [
+                    'black',
+                    'white'],
+                data: [5, 95],
+                borderColor:	['black', 'black'],
+                borderWidth: [2,2]
             }
-        });
+        ]
+    };
+
+    var myBarChart = new Chart(ctx, {
+        type: 'pie',
+        data: data,
+        options: options
     });
+
 
     let pie_label = document.getElementById('pie-label-' + position);
     let pie_label_text = "";

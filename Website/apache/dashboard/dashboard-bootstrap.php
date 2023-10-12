@@ -14,7 +14,7 @@ loginCheck();
 
     <!-- Pie Graph Dependencies -->
     <script src="../js/charts/chart.min.js"></script>
-
+    <script src="../js/charts/chart.umd.js"></script>
     <!-- Map & Bar Graph Dependencies -->
     <script src="../js/jvectormap/jquery-3.7.0.js"></script>
     <link rel="stylesheet" href="../js/jvectormap/jquery-jvectormap-2.0.5.css" type="text/css" media="screen"/>
@@ -60,16 +60,16 @@ printPreloader();
             <table id="vert-table-4"></table>
         </div>
         <div class="top-pie-1"><h4 id="pie-label-1">Label 1</h4>
-            <canvas id="chart-pie-1" width="300" height="200" class="chartjs-render-monitor" style="display: block; width: 300px; height: 200px;"></canvas>
+            <canvas id="chart-pie-1"</canvas>
         </div>
         <div class="top-pie-2"><h4 id="pie-label-2">Label 2</h4>
-            <canvas id="chart-pie-2" width="300" height="200" class="chartjs-render-monitor" style="display: block; width: 300px; height: 200px;"></canvas>
+            <canvas id="chart-pie-2"</canvas>
         </div>
         <div class="top-pie-3"><h4 id="pie-label-3">Label 3</h4>
-            <canvas id="chart-pie-3" width="300" height="200" class="chartjs-render-monitor" style="display: block; width: 300px; height: 200px;"></canvas>
+            <canvas id="chart-pie-3"</canvas>
         </div>
         <div class="top-pie-4"><h4 id="pie-label-4">Label 4</h4>
-            <canvas id="chart-pie-4" width="300" height="200" class="chartjs-render-monitor" style="display: block; width: 300px; height: 200px;"></canvas>
+            <canvas id="chart-pie-4"</canvas>
         </div>
 
         <div class="live-map">
@@ -93,30 +93,5 @@ printPreloader();
 <?php
 printFooter();
 ?>
-
-<script>
-    $(document).ready(function() {
-        var ctx = $("#chart-line");
-        var myLineChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ["Spring", "Summer", "Fall", "Winter"],
-                datasets: [{
-                    data: [1200, 1700, 800, 200],
-                    backgroundColor: ["rgba(255, 0, 0, 0.5)", "rgba(100, 255, 0, 0.5)", "rgba(200, 50, 255, 0.5)", "rgba(0, 100, 255, 0.5)"]
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: 'Weather'
-                }
-            }
-        });
-    });
-</script>
-
-<canvas id="chart-line" width="300" height="200" class="chartjs-render-monitor" style="display: block; width: 299px; height: 200px;"></canvas>
-
 </body>
 </html>
