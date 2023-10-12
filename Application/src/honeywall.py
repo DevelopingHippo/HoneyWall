@@ -48,12 +48,10 @@ def telnet_log_push():
 
 #connection to the database to actually push the data
 def query_connection(dst_ip, dst_port, src_ip, src_port, protocol, time_of_attack, date, service, location, packets):
-  global data_id
   query = "INSERT INTO connections VALUES (%d, %s, %d, %s, %d, %s, %s, %s, %s, %s, %d)"
-  data = (data_id, dst_ip, dst_port, src_ip, src_port, protocol, time_of_attack, date, service, location, packets)
+  data = (dst_ip, dst_port, src_ip, src_port, protocol, time_of_attack, date, service, location, packets)
   cursor.execute(query, data)
   db.commit()
-  data_id += 1
 
 
 #while loop to constantly run through each protocol push and wait 30 seconds
