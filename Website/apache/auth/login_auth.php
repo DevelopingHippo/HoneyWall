@@ -32,6 +32,7 @@ if (mysqli_num_rows($result) > 0) # If query comes back with results
     {
         $_SESSION["admin"] = "false";
     }
+    $_SESSION["loggedIn"] = "true";
     header("location: /dashboard/dashboard.php");
 }
 else # redirect the user to Login page with status message
