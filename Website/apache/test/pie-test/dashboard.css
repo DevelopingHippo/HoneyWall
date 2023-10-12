@@ -1,0 +1,64 @@
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #323b44;
+    background-size: cover;
+    min-height: 94vh;
+}
+
+.stats {
+    display:grid;
+    gap: 10px;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    color: #fff;
+    /*
+    background: transparent;
+    */
+    border-radius: 20px;
+    filter: drop-shadow(5px 5px 5px black);
+    padding: 10px;
+    width: 90%;
+}
+
+.stats > div {
+    text-align: center;
+    font-size: 25px;
+}
+
+/* Section for Pie Charts*/
+.top-pie-1 {
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: #36404a;
+    border-radius: 20px;
+    padding-bottom: 10px;
+}
+.top-pie-2 {
+    grid-row: 2;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    background-color: #36404a;
+    border-radius: 20px;
+    padding-bottom: 10px;
+}
+.top-pie-3 {
+    grid-row: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: #36404a;
+    border-radius: 20px;
+    padding-bottom: 10px;
+}
+.top-pie-4 {
+    grid-row: 3;
+    grid-column-start: 3;
+    grid-column-end: 5;
+    background-color: #36404a;
+    border-radius: 20px;
+    padding-bottom: 10px;
+}
