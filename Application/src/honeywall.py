@@ -14,4 +14,3 @@ mydb = mysql.connector.connect(
   user="username",
   password="password"
 )
-
