@@ -8,11 +8,9 @@ create table connections(
     dst_port INT,
     src_ip VARCHAR(15),
     src_port INT,
-    protocol VARCHAR(3),
     date_time DATETIME,
     service VARCHAR(30),
     location VARCHAR(2),
-    packets INT,
     primary key (id)
 );
 create table ssh(
@@ -40,6 +38,7 @@ create table ftp(
     password VARCHAR(64),
     FOREIGN KEY (id) REFERENCES connections(id)
 );
+
 
 insert into connections (dst_ip, dst_port, src_ip, src_port, protocol, date_time, service, location, packets) VALUES ("10.0.1.1", 443, "40.11.217.61", 32471, "tcp", "2023-06-29 21:28:11", "https", "FJ", 898);
 insert into connections (dst_ip, dst_port, src_ip, src_port, protocol, date_time, service, location, packets) VALUES ("10.0.1.1", 1433, "115.149.63.24", 12994, "tcp", "2023-06-29 6:16:5", "SQL", "AD", 784);
