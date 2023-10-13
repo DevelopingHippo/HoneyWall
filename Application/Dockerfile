@@ -12,8 +12,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y && apt autor
 #RUN mv /opt/HoneyWall/Application/src /api
 #RUN rm -r /opt/HoneyWall/
 
-COPY ./requirements.txt /opt
+COPY ./src ./
 RUN pip install --upgrade pip
-RUN pip install -r /opt/requirements.txt
-COPY ./src /app
+RUN pip install -r requirements.txt
 CMD ["python3", "/app/honeywall.py"]
