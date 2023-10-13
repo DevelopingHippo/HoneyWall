@@ -45,6 +45,8 @@ services:
       - "2323:23"
       - "8080:80"
       - "4443:443"
+    volumes:
+      - "./logs/:/var/log/honeypots/"
     depends_on:
       - db_honey
     #restart: unless-stopped
