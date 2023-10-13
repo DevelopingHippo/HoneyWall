@@ -18,7 +18,7 @@ os.system("python3 -m honeypots --setup ssh,http,https,telnet --config honeypotc
 # connecting to db
 db = mysql.connector.connect(
     host="db_honey",
-    user="honeywall",
+    user="honey",
     password="P@ssw0rd",
     database="honeywall"
 )
