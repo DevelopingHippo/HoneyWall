@@ -13,6 +13,10 @@ data_id = 0
 logpath = "/var/log/honeypots/"
 
 db_password = os.getenv('DB_PASSWORD')
+
+
+print(db_password)
+
 db_user = 'honey'
 db_host = 'db_honey'
 db_database = 'honeywall'
