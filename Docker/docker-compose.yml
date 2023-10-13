@@ -41,8 +41,8 @@ services:
       context: ../Application
       dockerfile: Dockerfile
     ports: # List of Open Ports Being Honeypotted by the Application
-      - "2777:22"
-      - "23:23"
+      - "2222:22"
+      - "2323:23"
       - "8080:80"
       - "4443:443"
     depends_on:
