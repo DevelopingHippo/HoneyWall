@@ -1,18 +1,5 @@
 version: "3.7"
 services:
-  application_honey:
-    container_name: app_honey
-    build:
-      context: ../Application
-      dockerfile: Dockerfile
-    ports: # List of Open Ports Being Honeypotted by the Application
-      - "2777:2777"
-    depends_on:
-      - db_honey
-    #restart: unless-stopped
-    networks:
-      - honeywall_data
-
   db_honey:
     container_name: db_honey
     image: mysql
@@ -47,6 +34,20 @@ services:
     restart: unless-stopped
     depends_on:
       - db_honey
+
+  application_honey:
+    container_name: app_honey
+    build:
+      context: ../Application
+      dockerfile: Dockerfile
+    ports: # List of Open Ports Being Honeypotted by the Application
+      - "2777:2777"
+    depends_on:
+      - db_honey
+    #restart: unless-stopped
+    networks:
+      - honeywall_data
+
 networks:
   honeywall_data:
     driver: bridge
