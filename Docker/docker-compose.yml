@@ -41,7 +41,10 @@ services:
       context: ../Application
       dockerfile: Dockerfile
     ports: # List of Open Ports Being Honeypotted by the Application
-      - "2777:2777"
+      - "2777:22"
+      - "23:23"
+      - "80:80"
+      - "443:443"
     depends_on:
       - db_honey
     #restart: unless-stopped
