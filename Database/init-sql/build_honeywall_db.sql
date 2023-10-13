@@ -13,37 +13,7 @@ create table connections(
     location VARCHAR(2),
     primary key (id)
 );
-create table ssh(
-    id INT NOT NULL,
-    username VARCHAR(64),
-    password VARCHAR(64),
-    FOREIGN KEY (id) REFERENCES connections(id)
-);
-create table smb(
-    id INT NOT NULL,
-    username VARCHAR(64),
-    password VARCHAR(64),
-    FOREIGN KEY (id) REFERENCES connections(id)
-);
-create table telnet(
-   id INT NOT NULL,
-   username VARCHAR(64),
-   password VARCHAR(64),
-   FOREIGN KEY (id) REFERENCES connections(id)
-);
-create table http(
-    id INT NOT NULL,
-    username VARCHAR(64),
-    password VARCHAR(64),
-    FOREIGN KEY (id) REFERENCES connections(id)
-);
-create table https(
-    id INT NOT NULL,
-    username VARCHAR(64),
-    password VARCHAR(64),
-    FOREIGN KEY (id) REFERENCES connections(id)
-);
-create table ftp(
+create table logins(
     id INT NOT NULL,
     username VARCHAR(64),
     password VARCHAR(64),
