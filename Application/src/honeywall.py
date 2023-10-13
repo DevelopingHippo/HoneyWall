@@ -27,10 +27,17 @@ cursor = db.cursor()
 
 # connection to the database to actually push the data
 def query_connection(dst_ip, dst_port, src_ip, src_port, timestamp, date, service, location):
-    query = "INSERT INTO connections VALUES (%d, %s, %d, %s, %d, %s, %s, %s, %s, %s)"
-    data = (dst_ip, dst_port, src_ip, src_port, timestamp, date, service, location)
+    query = "INSERT INTO connections VALUES (%s, %d, %s, %d, %s, %s, %s)"
+    data = (dst_ip, dst_port, src_ip, src_port, timestamp, service, location)
     cursor.execute(query, data)
     db.commit()
+
+def query_login(service_name):
+        query = "INSERT INTO " + service_name + " VALUES (%s, %s)"
+        data = ()
+        cursor.execute(query, data)
+        db.commit()
+
 
 
 # read/write the file, send contents to the database connection method, clear the file
