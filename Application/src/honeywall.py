@@ -50,7 +50,7 @@ def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, loc
     db.commit()
 
 def query_login(data_id, username, password):
-    query = "INSERT INTO logins VALUES (%d, %s, %s)"
+    query = "INSERT INTO logins VALUES (%s, %s, %s)"
     data = (data_id, username, password)
     cursor.execute(query, data)
     db.commit()
