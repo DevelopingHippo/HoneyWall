@@ -61,12 +61,12 @@ def logparse(service_name):
     filelog = open((logpath + service_name + ".log"), 'r+')
     for line in filelog:
         x = json.loads(line)
-        action = x["action"]
         if action == "login":
             status = x["status"]
             username = x["username"]
             password = x["password"]
-            query_login(username, password)
+            if username != "" and password != "":
+                query_login(username, password)
         elif action == "connection":
             dest_ip = x["dest_ip"]
             dest_port = x["dest_port"]
@@ -90,4 +90,4 @@ while True:
     logparse("http")
     logparse("https")
     logparse("telnet")
-    time.sleep(60)
+    time.sleep(10)
