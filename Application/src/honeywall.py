@@ -9,7 +9,7 @@ import time
 import json
 
 # setting log path variables
-data_id = 0
+global data_id = 0
 logpath = "/var/log/honeypots/"
 
 # executing command to start the honeypots, root doesnt matter because it will be root in the container
@@ -37,12 +37,12 @@ while not db.is_connected():
 cursor = db.cursor()
 cursor.execute("SELECT max(id) as last_id FROM connections LIMIT 1")
 result = cursor.fetchone()
-data_id = int(result[0]) + 1
+data_id = int(result[0])
 
 
 # connection to the database to actually push the data
 def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, location):
-    data_id += 1
+    global data_id += 1
     query = "INSERT INTO connections VALUES (%s, %d, %s, %d, %s, %s, %s)"
     data = (dst_ip, dst_port, src_ip, src_port, timestamp, service, location)
     cursor.execute(query, data)
