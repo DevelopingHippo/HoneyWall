@@ -61,6 +61,7 @@ def logparse(service_name):
     filelog = open((logpath + service_name + ".log"), 'r+')
     for line in filelog:
         x = json.loads(line)
+        action = x["action"]
         if action == "login":
             status = x["status"]
             username = x["username"]
