@@ -1,4 +1,4 @@
-```# TODO
+# TODO
 # convert ip address to geolocation
 # make sure that the data is sent to db properly
 
@@ -72,4 +72,3 @@ while True:
     logparse("https")
     logparse("telnet")
     time.sleep(60)
-```
