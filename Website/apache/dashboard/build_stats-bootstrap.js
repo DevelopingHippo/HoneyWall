@@ -173,9 +173,39 @@ async function build_pie(type, position){
     var ctx = canvas.getContext('2d');
 
 
+    let pie_label_text = "";
+    // Replace the text with your desired content
+    switch (type) {
+        case "location":
+            pie_label_text = "Top Geolocations";
+            break;
+        case "dst_port":
+            pie_label_text = "Top Port";
+            break;
+        case "src_ip":
+            pie_label_text = "Top IP";
+            break;
+        case "username":
+            pie_label_text = "Top Username";
+            break;
+        case "password":
+            pie_label_text = "Top Password";
+            break;
+        case "service":
+            pie_label_text = "Top Services";
+            break;
+    }
+    pie_label.textContent = pie_label_text;
+
+
+
     var options = {
         tooltip: {
             enabled: true
+        },
+        title: {
+            display: true,
+            text: pie_label_text
         },
         responsive: true,
         maintainAspectRatio: true
@@ -204,30 +234,30 @@ async function build_pie(type, position){
     });
 
 
-    let pie_label = document.getElementById('pie-label-' + position);
-    let pie_label_text = "";
-    // Replace the text with your desired content
-    switch (type) {
-        case "location":
-            pie_label_text = "Top Geolocations";
-            break;
-        case "dst_port":
-            pie_label_text = "Top Port";
-            break;
-        case "src_ip":
-            pie_label_text = "Top IP";
-            break;
-        case "username":
-            pie_label_text = "Top Username";
-            break;
-        case "password":
-            pie_label_text = "Top Password";
-            break;
-        case "service":
-            pie_label_text = "Top Services";
-            break;
-    }
-    pie_label.textContent = pie_label_text;
+    // let pie_label = document.getElementById('pie-label-' + position);
+    // let pie_label_text = "";
+    // // Replace the text with your desired content
+    // switch (type) {
+    //     case "location":
+    //         pie_label_text = "Top Geolocations";
+    //         break;
+    //     case "dst_port":
+    //         pie_label_text = "Top Port";
+    //         break;
+    //     case "src_ip":
+    //         pie_label_text = "Top IP";
+    //         break;
+    //     case "username":
+    //         pie_label_text = "Top Username";
+    //         break;
+    //     case "password":
+    //         pie_label_text = "Top Password";
+    //         break;
+    //     case "service":
+    //         pie_label_text = "Top Services";
+    //         break;
+    // }
+    // pie_label.textContent = pie_label_text;
 }
 
 async function build_vert(type, position) {

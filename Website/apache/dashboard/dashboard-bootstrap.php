@@ -59,16 +59,16 @@ printPreloader();
             <h6 class="vert-h6" id="vert-label-4">Vert Label 4</h6>
             <table id="vert-table-4"></table>
         </div>
-        <div class="top-pie-1"><h4 id="pie-label-1">Label 1</h4>
+        <div class="top-pie-1"><h4 id="pie-label-1"></h4>
             <canvas id="chart-pie-1"</canvas>
         </div>
-        <div class="top-pie-2"><h4 id="pie-label-2">Label 2</h4>
+        <div class="top-pie-2"><h4 id="pie-label-2"></h4>
             <canvas id="chart-pie-2"</canvas>
         </div>
-        <div class="top-pie-3"><h4 id="pie-label-3">Label 3</h4>
+        <div class="top-pie-3"><h4 id="pie-label-3"></h4>
             <canvas id="chart-pie-3"</canvas>
         </div>
-        <div class="top-pie-4"><h4 id="pie-label-4">Label 4</h4>
+        <div class="top-pie-4"><h4 id="pie-label-4"></h4>
             <canvas id="chart-pie-4"</canvas>
         </div>
 

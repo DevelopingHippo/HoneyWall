@@ -118,8 +118,6 @@ td {
 canvas{
     width:300px !important;
     height:300px !important;
-    justify-content: center;
-    align-items: center;
 }
 
 /* Section for Pie Charts*/
