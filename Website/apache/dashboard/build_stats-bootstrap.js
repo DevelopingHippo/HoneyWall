@@ -174,25 +174,25 @@ async function build_pie(type, position){
 
 
     var options = {
-        title: {
-            display: true,
-            position: 'top'
-        }
+        tooltip: {
+            enabled: true
+        },
     };
 
     var data = {
         labels: label_array,
-        datasets: [
-            {
+        datasets: [{
                 fill: true,
                 backgroundColor: [
-                    'black',
-                    'white'],
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)',
+                    'rgb(255, 255, 86)',
+                    'rgb(255, 0, 86)'
+                ],
                 data: data_array,
-                borderColor:	['black', 'black'],
-                borderWidth: [2,2]
-            }
-        ]
+                hoverOffset: 4
+            }]
     };
 
     const myChart = new Chart(ctx, {
