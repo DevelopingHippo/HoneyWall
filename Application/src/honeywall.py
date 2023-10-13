@@ -42,9 +42,8 @@ data_id = int(result[0])
 
 # connection to the database to actually push the data
 def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, location):
-    count = global data_id
-     count += 1
-     data_id = count
+    global data_id
+    data_id += 1
     query = "INSERT INTO connections VALUES (%s, %d, %s, %d, %s, %s, %s)"
     data = (dst_ip, dst_port, src_ip, src_port, timestamp, service, location)
     cursor.execute(query, data)
