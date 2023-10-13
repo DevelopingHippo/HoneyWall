@@ -195,7 +195,7 @@ async function build_pie(type, position){
         ]
     };
 
-    var myChart = new Chart(ctx, {
+    const myChart = new Chart(ctx, {
         type: 'pie',
         data: data,
         options: options
