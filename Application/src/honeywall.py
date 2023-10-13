@@ -29,7 +29,7 @@ data_id = int(result) + 1
 
 
 # connection to the database to actually push the data
-def query_connection(dst_ip, dst_port, src_ip, src_port, timestamp, date, service, location):
+def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, location):
     data_id += 1
     query = "INSERT INTO connections VALUES (%s, %d, %s, %d, %s, %s, %s)"
     data = (dst_ip, dst_port, src_ip, src_port, timestamp, service, location)
@@ -62,7 +62,8 @@ def logparse(service_name):
             timeformat = x["timestamp"]
             timeformat = timeformat.split("T")
             timestamp = str(timeformat[0]) + " " + str(timeformat[1])
-            query_connection(action, dest_ip, dest_port, src_ip, src_port, service_name, timestamp)
+            location = "US"
+            query_connection(dest_ip, dest_port, src_ip, src_port, service_name, timestamp, location)
         else:
             continue
 
