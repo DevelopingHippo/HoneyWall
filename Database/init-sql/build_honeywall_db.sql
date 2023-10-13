@@ -3,7 +3,7 @@ use honeywall;
 
 # Connections Table
 create table connections(
-    id INT NOT NULL AUTO_INCREMENT,
+    id INT NOT NULL,
     dst_ip VARCHAR(15),
     dst_port INT,
     src_ip VARCHAR(15),
@@ -19,3 +19,5 @@ create table logins(
     password VARCHAR(64),
     FOREIGN KEY (id) REFERENCES connections(id)
 );
+
+INSERT INTO connections VALUES (1, '127.0.0.1', 0, '0', 0, '2023-06-29 13:54:57', 'test', 'US');

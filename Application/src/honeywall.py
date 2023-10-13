@@ -15,6 +15,9 @@ logpath = "/var/log/honeypots/"
 # executing command to start the honeypots, root doesnt matter because it will be root in the container
 os.system("python3 -m honeypots --setup ssh,http,https,telnet --config honeypotconfig.json")
 
+time.sleep(20)
+
+
 # connecting to db
 db = mysql.connector.connect(
     host="db_honey",
