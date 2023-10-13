@@ -14,7 +14,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y && apt autor
 
 COPY ./src ./
 RUN pip install --upgrade pip
-RUN pip install --upgrade wheel
-RUN pip install --upgrade setuptools
+#RUN pip install --upgrade wheel
+#RUN pip install --upgrade setuptools
 RUN pip install -r requirements.txt
 CMD ["python3", "/app/honeywall.py"]
