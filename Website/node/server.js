@@ -40,7 +40,7 @@ app.get('/', cors(corsOptions), function(req, res){
 app.get('/get-map-data', cors(corsOptions), async function (req, res) {
     try {
         res.setHeader('Content-Type', 'application/json');
-        let query = "SELECT location, sum(packets) AS total_packets FROM connections GROUP BY location;";
+        let query = "SELECT location, count(location) AS total_connections FROM connections GROUP BY location;";
         const result = await db_query(query);
         let formatted_result = '{';
         for (var i = 0; i < result.length - 1; i++) {
