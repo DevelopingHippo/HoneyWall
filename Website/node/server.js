@@ -116,7 +116,7 @@ app.get('/get-pie-data', cors(corsOptions), async function (req, res) {
         for (let i = 0; i < result.length - 1; i++) {
             formatted_result += '{"name": "' + result[i]['data'] + '", "share": ' + result[i]['total_count'] + '},';
         }
-        formatted_result += '{"name": "' + result[result.length - 1]['data'] + '", "share": ' + ((parseFloat(result[result.length - 1]['total_count']) / total) * 100).toFixed(2) + "}]";
+        formatted_result += '{"name": "' + result[result.length - 1]['data'] + '", "share": ' + ((parseFloat(result[result.length - 1]))) + "}]";
         let json_format = JSON.parse(formatted_result);
         res.json(json_format);
     }
