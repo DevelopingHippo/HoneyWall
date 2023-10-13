@@ -49,7 +49,8 @@ def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, loc
     cursor.execute(query, data)
     db.commit()
 
-def query_login(data_id, username, password):
+def query_login(username, password):
+    global data_id
     query = "INSERT INTO logins VALUES (%s, %s, %s)"
     data = (data_id, username, password)
     cursor.execute(query, data)
@@ -66,8 +67,7 @@ def logparse(service_name):
             status = x["status"]
             username = x["username"]
             password = x["password"]
-            if username != "" and password != "":
-                query_login(username, password)
+            query_login(username, password)
         elif action == "connection":
             dest_ip = x["dest_ip"]
             dest_port = x["dest_port"]
