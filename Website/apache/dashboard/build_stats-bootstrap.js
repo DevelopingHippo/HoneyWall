@@ -173,7 +173,7 @@ async function build_pie(type, position){
     var ctx = canvas.getContext('2d');
 
 
-    let pie_label_text = "";
+    let pie_label_text = "test";
     // Replace the text with your desired content
     switch (type) {
         case "location":
