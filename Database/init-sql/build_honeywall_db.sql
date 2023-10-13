@@ -17,6 +17,7 @@ create table ssh(
     id INT NOT NULL,
     username VARCHAR(64),
     password VARCHAR(64),
+    action VARCHAR(64)
     FOREIGN KEY (id) REFERENCES connections(id)
 );
 create table smb(
