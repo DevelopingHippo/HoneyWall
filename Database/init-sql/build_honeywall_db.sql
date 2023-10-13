@@ -19,5 +19,3 @@ create table logins(
     password VARCHAR(64),
     FOREIGN KEY (id) REFERENCES connections(id)
 );
-
-INSERT INTO connections VALUES (1, '127.0.0.1', 0, '0', 0, '2023-06-29 13:54:57', 'test', 'US');
