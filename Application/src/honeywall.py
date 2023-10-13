@@ -22,6 +22,15 @@ db = mysql.connector.connect(
     password="P@ssw0rd",
     database="honeywall"
 )
+
+while not db.is_connected():
+    db = mysql.connector.connect(
+        host="db_honey",
+        user="honeywall",
+        password="P@ssw0rd",
+        database="honeywall"
+    )
+
 cursor = db.cursor()
 cursor.execute("SELECT max(id) as last_id FROM connections LIMIT 1")
 result = cursor.fetchone()
