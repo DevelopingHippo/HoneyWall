@@ -36,11 +36,12 @@ while not db.is_connected():
 
 cursor = db.cursor()
 cursor.execute("SELECT max(id) as last_id FROM connections LIMIT 1")
-result = cursor.fetchone()
+
 
 if cursor.rowcount == 0:
     data_id = 0
 else:
+    result = cursor.fetchone()
     data_id = int(result[0])
 
 
