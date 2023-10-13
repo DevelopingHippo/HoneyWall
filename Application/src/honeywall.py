@@ -35,13 +35,8 @@ while not db.is_connected():
     )
 
 cursor = db.cursor(buffered=True)
-cursor.execute("SELECT max(id) as last_id FROM connections LIMIT 1")
-result = cursor.fetchall()
-
-if not result:
-    data_id = 0
-else:
-    data_id = int(result[0])
+#cursor.execute("SELECT max(id) as last_id FROM connections LIMIT 1")
+#result = cursor.fetchall()
 
 
 # connection to the database to actually push the data
