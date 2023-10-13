@@ -160,8 +160,14 @@ async function build_pie(type, position){
     let position_tag = "#chart-pie-" + position;
     let data_api = await apiCall("/api/get-pie-data?type=" + type);
 
-    const label_array = Object.keys(data_api);
-    const data_array = Object.values(data_api);
+    const label_array = data_api.map(
+        function(index){
+            return index.name;
+        });
+    const data_array = data_api.map(
+        function(index){
+            return index.share;
+        });
 
     var canvas = document.getElementById("chart-pie-" + position);
     var ctx = canvas.getContext('2d');
@@ -175,21 +181,21 @@ async function build_pie(type, position){
     };
 
     var data = {
-        labels: ["Taiwan", "China"],
+        labels: label_array,
         datasets: [
             {
                 fill: true,
                 backgroundColor: [
                     'black',
                     'white'],
-                data: [5, 95],
+                data: data_array,
                 borderColor:	['black', 'black'],
                 borderWidth: [2,2]
             }
         ]
     };
 
-    var myBarChart = new Chart(ctx, {
+    var myChart = new Chart(ctx, {
         type: 'pie',
         data: data,
         options: options
