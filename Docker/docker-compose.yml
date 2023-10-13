@@ -40,6 +40,8 @@ services:
     build:
       context: ../Application
       dockerfile: Dockerfile
+    environment:
+      - DB_PASSWORD = "P@ssw0rd"
     ports: # List of Open Ports Being Honeypotted by the Application
       - "2222:22"
       - "2323:23"

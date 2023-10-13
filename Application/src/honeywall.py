@@ -12,6 +12,12 @@ import json
 data_id = 0
 logpath = "/var/log/honeypots/"
 
+db_password = os.getenv('DB_PASSWORD')
+db_user = 'honey'
+db_host = 'db_honey'
+db_database = 'honeywall'
+
+
 # executing command to start the honeypots, root doesnt matter because it will be root in the container
 os.system("python3 -m honeypots --setup ssh,http,https,telnet --config honeypotconfig.json")
 
@@ -20,19 +26,20 @@ time.sleep(20)
 
 # connecting to db
 db = mysql.connector.connect(
-    host="db_honey",
-    user="honey",
-    password="P@ssw0rd",
-    database="honeywall"
+    host=db_host,
+    user=db_user,
+    password=db_password,
+    database=db_database
 )
 
 while not db.is_connected():
     db = mysql.connector.connect(
-        host="db_honey",
-        user="honeywall",
-        password="P@ssw0rd",
-        database="honeywall"
+        host=db_host,
+        user=db_user,
+        password=db_password,
+        database=db_database
     )
+
 
 cursor = db.cursor(buffered=True)
 cursor.execute("SELECT max(id) as last_id FROM connections LIMIT 1")
@@ -43,11 +50,12 @@ db.close()
 # connection to the database to actually push the data
 def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, location):
     db = mysql.connector.connect(
-        host="db_honey",
-        user="honey",
-        password="P@ssw0rd",
-        database="honeywall"
+        host=db_host,
+        user=db_user,
+        password=db_password,
+        database=db_database
     )
+
     cursor = db.cursor(buffered=True)
 
     global data_id
@@ -60,11 +68,12 @@ def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, loc
 
 def query_login(username, password):
     db = mysql.connector.connect(
-        host="db_honey",
-        user="honey",
-        password="P@ssw0rd",
-        database="honeywall"
+        host=db_host,
+        user=db_user,
+        password=db_password,
+        database=db_database
     )
+
 
     global data_id
     query = "INSERT INTO logins VALUES (%s, %s, %s)"
