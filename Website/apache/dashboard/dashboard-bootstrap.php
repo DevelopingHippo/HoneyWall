@@ -41,7 +41,7 @@ printPreloader();
             <h1>Control Panel</h1>
         </div>
         <div class="bar-chart">
-            <svg id="bar-chart" width="600" height="500"></svg>
+            <canvas id="bar-chart"></canvas>
         </div>
         <div class="top-vert-1">
             <h6 class="vert-h6" id="vert-label-1">Vert Label 1</h6>
@@ -60,16 +60,16 @@ printPreloader();
             <table id="vert-table-4"></table>
         </div>
         <div class="top-pie-1"><h4 id="pie-label-1"></h4>
-            <canvas id="chart-pie-1"</canvas>
+            <canvas id="chart-pie-1"></canvas>
         </div>
         <div class="top-pie-2"><h4 id="pie-label-2"></h4>
-            <canvas id="chart-pie-2"</canvas>
+            <canvas id="chart-pie-2"></canvas>
         </div>
         <div class="top-pie-3"><h4 id="pie-label-3"></h4>
-            <canvas id="chart-pie-3"</canvas>
+            <canvas id="chart-pie-3"></canvas>
         </div>
         <div class="top-pie-4"><h4 id="pie-label-4"></h4>
-            <canvas id="chart-pie-4"</canvas>
+            <canvas id="chart-pie-4"></canvas>
         </div>
 
         <div class="live-map">
