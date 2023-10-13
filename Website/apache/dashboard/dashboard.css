@@ -128,6 +128,8 @@ canvas{
     background-color: #36404a;
     border-radius: 20px;
     padding-bottom: 10px;
+    justify-content: center;
+    align-items: center;
 }
 .top-pie-2 {
     grid-row: 2;
@@ -136,6 +138,8 @@ canvas{
     background-color: #36404a;
     border-radius: 20px;
     padding-bottom: 10px;
+    justify-content: center;
+    align-items: center;
 }
 .top-pie-3 {
     grid-row: 3;
@@ -144,6 +148,8 @@ canvas{
     background-color: #36404a;
     border-radius: 20px;
     padding-bottom: 10px;
+    justify-content: center;
+    align-items: center;
 }
 .top-pie-4 {
     grid-row: 3;
@@ -152,4 +158,6 @@ canvas{
     background-color: #36404a;
     border-radius: 20px;
     padding-bottom: 10px;
+    justify-content: center;
+    align-items: center;
 }
