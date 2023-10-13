@@ -195,9 +195,6 @@ async function build_pie(type, position){
             pie_label_text = "Top Services";
             break;
     }
-    pie_label.textContent = pie_label_text;
-
-
 
     var options = {
         tooltip: {
