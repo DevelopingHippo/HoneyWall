@@ -2,7 +2,7 @@ FROM python:3.11.4-slim-bullseye
 
 WORKDIR /app
 
-RUN apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y && apt autoremove -y && apt install libpq-dev -y
+RUN apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y && apt autoremove -y && apt install libpq-dev python3-dev -y
 
 # THIS IS FOR LATER
 #WORKDIR /opt
