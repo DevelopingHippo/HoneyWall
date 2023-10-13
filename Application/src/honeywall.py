@@ -37,7 +37,7 @@ while not db.is_connected():
 cursor = db.cursor()
 cursor.execute("SELECT max(id) as last_id FROM connections LIMIT 1")
 result = cursor.fetchone()
-data_id = int(result) + 1
+data_id = int(result[0]) + 1
 
 
 # connection to the database to actually push the data
