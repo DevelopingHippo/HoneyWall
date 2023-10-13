@@ -178,7 +178,7 @@ async function build_pie(type, position){
             enabled: true
         },
         responsive: true,
-        maintainAspectRatio: false
+        maintainAspectRatio: true
     };
 
     var data = {
