@@ -81,6 +81,7 @@ def logparse(service_name):
 
     filelog.truncate(0)
     filelog.close()
+    print("Logs Parsed!")
 
 # while loop to constantly run through each protocol push and wait 30 seconds
 while True:
