@@ -35,25 +35,43 @@ while not db.is_connected():
     )
 
 cursor = db.cursor(buffered=True)
-#cursor.execute("SELECT max(id) as last_id FROM connections LIMIT 1")
+cursor.execute("SELECT max(id) as last_id FROM connections LIMIT 1")
+db.close()
 #result = cursor.fetchall()
 
 
 # connection to the database to actually push the data
 def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, location):
+    db = mysql.connector.connect(
+        host="db_honey",
+        user="honey",
+        password="P@ssw0rd",
+        database="honeywall"
+    )
+    cursor = db.cursor(buffered=True)
+
     global data_id
     data_id += 1
     query = "INSERT INTO connections VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
     data = (data_id, dst_ip, dst_port, src_ip, src_port, timestamp, service, location)
     cursor.execute(query, data)
     db.commit()
+    db.close()
 
 def query_login(username, password):
+    db = mysql.connector.connect(
+        host="db_honey",
+        user="honey",
+        password="P@ssw0rd",
+        database="honeywall"
+    )
+
     global data_id
     query = "INSERT INTO logins VALUES (%s, %s, %s)"
     data = (data_id, username, password)
     cursor.execute(query, data)
     db.commit()
+    db.close()
 
 
 # read/write the file, send contents to the database connection method, clear the file
