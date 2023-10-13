@@ -115,7 +115,10 @@ td {
 }
 
 
-
+canvas{
+    width:300px !important;
+    height:300px !important;
+}
 
 /* Section for Pie Charts*/
 .top-pie-1 {
