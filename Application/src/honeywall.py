@@ -9,7 +9,7 @@ import time
 import json
 
 # setting log path variables
-global data_id = 0
+data_id = 0
 logpath = "/var/log/honeypots/"
 
 # executing command to start the honeypots, root doesnt matter because it will be root in the container
