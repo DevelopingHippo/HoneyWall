@@ -177,6 +177,8 @@ async function build_pie(type, position){
         tooltip: {
             enabled: true
         },
+        responsive: true,
+        maintainAspectRatio: false
     };
 
     var data = {
