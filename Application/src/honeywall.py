@@ -44,7 +44,7 @@ data_id = int(result[0])
 def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, location):
     global data_id
     data_id += 1
-    query = "INSERT INTO connections VALUES (%d, %s, %d, %s, %d, %s, %s, %s)"
+    query = "INSERT INTO connections VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
     data = (data_id, dst_ip, dst_port, src_ip, src_port, timestamp, service, location)
     cursor.execute(query, data)
     db.commit()
