@@ -10,6 +10,8 @@ services:
     depends_on:
       - db_honey
     #restart: unless-stopped
+    networks:
+      - honeywall_data
 
   db_honey:
     container_name: db_honey
@@ -26,6 +28,7 @@ services:
       - "3306:3306"
     networks:
       - web_data
+      - honeywall_data
     #restart: unless-stopped
 
   web_honey:
@@ -45,5 +48,7 @@ services:
     depends_on:
       - db_honey
 networks:
+  honeywall_data:
+    driver: bridge
   web_data:
     driver: bridge
