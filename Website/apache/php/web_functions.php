@@ -52,9 +52,6 @@ function printHeader(): void
             </nav>
         </header>';
     }
-    if
-
-
 }
 
 
