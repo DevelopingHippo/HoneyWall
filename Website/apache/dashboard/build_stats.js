@@ -4,11 +4,11 @@ async function build_bar_chart() {
 
     const label_array = data_api.map(
         function(index){
-            return index.name;
+            return index.month;
         });
     const data_array = data_api.map(
         function(index){
-            return index.share;
+            return index.num_connections;
         });
 
 
@@ -16,10 +16,10 @@ async function build_bar_chart() {
     var chartId = new Chart(chrt, {
         type: 'bar',
         data: {
-            labels: ["HTML", "CSS", "JAVASCRIPT", "CHART.JS", "JQUERY", "BOOTSTRP"],
+            labels: label_array,
             datasets: [{
                 label: '# of Connections',
-                data: [65, 59, 80, 81, 56, 55, 40],
+                data: data_array,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(255, 159, 64, 0.2)',

@@ -133,51 +133,51 @@ app.get('/get-chart-data', cors(corsOptions), function (req, res) {
     res.json([
             {
                 "month": "January",
-                "packet_number": 1000
+                "num_connections": 1000
             },
             {
                 "month": "February",
-                "packet_number": 1200
+                "num_connections": 1200
             },
             {
                 "month": "March",
-                "packet_number": 300
+                "num_connections": 300
             },
             {
                 "month": "April",
-                "packet_number": 400
+                "num_connections": 400
             },
             {
                 "month": "May",
-                "packet_number": 450
+                "num_connections": 450
             },
             {
                 "month": "June",
-                "packet_number": 355
+                "num_connections": 355
             },
             {
                 "month": "July",
-                "packet_number": 203
+                "num_connections": 203
             },
             {
                 "month": "August",
-                "packet_number": 122
+                "num_connections": 122
             },
             {
                 "month": "September",
-                "packet_number": 700
+                "num_connections": 700
             },
             {
                 "month": "October",
-                "packet_number": 960
+                "num_connections": 960
             },
             {
                 "month": "November",
-                "packet_number": 104
+                "num_connections": 104
             },
             {
                 "month": "December",
-                "packet_number": 1010
+                "num_connections": 1010
             }
         ]
     );
