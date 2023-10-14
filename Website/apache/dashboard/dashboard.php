@@ -79,12 +79,12 @@ printPreloader();
         <script>
             build_bar_chart();
             build_map();
-            build_pie("location", 1);
-            build_pie("dst_port", 2)
+            build_pie("password", 1);
+            build_pie("username", 2)
             build_pie("src_ip", 3);
             build_pie("service", 4);
-            build_vert("location", 1);
-            build_vert("dst_port", 2);
+            build_vert("username", 1);
+            build_vert("password", 2);
             build_vert("service", 3);
             build_vert("src_ip", 4);
         </script>
