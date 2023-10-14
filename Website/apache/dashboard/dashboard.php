@@ -169,7 +169,6 @@ printPreloader();
         </div>
 
         <script>
-            build_control_panel();
             build_bar_chart();
             build_map();
             build_pie(document.getElementById('pie-chart-1').value, 1);
