@@ -47,7 +47,7 @@ printPreloader();
                             <option value="service">Services</option>
                             <option value="port">Ports</option>
                             <option value="src_ip">Src. IPs</option>
-                            <option value="dst_ip">Dest. IPs</option>
+                            <option value="dst_port">Dest. Port</option>
                             <option value="location">Locations</option>
                         </select></td></tr>
                         <tr><td><label for="pie-chart-2">Pie Chart 2</label></td>
@@ -57,7 +57,7 @@ printPreloader();
                             <option value="service">Services</option>
                             <option value="port">Ports</option>
                             <option value="src_ip">Src. IPs</option>
-                            <option value="dst_ip">Dest. IPs</option>
+                            <option value="dst_port">Dest. Port</option>
                             <option value="location">Locations</option>
                         </select></td></tr>
                         <tr><td><label for="pie-chart-3">Pie Chart 3</label></td>
@@ -67,7 +67,7 @@ printPreloader();
                             <option value="service">Services</option>
                             <option value="port">Ports</option>
                             <option value="src_ip" selected>Src. IPs</option>
-                            <option value="dst_ip">Dest. IPs</option>
+                            <option value="dst_port">Dest. Port</option>
                             <option value="location">Locations</option>
                         </select></td></tr>
                         <tr><td><label for="pie-chart-4">Pie Chart 4</label></td>
@@ -77,7 +77,7 @@ printPreloader();
                             <option value="service">Services</option>
                             <option value="port">Ports</option>
                             <option value="src_ip">Src. IPs</option>
-                            <option value="dst_ip">Dest. IPs</option>
+                            <option value="dst_port">Dest. Port</option>
                             <option value="location" selected>Locations</option>
                         </select></td></tr>
                     </table>
@@ -89,7 +89,7 @@ printPreloader();
                                 <option value="service">Services</option>
                                 <option value="port">Ports</option>
                                 <option value="src_ip">Src. IPs</option>
-                                <option value="dst_ip">Dest. IPs</option>
+                                <option value="dst_port">Dest. Port</option>
                                 <option value="location">Locations</option>
                             </select></td></tr>
                         <tr><td><label for="vert-2">Vert 2</label></td>
@@ -99,7 +99,7 @@ printPreloader();
                                 <option value="service">Services</option>
                                 <option value="port">Ports</option>
                                 <option value="src_ip">Src. IPs</option>
-                                <option value="dst_ip">Dest. IPs</option>
+                                <option value="dst_port">Dest. Port</option>
                                 <option value="location">Locations</option>
                         </select></td></tr>
                         <tr><td><label for="vert-3">Vert 3</label></td>
@@ -109,7 +109,7 @@ printPreloader();
                                 <option value="service">Services</option>
                                 <option value="port">Ports</option>
                                 <option value="src_ip" selected>Src. IPs</option>
-                                <option value="dst_ip">Dest. IPs</option>
+                                <option value="dst_port">Dest. Port</option>
                                 <option value="location">Locations</option>
                             </select></td></tr>
                         <tr><td><label for="vert-4">Vert 4</label></td>
@@ -119,7 +119,7 @@ printPreloader();
                                 <option value="service">Services</option>
                                 <option value="port">Ports</option>
                                 <option value="src_ip">Src. IPs</option>
-                                <option value="dst_ip">Dest. IPs</option>
+                                <option value="dst_port">Dest. Port</option>
                                 <option value="location" selected>Locations</option>
                             </select></td></tr>
                     </table>
