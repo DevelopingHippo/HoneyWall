@@ -25,7 +25,7 @@ loginCheck();
     <!-- Internal Dependencies -->
     <link rel="stylesheet" href="dashboard.css" type="text/css">
     <link rel="stylesheet" href="../css/site-global.css" type="text/css">
-    <script src="build_stats-bootstrap.js"></script>
+    <script src="build_stats.js"></script>
 
 </head>
 <body>
