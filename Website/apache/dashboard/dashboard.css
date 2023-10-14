@@ -104,8 +104,8 @@ canvas {
 table {
     padding-top: 0;
     color: #fff;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     font-size: 20px;
 }
