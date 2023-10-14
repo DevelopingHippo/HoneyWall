@@ -8,48 +8,6 @@ import mysql.connector
 import time
 import json
 
-# setting log path variables
-data_id = 0
-logpath = "/var/log/honeypots/"
-
-db_password = os.getenv('DB_PASSWORD')
-
-
-print(db_password)
-
-db_user = 'honey'
-db_host = 'db_honey'
-db_database = 'honeywall'
-
-
-# executing command to start the honeypots, root doesnt matter because it will be root in the container
-os.system("python3 -m honeypots --setup ssh,http,https,telnet --config honeypotconfig.json")
-
-time.sleep(20)
-
-
-# connecting to db
-db = mysql.connector.connect(
-    host=db_host,
-    user=db_user,
-    password=db_password,
-    database=db_database
-)
-
-while not db.is_connected():
-    db = mysql.connector.connect(
-        host=db_host,
-        user=db_user,
-        password=db_password,
-        database=db_database
-    )
-
-
-cursor = db.cursor(buffered=True)
-cursor.execute("SELECT max(id) as last_id FROM connections LIMIT 1")
-db.close()
-#result = cursor.fetchall()
-
 
 # connection to the database to actually push the data
 def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, location):
@@ -113,7 +71,49 @@ def logparse(service_name):
 
     filelog.truncate(0)
     filelog.close()
-    print("Logs Parsed!")
+
+
+# setting log path variables
+data_id = 0
+logpath = "/var/log/honeypots/"
+
+db_password = os.getenv('DB_PASSWORD')
+
+db_user = 'honey'
+db_host = 'db_honey'
+db_database = 'honeywall'
+
+
+# executing command to start the honeypots, root doesnt matter because it will be root in the container
+os.system("python3 -m honeypots --setup ssh,http,https,telnet --config honeypotconfig.json")
+
+time.sleep(20)
+
+
+# connecting to db
+db = mysql.connector.connect(
+    host=db_host,
+    user=db_user,
+    password=db_password,
+    database=db_database
+)
+
+while not db.is_connected():
+    db = mysql.connector.connect(
+        host=db_host,
+        user=db_user,
+        password=db_password,
+        database=db_database
+    )
+
+cursor = db.cursor(buffered=True)
+cursor.execute("SELECT max(id) as last_id FROM connections LIMIT 1")
+
+result = cursor.fetchall()
+if result != None:
+    data_id = result[0]
+db.close()
+
 
 # while loop to constantly run through each protocol push and wait 30 seconds
 while True:
