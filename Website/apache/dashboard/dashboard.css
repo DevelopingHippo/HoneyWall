@@ -1,4 +1,3 @@
-
 section{
     display: flex;
     justify-content: center;
@@ -24,6 +23,15 @@ section{
     width: 90%;
 }
 
+canvas {
+    padding: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 .stats > div {
     text-align: center;
     font-size: 25px;
@@ -39,6 +47,10 @@ section{
     display: flex;
     justify-content: center; /* center horizontally */
     align-items: center; /* center vertically */
+}
+.bar-chart-canvas {
+    width:750px !important;
+    height:300px !important;
 }
 
 .control-panel {
@@ -94,40 +106,17 @@ table {
     color: #fff;
     margin-left: auto;
     margin-right: auto;
-}
-tr {
-    text-align: center;
+    text-align: left;
     font-size: 20px;
+}
+/*tr {
+
+
 }
 td {
-    text-align: center;
+    text-align: left;
 }
-#numbers {
-    font-size: 20px;
-}
-
-#vert-2-table {
-    font-size: 20px;
-}
-
-canvas {
-    padding: 0;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-.bar-chart-canvas {
-    width:750px !important;
-    height:300px !important;
-}
-.pie-chart-canvas {
-    width:300px !important;
-    height:300px !important;
-}
-
+*/
 
 /* Section for Pie Charts*/
 .top-pie-1 {
@@ -161,4 +150,8 @@ canvas {
     background-color: #36404a;
     border-radius: 20px;
     padding-bottom: 10px;
+}
+.pie-chart-canvas {
+    width:300px !important;
+    height:300px !important;
 }
