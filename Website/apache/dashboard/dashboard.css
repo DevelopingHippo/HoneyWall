@@ -114,9 +114,19 @@ td {
     font-size: 20px;
 }
 
+canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 
 .bar-chart-canvas {
-    width:1000px !important;
+    width:750px !important;
     height:300px !important;
 }
 .pie-chart-canvas {
