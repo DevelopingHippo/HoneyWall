@@ -18,7 +18,7 @@ async function build_bar_chart() {
         data: {
             labels: ["HTML", "CSS", "JAVASCRIPT", "CHART.JS", "JQUERY", "BOOTSTRP"],
             datasets: [{
-                label: 'My First Dataset',
+                label: '# of Connections',
                 data: [65, 59, 80, 81, 56, 55, 40],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
