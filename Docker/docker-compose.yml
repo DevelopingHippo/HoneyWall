@@ -51,7 +51,7 @@ services:
       - "./logs/:/var/log/honeypots/"
     depends_on:
       - db_honey
-    #restart: unless-stopped
+    restart: unless-stopped
     networks:
       - honeywall_data
 
