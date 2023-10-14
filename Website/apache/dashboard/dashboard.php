@@ -26,7 +26,6 @@ loginCheck();
     <link rel="stylesheet" href="dashboard.css" type="text/css">
     <link rel="stylesheet" href="../css/site-global.css" type="text/css">
     <script src="build_stats.js"></script>
-    <meta http-equiv="refresh" content="5; URL=dashboard.php">
 </head>
 <body>
 <?php
