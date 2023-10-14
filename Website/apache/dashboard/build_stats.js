@@ -130,22 +130,22 @@ async function build_pie(type, position){
     // Replace the text with your desired content
     switch (type) {
         case "location":
-            pie_label_text = "Top Locations";
+            pie_label_text = "Top 5 Locations";
             break;
         case "dst_port":
-            pie_label_text = "Top Port";
+            pie_label_text = "Top 5 Port";
             break;
         case "src_ip":
-            pie_label_text = "Top IP";
+            pie_label_text = "Top 5 IPs";
             break;
         case "username":
-            pie_label_text = "Top Username";
+            pie_label_text = "Top 5 Username";
             break;
         case "password":
-            pie_label_text = "Top Password";
+            pie_label_text = "Top 5 Password";
             break;
         case "service":
-            pie_label_text = "Top Services";
+            pie_label_text = "Top 5 Services";
             break;
     }
     pie_label.textContent = pie_label_text;
@@ -167,22 +167,22 @@ async function build_vert(type, position) {
     // Replace the text with your desired content
     switch (type) {
         case "location":
-            vert_label_text = "Top Locations";
+            vert_label_text = "Top 8 Locations";
             break;
         case "dst_port":
-            vert_label_text = "Top Port";
+            vert_label_text = "Top 8 Port";
             break;
         case "src_ip":
-            vert_label_text = "Top IP";
+            vert_label_text = "Top 8 IP";
             break;
         case "username":
-            vert_label_text = "Top Username";
+            vert_label_text = "Top 8 Username";
             break;
         case "password":
-            vert_label_text = "Top Password";
+            vert_label_text = "Top 8 Password";
             break;
         case "service":
-            vert_label_text = "Top Services";
+            vert_label_text = "Top 8 Services";
             break;
     }
     vert_label.textContent = vert_label_text;
