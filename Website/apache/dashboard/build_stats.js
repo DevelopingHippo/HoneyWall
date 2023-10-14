@@ -47,7 +47,8 @@ async function build_bar_chart() {
                     beginAtZero: true
                 }
             },
-            responsive: true
+            responsive: true,
+            maintainAspectRatio: true
         },
     });
 }
