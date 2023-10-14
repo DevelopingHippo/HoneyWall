@@ -40,7 +40,7 @@ printPreloader();
         <div class="control-panel">
             <h1>Control Panel</h1>
         </div>
-        <div class="bar-chart">
+        <div class="bar-chart-wrapper">
             <canvas class="bar-chart-canvas" id="bar-chart"></canvas>
         </div>
         <div class="top-vert-1">
