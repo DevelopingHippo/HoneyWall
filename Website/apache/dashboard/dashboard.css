@@ -37,6 +37,18 @@ canvas {
     font-size: 25px;
 }
 
+.control-panel-wrapper {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    font-size: 15px;
+}
+#chart-column {
+    grid-row: 1;
+    grid-column: 1;
+}
+
 /* Section for Map and Vertical Stats*/
 .bar-chart-wrapper {
     grid-row: 1;

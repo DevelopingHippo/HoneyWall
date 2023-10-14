@@ -36,9 +36,103 @@ printPreloader();
 ?>
 <section>
     <div class="stats">
+
         <div class="control-panel">
             <h1>Control Panel</h1>
+                <div class="control-panel-wrapper">
+                    <table>
+                        <tr><td><label for="pie-chart-1">Pie Chart 1</label></td>
+                            <td><select name="pie-chart" id="pie-chart-1">
+                            <option value="username" selected>Usernames</option>
+                            <option value="password">Passwords</option>
+                            <option value="service">Services</option>
+                            <option value="port">Ports</option>
+                            <option value="src_ip">Src. IPs</option>
+                            <option value="dst_ip">Dest. IPs</option>
+                            <option value="location">Locations</option>
+                        </select></td></tr>
+                        <tr><td><label for="pie-chart-2">Pie Chart 2</label></td>
+                            <td><select name="pie-chart" id="pie-chart-2">
+                            <option value="username">Usernames</option>
+                            <option value="password" selected>Passwords</option>
+                            <option value="service">Services</option>
+                            <option value="port">Ports</option>
+                            <option value="src_ip">Src. IPs</option>
+                            <option value="dst_ip">Dest. IPs</option>
+                            <option value="location">Locations</option>
+                        </select></td></tr>
+                        <tr><td><label for="pie-chart-3">Pie Chart 3</label></td>
+                            <td><select name="pie-chart" id="pie-chart-3">
+                            <option value="username">Usernames</option>
+                            <option value="password">Passwords</option>
+                            <option value="service">Services</option>
+                            <option value="port">Ports</option>
+                            <option value="src_ip" selected>Src. IPs</option>
+                            <option value="dst_ip">Dest. IPs</option>
+                            <option value="location">Locations</option>
+                        </select></td></tr>
+                        <tr><td><label for="pie-chart-4">Pie Chart 4</label></td>
+                            <td><select name="pie-chart" id="pie-chart-4">
+                            <option value="username" selected>Usernames</option>
+                            <option value="password">Passwords</option>
+                            <option value="service">Services</option>
+                            <option value="port">Ports</option>
+                            <option value="src_ip">Src. IPs</option>
+                            <option value="dst_ip">Dest. IPs</option>
+                            <option value="location" selected>Locations</option>
+                        </select></td></tr>
+                    </table>
+
+
+
+                    <table>
+                        <tr><td><label for="vert-1">Vert 1</label></td>
+                            <td><select name="vert-chart" id="vert-1">
+                                <option value="username" selected>Usernames</option>
+                                <option value="password">Passwords</option>
+                                <option value="service">Services</option>
+                                <option value="port">Ports</option>
+                                <option value="src_ip">Src. IPs</option>
+                                <option value="dst_ip">Dest. IPs</option>
+                                <option value="location">Locations</option>
+                            </select></td></tr>
+                        <tr><td><label for="vert-2">Vert 2</label></td>
+                                <td><select name="vert-chart" id="vert-2">
+                                <option value="username">Usernames</option>
+                                <option value="password" selected>Passwords</option>
+                                <option value="service">Services</option>
+                                <option value="port">Ports</option>
+                                <option value="src_ip">Src. IPs</option>
+                                <option value="dst_ip">Dest. IPs</option>
+                                <option value="location">Locations</option>
+                        </select></td></tr>
+                        <tr><td><label for="vert-3">Vert 3</label></td>
+                                <td><select name="vert-chart" id="vert-3">
+                                <option value="username">Usernames</option>
+                                <option value="password">Passwords</option>
+                                <option value="service">Services</option>
+                                <option value="port">Ports</option>
+                                <option value="src_ip" selected>Src. IPs</option>
+                                <option value="dst_ip">Dest. IPs</option>
+                                <option value="location">Locations</option>
+                            </select></td></tr>
+                        <tr><td><label for="vert-4">Vert 4</label></td>
+                                <td><select name="vert-chart" id="vert-4">
+                                <option value="username" selected>Usernames</option>
+                                <option value="password">Passwords</option>
+                                <option value="service">Services</option>
+                                <option value="port">Ports</option>
+                                <option value="src_ip">Src. IPs</option>
+                                <option value="dst_ip">Dest. IPs</option>
+                                <option value="location" selected>Locations</option>
+                            </select></td></tr>
+                    </table>
+
+                </div>
         </div>
+
+
+
         <div class="bar-chart-wrapper">
             <canvas class="bar-chart-canvas" id="bar-chart"></canvas>
         </div>
@@ -76,16 +170,17 @@ printPreloader();
         </div>
 
         <script>
+            build_control_panel();
             build_bar_chart();
             build_map();
-            build_pie("password", 1);
-            build_pie("username", 2)
-            build_pie("src_ip", 3);
-            build_pie("service", 4);
-            build_vert("username", 1);
-            build_vert("password", 2);
-            build_vert("service", 3);
-            build_vert("src_ip", 4);
+            build_pie(document.getElementById('pie-chart-1').value, 1);
+            build_pie(document.getElementById('pie-chart-2').value, 2)
+            build_pie(document.getElementById('pie-chart-3').value, 3);
+            build_pie(document.getElementById('pie-chart-4').value, 4);
+            build_vert(document.getElementById('vert-1').value, 1);
+            build_vert(document.getElementById('vert-2').value, 2);
+            build_vert(document.getElementById('vert-3').value, 3);
+            build_vert(document.getElementById('vert-4').value, 4);
         </script>
     </div>
 </section>
