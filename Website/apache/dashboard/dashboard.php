@@ -36,7 +36,6 @@ printPreloader();
 ?>
 <section>
     <div class="stats">
-
         <div class="control-panel">
             <h1>Control Panel</h1>
                 <div class="control-panel-wrapper">
