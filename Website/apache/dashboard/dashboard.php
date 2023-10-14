@@ -81,9 +81,6 @@ printPreloader();
                             <option value="location" selected>Locations</option>
                         </select></td></tr>
                     </table>
-
-
-
                     <table>
                         <tr><td><label for="vert-1">Vert 1</label></td>
                             <td><select name="vert-chart" id="vert-1">
@@ -126,8 +123,8 @@ printPreloader();
                                 <option value="location" selected>Locations</option>
                             </select></td></tr>
                     </table>
-
                 </div>
+            <button class="apply-button" onclick="storeSelection()">Apply</button>
         </div>
 
 
@@ -171,14 +168,14 @@ printPreloader();
         <script>
             build_bar_chart();
             build_map();
-            build_pie(document.getElementById('pie-chart-1').value, 1);
-            build_pie(document.getElementById('pie-chart-2').value, 2)
-            build_pie(document.getElementById('pie-chart-3').value, 3);
-            build_pie(document.getElementById('pie-chart-4').value, 4);
-            build_vert(document.getElementById('vert-1').value, 1);
-            build_vert(document.getElementById('vert-2').value, 2);
-            build_vert(document.getElementById('vert-3').value, 3);
-            build_vert(document.getElementById('vert-4').value, 4);
+            build_pie(getCookie('pie-chart-1-selection'), 1);
+            build_pie(getCookie('pie-chart-2-selection'), 2)
+            build_pie(getCookie('pie-chart-3-selection'), 3);
+            build_pie(getCookie('pie-chart-4-selection'), 4);
+            build_vert(getCookie("vert-1-selection"), 1);
+            build_vert(getCookie("vert-2-selection"), 2);
+            build_vert(getCookie("vert-3-selection"), 3);
+            build_vert(getCookie("vert-4-selection"), 4);
         </script>
     </div>
 </section>

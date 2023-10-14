@@ -188,6 +188,36 @@ async function build_vert(type, position) {
     vert_label.textContent = vert_label_text;
 }
 
+function storeSelection() {
+
+    document.cookie = "pie-chart-1-selection=" + document.getElementById('pie-chart-1').value;
+    document.cookie = "pie-chart-2-selection=" + document.getElementById('pie-chart-2').value;
+    document.cookie = "pie-chart-3-selection=" + document.getElementById('pie-chart-3').value;
+    document.cookie = "pie-chart-4-selection=" + document.getElementById('pie-chart-4').value;
+
+    document.cookie = "vert-1-selection=" + document.getElementById('vert-1').value;
+    document.cookie = "vert-2-selection=" + document.getElementById('vert-2').value;
+    document.cookie = "vert-3-selection=" + document.getElementById('vert-3').value;
+    document.cookie = "vert-4-selection=" + document.getElementById('vert-4').value;
+
+}
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) === 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
 
 async function apiCall(url) {
     const response = await fetch(url);
