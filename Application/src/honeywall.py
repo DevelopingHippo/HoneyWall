@@ -17,11 +17,10 @@ def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, loc
         password=db_password,
         database=db_database
     )
-
-    cursor = db.cursor(buffered=True)
-
+    cursor = db.cursor()
     global data_id
     data_id += 1
+
     query = "INSERT INTO connections VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
     data = (data_id, dst_ip, dst_port, src_ip, src_port, timestamp, service, location)
     cursor.execute(query, data)
@@ -35,9 +34,9 @@ def query_login(username, password):
         password=db_password,
         database=db_database
     )
-
-
+    cursor = db.cursor()
     global data_id
+
     query = "INSERT INTO logins VALUES (%s, %s, %s)"
     data = (data_id, username, password)
     cursor.execute(query, data)
