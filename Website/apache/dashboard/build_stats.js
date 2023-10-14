@@ -11,17 +11,6 @@ async function build_bar_chart() {
             return index.share;
         });
 
-    const config = {
-        type: 'bar',
-        data: data,
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        },
-    };
 
     const labels = ['January, February, March, April, May, June, July'];
     const data = {
@@ -49,6 +38,17 @@ async function build_bar_chart() {
             ],
             borderWidth: 1
         }]
+    };
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        },
     };
 
     const barChart = new Chart(document.getElementById("bar-chart"), {
