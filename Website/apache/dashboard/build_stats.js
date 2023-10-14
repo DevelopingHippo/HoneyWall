@@ -133,16 +133,16 @@ async function build_pie(type, position){
             pie_label_text = "Top 5 Locations";
             break;
         case "dst_port":
-            pie_label_text = "Top 5 Port";
+            pie_label_text = "Top 5 Ports";
             break;
         case "src_ip":
             pie_label_text = "Top 5 IPs";
             break;
         case "username":
-            pie_label_text = "Top 5 Username";
+            pie_label_text = "Top 5 Usernames";
             break;
         case "password":
-            pie_label_text = "Top 5 Password";
+            pie_label_text = "Top 5 Passwords";
             break;
         case "service":
             pie_label_text = "Top 5 Services";
@@ -170,16 +170,16 @@ async function build_vert(type, position) {
             vert_label_text = "Top 8 Locations";
             break;
         case "dst_port":
-            vert_label_text = "Top 8 Port";
+            vert_label_text = "Top 8 Ports";
             break;
         case "src_ip":
-            vert_label_text = "Top 8 IP";
+            vert_label_text = "Top 8 IPs";
             break;
         case "username":
-            vert_label_text = "Top 8 Username";
+            vert_label_text = "Top 8 Usernames";
             break;
         case "password":
-            vert_label_text = "Top 8 Password";
+            vert_label_text = "Top 8 Passwords";
             break;
         case "service":
             vert_label_text = "Top 8 Services";
