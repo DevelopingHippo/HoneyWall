@@ -129,7 +129,7 @@ async function build_pie(type, position){
     // Replace the text with your desired content
     switch (type) {
         case "location":
-            pie_label_text = "Top Geolocations";
+            pie_label_text = "Top Locations";
             break;
         case "dst_port":
             pie_label_text = "Top Port";
@@ -166,7 +166,7 @@ async function build_vert(type, position) {
     // Replace the text with your desired content
     switch (type) {
         case "location":
-            vert_label_text = "Top Geolocations";
+            vert_label_text = "Top Locations";
             break;
         case "dst_port":
             vert_label_text = "Top Port";
