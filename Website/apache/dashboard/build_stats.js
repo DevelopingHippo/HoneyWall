@@ -199,7 +199,7 @@ function storeSelection() {
     document.cookie = "vert-2-selection=" + document.getElementById('vert-2').value;
     document.cookie = "vert-3-selection=" + document.getElementById('vert-3').value;
     document.cookie = "vert-4-selection=" + document.getElementById('vert-4').value;
-
+    location.reload()
 }
 
 function getCookie(cname) {
