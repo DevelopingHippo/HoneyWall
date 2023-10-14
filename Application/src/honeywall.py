@@ -109,7 +109,7 @@ while not db.is_connected():
 cursor = db.cursor()
 
 row_count = cursor.execute("SELECT max(id) as last_id FROM connections LIMIT 1")
-if row_count > 0:
+if row_count is not None:
     result = cursor.fetchall()
     data_id = result[0]
 db.close()
