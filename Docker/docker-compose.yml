@@ -52,6 +52,8 @@ services:
     #restart: unless-stopped
     networks:
       - honeywall_data
+    volumes:
+      - "./logs:/var/log/honeywall/"
     logging:
       options:
         max-size: "10m"
