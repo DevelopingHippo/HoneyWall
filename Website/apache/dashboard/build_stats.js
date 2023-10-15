@@ -189,7 +189,6 @@ async function build_vert(type, position) {
 }
 
 function storeSelection() {
-
     document.cookie = "pie-chart-1-selection=" + document.getElementById('pie-chart-1').value;
     document.cookie = "pie-chart-2-selection=" + document.getElementById('pie-chart-2').value;
     document.cookie = "pie-chart-3-selection=" + document.getElementById('pie-chart-3').value;
