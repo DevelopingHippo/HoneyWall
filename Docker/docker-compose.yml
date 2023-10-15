@@ -16,7 +16,7 @@ services:
     networks:
       - web_data
       - honeywall_data
-    #restart: unless-stopped
+    restart: unless-stopped
 
   web_honey:
     container_name: web_honey
@@ -47,8 +47,6 @@ services:
       - "2323:23"
       - "8700:80"
       #- "4443:443"
-    volumes:
-      - "./logs/:/var/log/honeypots/"
     depends_on:
       - db_honey
     restart: unless-stopped
