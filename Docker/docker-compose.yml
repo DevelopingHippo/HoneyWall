@@ -54,6 +54,10 @@ services:
     restart: unless-stopped
     networks:
       - honeywall_data
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
 
 networks:
   honeywall_data:
