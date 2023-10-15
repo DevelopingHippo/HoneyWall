@@ -44,10 +44,21 @@ canvas {
     padding: 10px;
     font-size: 15px;
 }
+
 #chart-column {
     grid-row: 1;
     grid-column: 1;
 }
+
+select {
+    background-color: ghostwhite;
+    border-radius: 5px;
+    padding: 0 1em 0 0;
+    margin: 10%;
+    width: 100%;
+    font-family: inherit;
+}
+
 
 /* Section for Map and Vertical Stats*/
 .bar-chart-wrapper {
@@ -71,7 +82,30 @@ canvas {
     grid-column-end: 5;
     background-color: #36404a;
     border-radius: 20px;
+    justify-content: center;
+    align-content: center;
 }
+
+.apply-button {
+    width: 80px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    color: #fff;
+    margin: 10px;
+    font-weight: 500;
+    transition: .5s;
+}
+.apply-button:hover {
+    background: #ffffff;
+    color: black;
+}
+
+
 
 .live-map {
     grid-row: 2;
@@ -121,14 +155,6 @@ table {
     text-align: center;
     font-size: 20px;
 }
-/*tr {
-
-
-}
-td {
-    text-align: left;
-}
-*/
 
 /* Section for Pie Charts*/
 .top-pie-1 {
