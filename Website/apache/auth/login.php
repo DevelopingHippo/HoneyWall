@@ -6,6 +6,8 @@ if (!isset($_SESSION["loggedIn"]))
 }
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,6 +39,20 @@ if (!isset($_SESSION["loggedIn"]))
             </div>
         </div>
     </section>
+
+    <script>
+        document.cookie = "pie-chart-1-selection=username";
+        document.cookie = "pie-chart-2-selection=password";
+        document.cookie = "pie-chart-3-selection=service";
+        document.cookie = "pie-chart-4-selection=location";
+
+        document.cookie = "vert-1-selection=username";
+        document.cookie = "vert-2-selection=password";
+        document.cookie = "vert-3-selection=service";
+        document.cookie = "vert-4-selection=location";
+    </script>
+
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
