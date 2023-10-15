@@ -11,8 +11,6 @@ from ip2geotools.databases.noncommercial import DbIpCity
 
 
 
-
-
 def getIPLocation(ip):
     res = DbIpCity.get(ip, api_key="free")
     return res.country
