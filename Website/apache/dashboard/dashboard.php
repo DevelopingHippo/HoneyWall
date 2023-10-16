@@ -82,7 +82,7 @@ printPreloader();
                         </select></td></tr>
                     </table>
                     <table>
-                        <tr><td><label for="vert-1">Vert 1</label></td>
+                        <tr><td><label for="vert-1">Table 1</label></td>
                             <td><select name="vert-chart" id="vert-1">
                                 <option value="username" selected>Usernames</option>
                                 <option value="password">Passwords</option>
@@ -92,7 +92,7 @@ printPreloader();
                                 <option value="dst_port">Dest. Port</option>
                                 <option value="location">Locations</option>
                             </select></td></tr>
-                        <tr><td><label for="vert-2">Vert 2</label></td>
+                        <tr><td><label for="vert-2">Table 2</label></td>
                                 <td><select name="vert-chart" id="vert-2">
                                 <option value="username">Usernames</option>
                                 <option value="password" selected>Passwords</option>
@@ -102,7 +102,7 @@ printPreloader();
                                 <option value="dst_port">Source Port</option>
                                 <option value="location">Locations</option>
                         </select></td></tr>
-                        <tr><td><label for="vert-3">Vert 3</label></td>
+                        <tr><td><label for="vert-3">Table 3</label></td>
                                 <td><select name="vert-chart" id="vert-3">
                                 <option value="username">Usernames</option>
                                 <option value="password">Passwords</option>
@@ -112,7 +112,7 @@ printPreloader();
                                 <option value="dst_port">Source Port</option>
                                 <option value="location">Locations</option>
                             </select></td></tr>
-                        <tr><td><label for="vert-4">Vert 4</label></td>
+                        <tr><td><label for="vert-4">Table 4</label></td>
                                 <td><select name="vert-chart" id="vert-4">
                                 <option value="username" selected>Usernames</option>
                                 <option value="password">Passwords</option>
