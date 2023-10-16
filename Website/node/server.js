@@ -138,11 +138,11 @@ app.get('/get-chart-data', cors(corsOptions), async function (req, res) {
         for (let i = result.length - 1; i > 0 ; i--) {
             let date_split = result[0]['time'].toString().split(" ");
             let date = date_split[0] + " " + date_split[1] + " " + date_split[2];
-            formatted_result += '{"time": "' + date + '", "data": ' + result[i]['total_connections'] + '},';
+            formatted_result += '{"date_time": "' + date + '", "total_connections": ' + result[i]['total_connections'] + '},';
         }
         let date_split = result[0]['time'].toString().split(" ");
         let date = date_split[0] + " " + date_split[1] + " " + date_split[2];
-        formatted_result += '{"time": "' + date + '", "data": ' + result[0]['total_connections'] + "}]";
+        formatted_result += '{"date_time": "' + date + '", "total_connections": ' + result[0]['total_connections'] + "}]";
         let json_format = JSON.parse(formatted_result);
         res.json(json_format);
 
