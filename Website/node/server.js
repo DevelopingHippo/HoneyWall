@@ -145,7 +145,6 @@ app.get('/get-chart-data', cors(corsOptions), async function (req, res) {
         formatted_result += '{"date_time": "' + date + '", "total_connections": ' + result[0]['total_connections'] + "}]";
         let json_format = JSON.parse(formatted_result);
         res.json(json_format);
-
     } catch (error) {
         console.error('Error executing the query:', error);
         res.status(500).json({error: 'Internal Server Error'});
