@@ -127,28 +127,80 @@ app.get('/get-pie-data', cors(corsOptions), async function (req, res) {
 
 app.get('/get-chart-data', cors(corsOptions), async function (req, res) {
 
-    try {
-        res.setHeader('Content-Type', 'application/json');
-        let query;
+    // try {
+    //     res.setHeader('Content-Type', 'application/json');
+    //     let query;
+    //
+    //     query = "select DATE(date_time) AS time, COUNT(id) as total_connections FROM connections GROUP BY DATE(connections.date_time) ORDER BY time DESC LIMIT 7;";
+    //     const result = await db_query(query);
+    //
+    //     let formatted_result = '[';
+    //     for (let i = result.length - 1; i > 0 ; i--) {
+    //         let date_split = result[i]['time'].toString().split(" ");
+    //         let date = date_split[0] + " " + date_split[1] + " " + date_split[2];
+    //         formatted_result += '{"date_time": "' + date + '", "total_connections": ' + result[i]['total_connections'] + '},';
+    //     }
+    //     let date_split = result[0]['time'].toString().split(" ");
+    //     let date = date_split[0] + " " + date_split[1] + " " + date_split[2];
+    //     formatted_result += '{"date_time": "' + date + '", "total_connections": ' + result[0]['total_connections'] + "}]";
+    //     let json_format = JSON.parse(formatted_result);
+    //     res.json(json_format);
+    // } catch (error) {
+    //     console.error('Error executing the query:', error);
+    //     res.status(500).json({error: 'Internal Server Error'});
+    // }
 
-        query = "select DATE(date_time) AS time, COUNT(id) as total_connections FROM connections GROUP BY DATE(connections.date_time) ORDER BY time DESC LIMIT 7;";
-        const result = await db_query(query);
-
-        let formatted_result = '[';
-        for (let i = result.length - 1; i > 0 ; i--) {
-            let date_split = result[i]['time'].toString().split(" ");
-            let date = date_split[0] + " " + date_split[1] + " " + date_split[2];
-            formatted_result += '{"date_time": "' + date + '", "total_connections": ' + result[i]['total_connections'] + '},';
-        }
-        let date_split = result[0]['time'].toString().split(" ");
-        let date = date_split[0] + " " + date_split[1] + " " + date_split[2];
-        formatted_result += '{"date_time": "' + date + '", "total_connections": ' + result[0]['total_connections'] + "}]";
-        let json_format = JSON.parse(formatted_result);
-        res.json(json_format);
-    } catch (error) {
-        console.error('Error executing the query:', error);
-        res.status(500).json({error: 'Internal Server Error'});
-    }
+    res.json([
+            {
+                "month": "January",
+                "num_connections": 1000
+            },
+            {
+                "month": "February",
+                "num_connections": 1200
+            },
+            {
+                "month": "March",
+                "num_connections": 300
+            },
+            {
+                "month": "April",
+                "num_connections": 400
+            },
+            {
+                "month": "May",
+                "num_connections": 450
+            },
+            {
+                "month": "June",
+                "num_connections": 355
+            },
+            {
+                "month": "July",
+                "num_connections": 203
+            },
+            {
+                "month": "August",
+                "num_connections": 122
+            },
+            {
+                "month": "September",
+                "num_connections": 700
+            },
+            {
+                "month": "October",
+                "num_connections": 960
+            },
+            {
+                "month": "November",
+                "num_connections": 104
+            },
+            {
+                "month": "December",
+                "num_connections": 1010
+            }
+        ]
+    );
 });
 
 // Function to execute database queries
