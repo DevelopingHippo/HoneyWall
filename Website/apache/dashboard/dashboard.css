@@ -37,6 +37,10 @@ canvas {
     font-size: 25px;
 }
 
+.control-panel {
+    border-radius: 20px;
+}
+
 .control-panel-wrapper {
     display: grid;
     grid-template-rows: auto auto auto auto;
