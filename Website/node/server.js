@@ -146,60 +146,6 @@ app.get('/get-chart-data', cors(corsOptions), async function (req, res) {
         console.error('Error executing the query:', error);
         res.status(500).json({error: 'Internal Server Error'});
     }
-
-
-    //
-    // res.json([
-    //         {
-    //             "month": "January",
-    //             "num_connections": 1000
-    //         },
-    //         {
-    //             "month": "February",
-    //             "num_connections": 1200
-    //         },
-    //         {
-    //             "month": "March",
-    //             "num_connections": 300
-    //         },
-    //         {
-    //             "month": "April",
-    //             "num_connections": 400
-    //         },
-    //         {
-    //             "month": "May",
-    //             "num_connections": 450
-    //         },
-    //         {
-    //             "month": "June",
-    //             "num_connections": 355
-    //         },
-    //         {
-    //             "month": "July",
-    //             "num_connections": 203
-    //         },
-    //         {
-    //             "month": "August",
-    //             "num_connections": 122
-    //         },
-    //         {
-    //             "month": "September",
-    //             "num_connections": 700
-    //         },
-    //         {
-    //             "month": "October",
-    //             "num_connections": 960
-    //         },
-    //         {
-    //             "month": "November",
-    //             "num_connections": 104
-    //         },
-    //         {
-    //             "month": "December",
-    //             "num_connections": 1010
-    //         }
-    //     ]
-    // );
 });
 
 // Function to execute database queries
