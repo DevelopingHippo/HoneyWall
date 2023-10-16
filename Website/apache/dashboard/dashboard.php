@@ -160,7 +160,6 @@ printPreloader();
         <div class="top-pie-4"><h4 id="pie-label-4"></h4>
             <canvas class="pie-chart-canvas" id="chart-pie-4"></canvas>
         </div>
-
         <div class="live-map">
             <div id="world-map" style="width: 750px; height: 325px;margin: auto;padding: 10px"></div>
         </div>

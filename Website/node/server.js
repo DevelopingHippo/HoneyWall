@@ -152,52 +152,52 @@ app.get('/get-chart-data', cors(corsOptions), async function (req, res) {
 
     res.json([
             {
-                "month": "January",
-                "num_connections": 1000
+                "date_time": "January",
+                "total_connections": 1000
             },
             {
-                "month": "February",
-                "num_connections": 1200
+                "date_time": "February",
+                "total_connections": 1200
             },
             {
-                "month": "March",
-                "num_connections": 300
+                "date_time": "March",
+                "total_connections": 300
             },
             {
-                "month": "April",
-                "num_connections": 400
+                "date_time": "April",
+                "total_connections": 400
             },
             {
-                "month": "May",
-                "num_connections": 450
+                "date_time": "May",
+                "total_connections": 450
             },
             {
-                "month": "June",
-                "num_connections": 355
+                "date_time": "June",
+                "total_connections": 355
             },
             {
-                "month": "July",
-                "num_connections": 203
+                "date_time": "July",
+                "total_connections": 203
             },
             {
-                "month": "August",
-                "num_connections": 122
+                "date_time": "August",
+                "total_connections": 122
             },
             {
-                "month": "September",
-                "num_connections": 700
+                "date_time": "September",
+                "total_connections": 700
             },
             {
-                "month": "October",
-                "num_connections": 960
+                "date_time": "October",
+                "total_connections": 960
             },
             {
-                "month": "November",
-                "num_connections": 104
+                "date_time": "November",
+                "total_connections": 104
             },
             {
-                "month": "December",
-                "num_connections": 1010
+                "date_time": "December",
+                "total_connections": 1010
             }
         ]
     );
