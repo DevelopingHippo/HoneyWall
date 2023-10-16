@@ -126,9 +126,9 @@ app.get('/get-pie-data', cors(corsOptions), async function (req, res) {
 
 
 app.get('/get-chart-data', cors(corsOptions), async function (req, res) {
-
+    res.setHeader('Content-Type', 'application/json');
     // try {
-    //     res.setHeader('Content-Type', 'application/json');
+    //
     //     let query;
     //
     //     query = "select DATE(date_time) AS time, COUNT(id) as total_connections FROM connections GROUP BY DATE(connections.date_time) ORDER BY time DESC LIMIT 7;";
