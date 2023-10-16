@@ -104,6 +104,7 @@ db = mysql.connector.connect(
 )
 
 while not db.is_connected():
+    time.sleep(10)
     db = mysql.connector.connect(
         host=db_host,
         user=db_user,
