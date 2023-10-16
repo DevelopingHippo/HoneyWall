@@ -4,11 +4,11 @@ async function build_bar_chart() {
 
     const label_array = data_api.map(
         function(index){
-            return index.month;
+            return index.time;
         });
     const data_array = data_api.map(
         function(index){
-            return index.num_connections;
+            return index.total_connections;
         });
 
 

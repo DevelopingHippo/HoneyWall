@@ -74,7 +74,6 @@ app.get('/get-vert-data', cors(corsOptions), async function (req, res) {
         } else if (req.query['type'] === "password") {
             query = "select password as data, count(*) as total_count FROM logins GROUP BY data ORDER BY total_count DESC LIMIT 8;";
         }
-
         const result = await db_query(query);
         let formatted_result = '{';
         for (let i = 0; i < result.length - 1; i++) {
@@ -83,11 +82,10 @@ app.get('/get-vert-data', cors(corsOptions), async function (req, res) {
         formatted_result += '"' + result[result.length - 1]['data'] + '":' + result[result.length - 1]['total_count'] + "}";
         let json_format = JSON.parse(formatted_result);
         res.json(json_format);
-
     }
     catch (error){
         console.error('Error executing the query:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
+        res.status(500).json({ error: 'No Data in Database' });
     }
 });
 
@@ -111,12 +109,8 @@ app.get('/get-pie-data', cors(corsOptions), async function (req, res) {
         } else if (req.query['type'] === "password") {
             query = "select password as data, count(*) as total_count FROM logins GROUP BY data ORDER BY total_count DESC LIMIT 5;";
         }
-        let total = 0.00;
         const result = await db_query(query);
         let formatted_result = '[';
-        for (let i = 0; i < result.length; i++) {
-            total = total + parseFloat(result[i]['total_count']);
-        }
         for (let i = 0; i < result.length - 1; i++) {
             formatted_result += '{"name": "' + result[i]['data'] + '", "share": ' + result[i]['total_count'] + '},';
         }
@@ -131,60 +125,81 @@ app.get('/get-pie-data', cors(corsOptions), async function (req, res) {
 });
 
 
-app.get('/get-chart-data', cors(corsOptions), function (req, res) {
-    res.setHeader('Content-Type', 'application/json');
+app.get('/get-chart-data', cors(corsOptions), async function (req, res) {
 
-    res.json([
-            {
-                "month": "January",
-                "num_connections": 1000
-            },
-            {
-                "month": "February",
-                "num_connections": 1200
-            },
-            {
-                "month": "March",
-                "num_connections": 300
-            },
-            {
-                "month": "April",
-                "num_connections": 400
-            },
-            {
-                "month": "May",
-                "num_connections": 450
-            },
-            {
-                "month": "June",
-                "num_connections": 355
-            },
-            {
-                "month": "July",
-                "num_connections": 203
-            },
-            {
-                "month": "August",
-                "num_connections": 122
-            },
-            {
-                "month": "September",
-                "num_connections": 700
-            },
-            {
-                "month": "October",
-                "num_connections": 960
-            },
-            {
-                "month": "November",
-                "num_connections": 104
-            },
-            {
-                "month": "December",
-                "num_connections": 1010
-            }
-        ]
-    );
+    try {
+        res.setHeader('Content-Type', 'application/json');
+        let query;
+
+        query = "select DATE(date_time) AS time, COUNT(id) as total_connections FROM connections GROUP BY DATE(connections.date_time) ORDER BY time DESC LIMIT 7;";
+        const result = await db_query(query);
+
+        let formatted_result = '[';
+        for (let i = result.length - 1; i > 0 ; i--) {
+            formatted_result += '{"time": "' + result[i]['time'] + '", "data": ' + result[i]['total_connections'] + '},';
+        }
+        formatted_result += '{"time": "' + result[0]['time'] + '", "data": ' + result[0]['total_connections'] + "}]";
+        let json_format = JSON.parse(formatted_result);
+        res.json(json_format);
+
+    } catch (error) {
+        console.error('Error executing the query:', error);
+        res.status(500).json({error: 'Internal Server Error'});
+    }
+
+
+    //
+    // res.json([
+    //         {
+    //             "month": "January",
+    //             "num_connections": 1000
+    //         },
+    //         {
+    //             "month": "February",
+    //             "num_connections": 1200
+    //         },
+    //         {
+    //             "month": "March",
+    //             "num_connections": 300
+    //         },
+    //         {
+    //             "month": "April",
+    //             "num_connections": 400
+    //         },
+    //         {
+    //             "month": "May",
+    //             "num_connections": 450
+    //         },
+    //         {
+    //             "month": "June",
+    //             "num_connections": 355
+    //         },
+    //         {
+    //             "month": "July",
+    //             "num_connections": 203
+    //         },
+    //         {
+    //             "month": "August",
+    //             "num_connections": 122
+    //         },
+    //         {
+    //             "month": "September",
+    //             "num_connections": 700
+    //         },
+    //         {
+    //             "month": "October",
+    //             "num_connections": 960
+    //         },
+    //         {
+    //             "month": "November",
+    //             "num_connections": 104
+    //         },
+    //         {
+    //             "month": "December",
+    //             "num_connections": 1010
+    //         }
+    //     ]
+    // );
 });
 
 // Function to execute database queries
