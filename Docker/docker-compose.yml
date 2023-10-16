@@ -52,9 +52,6 @@ services:
     #restart: unless-stopped
     networks:
       - honeywall_data
-    volumes:
-      - "./logs:/var/log/honeywall/"
-      - "./src/honeywall.py:/app/honeywall.py"
     logging:
       options:
         max-size: "10m"
