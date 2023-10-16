@@ -8,7 +8,7 @@ async function build_bar_chart() {
         });
     const data_array = data_api.map(
         function(index){
-            return index.total_connections;
+            return index.data;
         });
 
 
