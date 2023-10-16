@@ -11,6 +11,8 @@ async function build_bar_chart() {
             return index.total_connections;
         });
 
+    console.log(data_array);
+    console.log(label_array);
 
     var chrt = document.getElementById("bar-chart").getContext("2d");
     var chartId = new Chart(chrt, {
