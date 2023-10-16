@@ -136,7 +136,7 @@ app.get('/get-chart-data', cors(corsOptions), async function (req, res) {
 
         let formatted_result = '[';
         for (let i = result.length - 1; i > 0 ; i--) {
-            let date_split = result[0]['time'].toString().split(" ");
+            let date_split = result[i]['time'].toString().split(" ");
             let date = date_split[0] + " " + date_split[1] + " " + date_split[2];
             formatted_result += '{"date_time": "' + date + '", "total_connections": ' + result[i]['total_connections'] + '},';
         }
