@@ -116,9 +116,8 @@ cursor = db.cursor()
 cursor.execute("SELECT max(id) as last_id FROM connections LIMIT 1")
 result = cursor.fetchone()
 
-if result is not None:
+if result[0] is not None:
     data_id = result[0]
-    print("Found Data: ",data_id)
 
 db.close()
 
