@@ -223,15 +223,12 @@ table {
 }
 #logs-table-tr {
     padding: 10px;
-    display: block;
 }
 #logs-table-thead {
     padding: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    display: block;
 }
-
 .logs-table th {
     padding: 10px;
     text-transform: uppercase;
