@@ -158,22 +158,22 @@ async function build_vert(type, position) {
     // Replace the text with your desired content
     switch (type) {
         case "location":
-            vert_label_text = "Top 8 Locations";
+            vert_label_text = "Top 15 Locations";
             break;
         case "dst_port":
-            vert_label_text = "Top 8 Ports";
+            vert_label_text = "Top 15 Ports";
             break;
         case "src_ip":
-            vert_label_text = "Top 8 IPs";
+            vert_label_text = "Top 15 IPs";
             break;
         case "username":
-            vert_label_text = "Top 8 Usernames";
+            vert_label_text = "Top 15 Usernames";
             break;
         case "password":
-            vert_label_text = "Top 8 Passwords";
+            vert_label_text = "Top 15 Passwords";
             break;
         case "service":
-            vert_label_text = "Top 8 Services";
+            vert_label_text = "Top 15 Services";
             break;
     }
     vert_label.textContent = vert_label_text;
