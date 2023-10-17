@@ -184,6 +184,7 @@ async function build_latest_logs() {
 
     let container = document.getElementById("latest-logs-container");
     let table = document.createElement("table");
+    table.setAttribute('class','logs-table');
 
     // Get the keys (column names) of the first object in the JSON data
     let cols = Object.keys(latest_data[0]);
