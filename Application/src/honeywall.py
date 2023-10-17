@@ -52,30 +52,30 @@ def query_login(username, password):
 
 # read/write the file, send contents to the database connection method, clear the file
 def logparse(service_name):
-    filelog = open((logpath + service_name + ".log"), 'r+')
-    for line in filelog:
-        x = json.loads(line)
-        action = x["action"]
-        if action == "login":
-            status = x["status"]
-            username = x["username"]
-            password = x["password"]
-            query_login(username, password)
-        elif action == "connection":
-            dest_ip = x["dest_ip"]
-            dest_port = x["dest_port"]
-            src_ip = x["src_ip"]
-            src_port = x["src_port"]
-            timeformat = x["timestamp"]
-            timeformat = timeformat.split("T")
-            timestamp = str(timeformat[0]) + " " + str(timeformat[1])
-            location = getIPLocation(src_ip)
-            query_connection(dest_ip, dest_port, src_ip, src_port, service_name, timestamp, location)
-        else:
-            continue
-
-    filelog.truncate(0)
-    filelog.close()
+    if os.path.isfile(logpath + service_name + ".log") == True:
+        filelog = open((logpath + service_name + ".log"), 'r+')
+        for line in filelog:
+            x = json.loads(line)
+            action = x["action"]
+            if action == "login":
+                status = x["status"]
+                username = x["username"]
+                password = x["password"]
+                query_login(username, password)
+            elif action == "connection":
+                dest_ip = x["dest_ip"]
+                dest_port = x["dest_port"]
+                src_ip = x["src_ip"]
+                src_port = x["src_port"]
+                timeformat = x["timestamp"]
+                timeformat = timeformat.split("T")
+                timestamp = str(timeformat[0]) + " " + str(timeformat[1])
+                location = getIPLocation(src_ip)
+                query_connection(dest_ip, dest_port, src_ip, src_port, service_name, timestamp, location)
+            else:
+                continue
+        filelog.truncate(0)
+        filelog.close()
 
 
 # setting log path variables
