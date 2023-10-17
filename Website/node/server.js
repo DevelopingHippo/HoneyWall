@@ -139,12 +139,12 @@ app.get('/get-latest-connection', cors(corsOptions), async function (req, res){
             let date_split = result[i]['date_time'].toString().split(" ");
             let time = date_split[4].toString();
             let date = date_split[0] + " " + date_split[1] + " " + date_split[2];
-            formatted_result += '{"id": ' + result[i]['id'] + ', "dst_ip": "' + result[i]['dst_ip'] + '", "dst_port": ' + result[i]['dst_port'] + ', "src_ip": "' + result[i]['src_ip'] +'", ' + '"src_port": ' + result[i]["src_port"] + ', "time": "' + time + '", "date": "' + date + '", "service": "' + result[i]["service"] + '", "location": "' + result[i]["location"] + '"},';
+            formatted_result += '{"Dest. IP": "' + result[i]['dst_ip'] + '", "Dest. Port": ' + result[i]['dst_port'] + ', "Source IP": "' + result[i]['src_ip'] +'", ' + '"Source Port": ' + result[i]["src_port"] + ', "Time": "' + time + '", "Date": "' + date + '", "Service": "' + result[i]["service"] + '", "Location": "' + result[i]["location"] + '"},';
         }
         let date_split = result[result.length - 1]['date_time'].toString().split(" ");
         let time = date_split[4].toString();
         let date = date_split[0] + " " + date_split[1] + " " + date_split[2];
-        formatted_result += '{"id": ' + result[result.length - 1]['id'] + ', "dst_ip": "' + result[result.length - 1]['dst_ip'] + '", "dst_port": ' + result[result.length - 1]['dst_port'] + ', "src_ip": "' + result[result.length - 1]['src_ip'] +'", ' + '"src_port": ' + result[result.length - 1]["src_port"] + ', "time": "' + time + '", "date": "' + date + '", "service": "' + '", "service": "' + result[result.length - 1]["service"] + '", "location": "' + result[result.length - 1]["location"] + '"}]';
+        formatted_result += '{"Dest. IP": "' + result[result.length - 1]['dst_ip'] + '", "Dest. Port": ' + result[result.length - 1]['dst_port'] + ', "Source IP": "' + result[result.length - 1]['src_ip'] +'", ' + '"Source Port": ' + result[result.length - 1]["src_port"] + ', "Time": "' + time + '", "Date": "' + date + '", "Service": "' + '", "service": "' + result[result.length - 1]["service"] + '", "Location": "' + result[result.length - 1]["location"] + '"}]';
         let json_format = JSON.parse(formatted_result);
         res.json(json_format);
     }
