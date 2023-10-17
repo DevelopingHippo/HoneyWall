@@ -211,9 +211,9 @@ table {
     grid-column-end: 9;
     background-color: #36404a;
     border-radius: 20px;
-    height: 300px;
-    overflow-x: hidden;
-    overflow-y: auto;
+    /*height: 300px;*/
+    /*overflow-x: hidden;*/
+    /*overflow-y: auto;*/
 }
 
 .logs-table {
