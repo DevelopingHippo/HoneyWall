@@ -133,9 +133,9 @@ app.get('/get-latest-connection', cors(corsOptions), async function (req, res){
         const result = await db_query(query);
         let formatted_result = '[';
         for (let i = 0; i < result.length - 1; i++) {
-            formatted_result += '{"id": "' + result[i]['id'] + '", "dst_ip": "' + result[i]['dst_ip'] + '", "dst_port": ' + result[i]['dst_port'] + ', "src_ip": "' + result[i]['src_ip'] +'", ' + '"src_port": ' + result[i]["src_port"] + ', "date_time": "' + result[i]['date_time'] + '", "service": "' + result[i]["service"] + '", "location": "' + result[i]["location"] + '"},';
+            formatted_result += '{"id": ' + result[i]['id'] + ', "dst_ip": "' + result[i]['dst_ip'] + '", "dst_port": ' + result[i]['dst_port'] + ', "src_ip": "' + result[i]['src_ip'] +'", ' + '"src_port": ' + result[i]["src_port"] + ', "date_time": "' + result[i]['date_time'] + '", "service": "' + result[i]["service"] + '", "location": "' + result[i]["location"] + '"},';
         }
-        formatted_result += '{"id": "' + result[result.length - 1]['id'] + '", "dst_ip": "' + result[result.length - 1]['dst_ip'] + '", "dst_port": ' + result[result.length - 1]['dst_port'] + ', "src_ip": "' + result[result.length - 1]['src_ip'] +'", ' + '"src_port": ' + result[result.length - 1]["src_port"] + ', "date_time": "' + result[result.length - 1]['date_time'] + '", "service": "' + result[result.length - 1]["service"] + '", "location": "' + result[result.length - 1]["location"] + '"}';
+        formatted_result += '{"id": "' + result[result.length - 1]['id'] + '", "dst_ip": "' + result[result.length - 1]['dst_ip'] + '", "dst_port": ' + result[result.length - 1]['dst_port'] + ', "src_ip": "' + result[result.length - 1]['src_ip'] +'", ' + '"src_port": ' + result[result.length - 1]["src_port"] + ', "date_time": "' + result[result.length - 1]['date_time'] + '", "service": "' + result[result.length - 1]["service"] + '", "location": "' + result[result.length - 1]["location"] + '"}]';
         let json_format = JSON.parse(formatted_result);
         res.json(json_format);
     }
