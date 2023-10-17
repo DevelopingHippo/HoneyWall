@@ -27,7 +27,6 @@ loginCheck();
     <link rel="stylesheet" href="../css/site-global.css" type="text/css">
     <script src="build_stats.js"></script>
 </head>
-<>
 <?php
 printHeader();
 ?>
@@ -126,9 +125,6 @@ printPreloader();
                 </div>
             <button class="apply-button" onclick="storeSelection()">Apply</button>
         </div>
-
-
-
         <div class="bar-chart-wrapper">
             <canvas class="bar-chart-canvas" id="bar-chart"></canvas>
         </div>

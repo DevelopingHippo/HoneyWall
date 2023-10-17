@@ -118,6 +118,7 @@ result = cursor.fetchone()
 
 if result is not None:
     data_id = result[0]
+    print("Found Data: " data_id)
 
 db.close()
 
