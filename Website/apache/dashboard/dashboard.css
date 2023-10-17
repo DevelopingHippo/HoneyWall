@@ -229,7 +229,7 @@ table {
 /*    text-transform: uppercase;*/
 /*    letter-spacing: 2px;*/
 /*}*/
-.logs-table th {
+.logs-table.th {
     padding: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
