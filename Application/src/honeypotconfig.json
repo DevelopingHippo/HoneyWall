@@ -11,6 +11,7 @@
   "honeypots": {
     "ssh": {
       "port": 22,
+      "ip": "0.0.0.0",
       "username": "ssh",
       "password": "sshadmin123",
       "log_file_name": "ssh.log",
@@ -20,6 +21,7 @@
     },
     "http": {
       "port": 80,
+      "ip": "0.0.0.0",
       "username": "http",
       "password": "httpadmin123",
       "log_file_name": "http.log",
@@ -29,6 +31,7 @@
     },
     "https": {
       "port": 443,
+      "ip": "0.0.0.0",
       "username": "https",
       "password": "httpsadmin123",
       "log_file_name": "https.log",
@@ -38,6 +41,7 @@
     },
     "telnet": {
       "port": 23,
+      "ip": "0.0.0.0",
       "username": "telnet",
       "password": "telnetadmin123",
       "log_file_name": "telnet.log",
