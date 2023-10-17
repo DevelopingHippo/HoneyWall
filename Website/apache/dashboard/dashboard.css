@@ -229,9 +229,10 @@ table {
     padding: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    display: block;
 }
 
-th {
+.logs-table th {
     padding: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
