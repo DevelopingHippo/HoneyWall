@@ -193,6 +193,10 @@ async function build_latest_logs() {
     let thead = document.createElement("thead");
     let tr = document.createElement("tr");
 
+    thead.setAttribute('id','logs-table-thead');
+    tr.setAttribute('id','logs-table-tr');
+
+
     cols.forEach((item) => {
         let th = document.createElement("th");
         th.innerText = item; // Set the column name as the text of the header cell
