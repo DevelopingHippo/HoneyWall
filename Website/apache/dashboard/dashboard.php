@@ -54,7 +54,7 @@ printPreloader();
                             <option value="username">Usernames</option>
                             <option value="password" selected>Passwords</option>
                             <option value="service">Services</option>
-                            <option value="port">Ports</option>
+                            <option value="dst_port">Dest. Ports</option>
                             <option value="src_ip">Source IPs</option>
                             <option value="dst_port">Dest. Port</option>
                             <option value="location">Locations</option>
@@ -64,7 +64,7 @@ printPreloader();
                             <option value="username">Usernames</option>
                             <option value="password">Passwords</option>
                             <option value="service">Services</option>
-                            <option value="port">Ports</option>
+                            <option value="dst_port">Dest. Ports</option>
                             <option value="src_ip" selected>Source IPs</option>
                             <option value="dst_port">Dest. Port</option>
                             <option value="location">Locations</option>
@@ -74,7 +74,7 @@ printPreloader();
                             <option value="username" selected>Usernames</option>
                             <option value="password">Passwords</option>
                             <option value="service">Services</option>
-                            <option value="port">Ports</option>
+                            <option value="dst_port">Dest. Ports</option>
                             <option value="src_ip">Source IPs</option>
                             <option value="dst_port">Dest. Port</option>
                             <option value="location" selected>Locations</option>
@@ -86,7 +86,7 @@ printPreloader();
                                 <option value="username" selected>Usernames</option>
                                 <option value="password">Passwords</option>
                                 <option value="service">Services</option>
-                                <option value="port">Ports</option>
+                                <option value="dst_port">Dest. Ports</option>
                                 <option value="src_ip">Source IPs</option>
                                 <option value="dst_port">Dest. Port</option>
                                 <option value="location">Locations</option>
@@ -96,7 +96,7 @@ printPreloader();
                                 <option value="username">Usernames</option>
                                 <option value="password" selected>Passwords</option>
                                 <option value="service">Services</option>
-                                <option value="port">Ports</option>
+                                <option value="dst_port">Dest. Ports</option>
                                 <option value="src_ip">Src. IPs</option>
                                 <option value="dst_port">Source Port</option>
                                 <option value="location">Locations</option>
@@ -106,7 +106,7 @@ printPreloader();
                                 <option value="username">Usernames</option>
                                 <option value="password">Passwords</option>
                                 <option value="service">Services</option>
-                                <option value="port">Ports</option>
+                                <option value="dst_port">Dest. Ports</option>
                                 <option value="src_ip" selected>Src. IPs</option>
                                 <option value="dst_port">Source Port</option>
                                 <option value="location">Locations</option>
@@ -116,7 +116,7 @@ printPreloader();
                                 <option value="username" selected>Usernames</option>
                                 <option value="password">Passwords</option>
                                 <option value="service">Services</option>
-                                <option value="port">Ports</option>
+                                <option value="dst_port">Dest. Ports</option>
                                 <option value="src_ip">Source IPs</option>
                                 <option value="dst_port">Dest. Port</option>
                                 <option value="location" selected>Locations</option>
