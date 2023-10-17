@@ -87,7 +87,8 @@ async function build_pie(type, position){
 
     var options = {
         tooltip: {
-            enabled: true
+            enabled: true,
+            fontColor: 'white'
         },
         responsive: true,
         maintainAspectRatio: true
@@ -112,10 +113,8 @@ async function build_pie(type, position){
     const myChart = new Chart(ctx, {
         type: 'pie',
         data: data,
-        options: options,
+        options: options
     });
-
-    Chart.defaults.global.defaultFontColor = "#fff";
 
     let pie_label = document.getElementById('pie-label-' + position);
     let pie_label_text = "";
