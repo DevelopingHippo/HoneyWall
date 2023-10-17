@@ -209,7 +209,7 @@ async function build_latest_logs() {
     // Loop through the JSON data and create table rows
     latest_data.forEach((item) => {
         let tr = document.createElement("tr");
-
+        tr.setAttribute('id','logs-table-tr');
         // Get the values of the current object in the JSON data
         let vals = Object.values(item);
 
