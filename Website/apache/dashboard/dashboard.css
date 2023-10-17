@@ -221,3 +221,9 @@ table {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+
+thead {
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
