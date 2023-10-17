@@ -145,7 +145,7 @@ app.get('/get-latest-connection', cors(corsOptions), async function (req, res){
         let date_split = result[result.length - 1]['date_time'].toString().split(" ");
         let time = date_split[4].toString();
         let date = date_split[0] + " " + date_split[1] + " " + date_split[2];
-        formatted_result += '{"Time": "' + time + " " + date + '", "Service": "' + result[result.length - 1]['service'] + ":" + result[result.length - 1]['dst_port'] + '", ' + '"Source": "' + result[result.length - 1]["src_ip"] + ":" + result[result.length - 1]['src_port'] + '", "Location": "' + result[result.length - 1]["location"] + '"},';
+        formatted_result += '{"Time": "' + time + " " + date + '", "Service": "' + result[result.length - 1]['service'] + ":" + result[result.length - 1]['dst_port'] + '", ' + '"Source": "' + result[result.length - 1]["src_ip"] + ":" + result[result.length - 1]['src_port'] + '", "Location": "' + result[result.length - 1]["location"] + '"}]';
         let json_format = JSON.parse(formatted_result);
         res.json(json_format);
     }
