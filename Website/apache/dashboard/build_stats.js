@@ -20,18 +20,18 @@ async function build_bar_chart() {
                 label: '# of Connections',
                 data: data_array,
                 backgroundColor: [
-                    'rgb(231, 111, 81, 0.2)',
                     'rgb(38, 70, 83, 0.2)',
-                    'rgb(233, 196, 106, 0.2)',
                     'rgb(42, 157, 143, 0.2)',
-                    'rgb(244, 162, 97, 0.2)'
+                    'rgb(233, 196, 106, 0.2)',
+                    'rgb(244, 162, 97, 0.2)',
+                    'rgb(231, 111, 81, 0.2)'
                 ],
                 borderColor: [
-                    'rgb(231, 111, 81)',
                     'rgb(38, 70, 83)',
-                    'rgb(233, 196, 106)',
                     'rgb(42, 157, 143)',
-                    'rgb(244, 162, 97)'
+                    'rgb(233, 196, 106)',
+                    'rgb(244, 162, 97)',
+                    'rgb(231, 111, 81)'
                 ],
                 borderWidth: 1,
             }],
@@ -112,11 +112,11 @@ async function build_pie(type, position){
         datasets: [{
             fill: true,
             backgroundColor: [
-                'rgb(231, 111, 81)',
                 'rgb(38, 70, 83)',
-                'rgb(233, 196, 106)',
                 'rgb(42, 157, 143)',
-                'rgb(244, 162, 97)'
+                'rgb(233, 196, 106)',
+                'rgb(244, 162, 97)',
+                'rgb(231, 111, 81)'
             ],
             data: data_array,
             hoverOffset: 4
