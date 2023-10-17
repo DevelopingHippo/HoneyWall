@@ -221,6 +221,11 @@ table {
     border-collapse: collapse;
     padding: 10px;
 }
+
+.log-table.tbody {
+    overflow-y: scroll;
+    position: absolute;
+}
 #logs-table-tr {
     padding: 10px;
 }
