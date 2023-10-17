@@ -229,12 +229,10 @@ table {
     padding: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    display: block;
 }
 
-.logs-table tbody {
-    display: block;
-    width: 100%;
-    overflow: auto;
-    height: 50px;
+th {
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
