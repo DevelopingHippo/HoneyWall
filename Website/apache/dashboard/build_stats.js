@@ -87,11 +87,15 @@ async function build_pie(type, position){
 
     var options = {
         tooltip: {
-            enabled: true,
-            fontColor: 'white'
+            enabled: true
         },
         responsive: true,
-        maintainAspectRatio: true
+        maintainAspectRatio: true,
+        legend: {
+            labels: {
+                fontColor: 'white'
+            }
+        }
     };
 
     var data = {
