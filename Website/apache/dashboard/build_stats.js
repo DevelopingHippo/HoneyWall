@@ -90,7 +90,8 @@ async function build_pie(type, position){
             enabled: true
         },
         responsive: true,
-        maintainAspectRatio: true
+        maintainAspectRatio: true,
+        scaleFontColor: "#FFF"
     };
 
     var data = {
