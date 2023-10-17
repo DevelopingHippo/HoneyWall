@@ -224,8 +224,7 @@ table {
 
 .log-table.tbody {
     overflow-y: scroll;
-    height: 100px;
-    display: block;
+    position: absolute;
 }
 
 
@@ -238,10 +237,9 @@ table {
     padding: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    display: block;
 }
 
-.log-table.th {
+.logs-table.th {
     padding: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
