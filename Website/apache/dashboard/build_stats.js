@@ -42,7 +42,7 @@ async function build_bar_chart() {
             maintainAspectRatio: true,
             legend: {
                 labels: {
-                    fontColor: 'red'
+                    fontColor: '#FFF'
                 }
             }
         }
@@ -98,7 +98,7 @@ async function build_pie(type, position){
         maintainAspectRatio: true,
         legend: {
             labels: {
-                fontColor: 'red'
+                fontColor: '#FFF'
             }
         }
     };
