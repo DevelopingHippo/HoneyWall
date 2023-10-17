@@ -224,8 +224,13 @@ table {
 
 .log-table.tbody {
     overflow-y: scroll;
-    position: absolute;
+    height: 100px;
+    display: block;
 }
+
+
+
+
 #logs-table-tr {
     padding: 10px;
 }
@@ -233,9 +238,10 @@ table {
     padding: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    display: block;
 }
 
-th {
+.log-table.th {
     padding: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
