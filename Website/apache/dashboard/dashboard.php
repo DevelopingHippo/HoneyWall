@@ -27,14 +27,14 @@ loginCheck();
     <link rel="stylesheet" href="../css/site-global.css" type="text/css">
     <script src="build_stats.js"></script>
 </head>
-<body>
+<>
 <?php
 printHeader();
 ?>
 <?php
 printPreloader();
 ?>
-<section>
+<section class="graphs-section">
     <div class="stats">
         <div class="control-panel">
             <h1>Control Panel</h1>
@@ -163,7 +163,9 @@ printPreloader();
         <div class="live-map">
             <div id="world-map" style="width: 750px; height: 325px;margin: auto;padding: 10px"></div>
         </div>
-
+        <div class="latest-logs-container">
+            <table id="latest-logs"></table>
+        </div>
         <script>
             build_bar_chart();
             build_map();
@@ -175,8 +177,10 @@ printPreloader();
             build_vert(getCookie("vert-2-selection"), 2);
             build_vert(getCookie("vert-3-selection"), 3);
             build_vert(getCookie("vert-4-selection"), 4);
+            build_latest_logs();
         </script>
     </div>
+
 </section>
 <?php
 printFooter();
