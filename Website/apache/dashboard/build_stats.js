@@ -34,13 +34,18 @@ async function build_bar_chart() {
         },
         options: {
             scales: {
-                y:{
+                y: {
                     beginAtZero: true
                 }
             },
             responsive: true,
-            maintainAspectRatio: true
-        },
+            maintainAspectRatio: true,
+            legend: {
+                labels: {
+                    fontColor: 'white'
+                }
+            }
+        }
     });
 }
 
