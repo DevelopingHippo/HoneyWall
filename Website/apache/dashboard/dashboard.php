@@ -103,7 +103,7 @@ printPreloader();
                                 <option value="dst_port">Dest. Ports</option>
                                 <option value="src_ip" selected>Src. IPs</option>
                                 <option value="location">Locations</option>
-                            </select></td></tr>
+                        </select></td></tr>
                         <tr><td><label for="vert-4">Table 4</label></td>
                                 <td><select name="vert-chart" id="vert-4">
                                 <option value="username" selected>Usernames</option>
