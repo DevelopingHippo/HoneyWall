@@ -224,11 +224,11 @@ table {
 #logs-table-tr {
     padding: 10px;
 }
-#logs-table-thead {
-    padding: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
+/*#logs-table-thead {*/
+/*    padding: 10px;*/
+/*    text-transform: uppercase;*/
+/*    letter-spacing: 2px;*/
+/*}*/
 .logs-table th {
     padding: 10px;
     text-transform: uppercase;
