@@ -62,17 +62,17 @@ app.get('/get-vert-data', cors(corsOptions), async function (req, res) {
         res.setHeader('Content-Type', 'application/json');
         let query;
         if (req.query['type'] === "location") {
-            query = "select location as data, count(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
+            query = "select location as data, count(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 15;";
         } else if (req.query['type'] === "dst_port") {
-            query = "select dst_port as data,COUNT(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
+            query = "select dst_port as data,COUNT(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 15;";
         } else if (req.query['type'] === "service") {
-            query = "select service as data, count(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
+            query = "select service as data, count(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 15;";
         } else if (req.query['type'] === "src_ip") {
-            query = "select src_ip as data,COUNT(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 8;";
+            query = "select src_ip as data,COUNT(*) as total_count from connections GROUP BY data ORDER BY total_count DESC LIMIT 15;";
         } else if (req.query['type'] === "username") {
-            query = "select username as data, count(*) as total_count FROM logins GROUP BY data ORDER BY total_count DESC LIMIT 8;";
+            query = "select username as data, count(*) as total_count FROM logins GROUP BY data ORDER BY total_count DESC LIMIT 15;";
         } else if (req.query['type'] === "password") {
-            query = "select password as data, count(*) as total_count FROM logins GROUP BY data ORDER BY total_count DESC LIMIT 8;";
+            query = "select password as data, count(*) as total_count FROM logins GROUP BY data ORDER BY total_count DESC LIMIT 15;";
         }
         const result = await db_query(query);
         let formatted_result = '{';

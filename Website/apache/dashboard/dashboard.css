@@ -169,6 +169,9 @@ table {
     background-color: #36404a;
     border-radius: 20px;
     padding-bottom: 10px;
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .top-pie-2 {
     grid-row: 2;
@@ -177,6 +180,9 @@ table {
     background-color: #36404a;
     border-radius: 20px;
     padding-bottom: 10px;
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .top-pie-3 {
     grid-row: 3;
@@ -185,6 +191,9 @@ table {
     background-color: #36404a;
     border-radius: 20px;
     padding-bottom: 10px;
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .top-pie-4 {
     grid-row: 3;
@@ -193,6 +202,9 @@ table {
     background-color: #36404a;
     border-radius: 20px;
     padding-bottom: 10px;
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .pie-chart-canvas {
     width:300px !important;
