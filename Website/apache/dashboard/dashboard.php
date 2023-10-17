@@ -159,7 +159,9 @@ printPreloader();
         <div class="live-map">
             <div id="world-map" style="width: 750px; height: 325px;margin: auto;padding: 10px"></div>
         </div>
-        <div id="latest-logs-container"></div>
+        <div id="latest-logs-container">
+            <h1>Most Recent Logs</h1>
+        </div>
         <script>
             build_bar_chart();
             build_map();
