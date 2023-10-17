@@ -20,14 +20,18 @@ async function build_bar_chart() {
                 label: '# of Connections',
                 data: data_array,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(255, 159, 64, 0.2)',
-                    'rgba(255, 205, 86, 0.2)'
+                    'rgba(58, 134, 255, 0.2)',
+                    'rgba(131, 56, 236, 0.2)',
+                    'rgba(255, 190, 11, 0.2)',
+                    'rgb(255, 0, 110, 0.2)',
+                    'rgb(251, 86, 7, 0.2)'
                 ],
                 borderColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(255, 159, 64)',
-                    'rgb(255, 205, 86)'
+                    'rgb(58, 134, 255)',
+                    'rgb(131, 56, 236)',
+                    'rgb(255, 190, 11)',
+                    'rgb(255, 0, 110)',
+                    'rgb(251, 86, 7)'
                 ],
                 borderWidth: 1,
             }],
