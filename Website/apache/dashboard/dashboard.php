@@ -130,19 +130,27 @@ printPreloader();
         </div>
         <div class="top-vert-1">
             <h6 class="vert-h6" id="vert-label-1"></h6>
+            <div class="top-vert-wrapper">
             <table id="vert-table-1"></table>
+            </div>
         </div>
         <div class="top-vert-2">
             <h6 class="vert-h6" id="vert-label-2"></h6>
+            <div class="top-vert-wrapper">
             <table id="vert-table-2"></table>
+            </div>
         </div>
         <div class="top-vert-3">
             <h6 class="vert-h6" id="vert-label-3"></h6>
+            <div class="top-vert-wrapper">
             <table id="vert-table-3"></table>
+            </div>
         </div>
         <div class="top-vert-4">
             <h6 class="vert-h6" id="vert-label-4"></h6>
+            <div class="top-vert-wrapper">
             <table id="vert-table-4"></table>
+            </div>
         </div>
         <div class="top-pie-1"><h4 id="pie-label-1"></h4>
             <canvas class="pie-chart-canvas" id="chart-pie-1"></canvas>
