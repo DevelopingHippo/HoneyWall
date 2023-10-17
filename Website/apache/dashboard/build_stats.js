@@ -108,11 +108,11 @@ async function build_pie(type, position){
         datasets: [{
             fill: true,
             backgroundColor: [
-                'rgb(247, 37, 133)',
-                'rgb(114, 9, 183)',
-                'rgb(58, 12, 163)',
-                'rgb(67, 97, 238)',
-                'rgb(76, 201, 240)'
+                'rgb(112, 214, 255)',
+                'rgb(255, 112, 166)',
+                'rgb(255, 151, 112)',
+                'rgb(255, 214, 112)',
+                'rgb(233, 255, 112)'
             ],
             data: data_array,
             hoverOffset: 4
