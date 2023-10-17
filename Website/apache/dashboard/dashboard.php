@@ -158,6 +158,8 @@ printPreloader();
         </div>
         <div class="live-map">
             <div id="world-map" style="width: 750px; height: 325px;margin: auto;padding: 10px"></div>
+        </div>
+        <div id="latest-logs-container"></div>
         <script>
             build_bar_chart();
             build_map();
@@ -171,9 +173,6 @@ printPreloader();
             build_vert(getCookie("vert-4-selection"), 4);
             build_latest_logs();
         </script>
-    </div>
-    </div>
-    <div id="latest-logs-container">
     </div>
 </section>
 <?php
