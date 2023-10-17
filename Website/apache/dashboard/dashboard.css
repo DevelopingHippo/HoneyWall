@@ -212,12 +212,13 @@ table {
     width: 100%;
     border-collapse: collapse;
     padding: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+
 }
 #logs-table-tr {
     padding: 10px;
 }
 #logs-table-thead {
     padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
