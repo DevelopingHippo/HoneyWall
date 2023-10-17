@@ -132,7 +132,7 @@ app.get('/get-latest-connection', cors(corsOptions), async function (req, res){
 
     try {
         let query;
-        query = "select * from connections ORDER BY id DESC LIMIT 10;";
+        query = "select * from connections ORDER BY id DESC LIMIT 20;";
         const result = await db_query(query);
         let formatted_result = '[';
         for (let i = 0; i < result.length - 1; i++) {
