@@ -211,9 +211,9 @@ table {
     grid-column-end: 9;
     background-color: #36404a;
     border-radius: 20px;
-    /*height: 300px;*/
-    /*overflow-x: hidden;*/
-    /*overflow-y: auto;*/
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .logs-table {
@@ -221,15 +221,6 @@ table {
     border-collapse: collapse;
     padding: 10px;
 }
-
-.log-table.tbody {
-    overflow-y: scroll;
-    position: absolute;
-}
-
-
-
-
 #logs-table-tr {
     padding: 10px;
 }
@@ -239,7 +230,7 @@ table {
     letter-spacing: 2px;
 }
 
-.logs-table.th {
+th {
     padding: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
