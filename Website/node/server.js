@@ -127,12 +127,9 @@ app.get('/get-pie-data', cors(corsOptions), async function (req, res) {
 
 app.get('/get-latest-connection', cors(corsOptions), async function (req, res){
     res.setHeader('Content-Type', 'application/json');
-
-
-
     try {
         let query;
-        query = "select * from connections ORDER BY id DESC LIMIT 20;";
+        query = "SELECT connections.id AS id, connections.dst_port AS dst_port, connections.src_ip AS src_ip, connections.src_port AS src_port, connections.date_time AS date_time, connections.service AS service, connections.location AS location, logins.username as username, logins.password AS password FROM connections RIGHT JOIN logins ON connections.id=logins.id ORDER BY ID DESC LIMIT 25;";
         const result = await db_query(query);
         let formatted_result = '[';
         for (let i = 0; i < result.length - 1; i++) {
@@ -140,19 +137,15 @@ app.get('/get-latest-connection', cors(corsOptions), async function (req, res){
             let time = date_split[4].toString();
             let date = date_split[0] + " " + date_split[1] + " " + date_split[2];
 
-            formatted_result += '{"Time": "' + time + " " + date + '", "Service": "' + result[i]['service'] + ":" + result[i]['dst_port'] + '", ' + '"Source": "' + result[i]["src_ip"] + ":" + result[i]['src_port'] + '", "Location": "' + result[i]["location"] + '"},';
+            formatted_result += '{"Time": "' + time + " " + date + '", "Service": "' + result[i]['service'] + ":" + result[i]['dst_port'] + '", ' + '"Source": "' + result[i]["src_ip"] + ":" + result[i]['src_port'] + '", "Location": "' + result[i]["location"] + '", "Username": "'+ result[i]["username"] + '", "Password":"'+ result[i]["password"] + '"},';
         }
         let date_split = result[result.length - 1]['date_time'].toString().split(" ");
         let time = date_split[4].toString();
         let date = date_split[0] + " " + date_split[1] + " " + date_split[2];
-        formatted_result += '{"Time": "' + time + " " + date + '", "Service": "' + result[result.length - 1]['service'] + ":" + result[result.length - 1]['dst_port'] + '", ' + '"Source": "' + result[result.length - 1]["src_ip"] + ":" + result[result.length - 1]['src_port'] + '", "Location": "' + result[result.length - 1]["location"] + '"}]';
+        formatted_result += '{"Time": "' + time + " " + date + '", "Service": "' + result[result.length - 1]['service'] + ":" + result[result.length - 1]['dst_port'] + '", ' + '"Source": "' + result[result.length - 1]["src_ip"] + ":" + result[result.length - 1]['src_port'] + '", "Location": "' + result[result.length - 1]["location"] + '", "Username": "'+ result[result.length - 1]["username"] + '", "Password":"'+ result[result.length - 1]["password"] + '"}]';
         let json_format = JSON.parse(formatted_result);
         res.json(json_format);
     }
-
-
-
-
     catch (error){
         console.error('Error executing the query:', error);
         res.status(500).json({ error: 'Internal Server Error' });
@@ -163,7 +156,6 @@ app.get('/get-latest-connection', cors(corsOptions), async function (req, res){
 app.get('/get-chart-data', cors(corsOptions), async function (req, res) {
     res.setHeader('Content-Type', 'application/json');
     try {
-
         let query;
         query = "select DATE(date_time) AS time, COUNT(id) as total_connections FROM connections GROUP BY DATE(connections.date_time) ORDER BY time DESC LIMIT 7;";
         const result = await db_query(query);
