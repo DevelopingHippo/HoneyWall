@@ -58,7 +58,6 @@ def logparse(service_name):
             x = json.loads(line)
             action = x["action"]
             if action == "login":
-                status = x["status"]
                 username = x["username"]
                 password = x["password"]
                 query_login(username, password)
