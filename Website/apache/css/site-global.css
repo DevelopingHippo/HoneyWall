@@ -127,3 +127,10 @@ footer {
     background-color: black;
     background-size: cover;
 }
+
+#connections-successful {
+    color: green;
+}
+#connections-attempted {
+    color: red;
+}
