@@ -123,10 +123,29 @@ app.get('/get-pie-data', cors(corsOptions), async function (req, res) {
         }
         const result = await db_query(query);
         let formatted_result = '[';
+        let data;
         for (let i = 0; i < result.length - 1; i++) {
-            formatted_result += '{"name": "' + result[i]['data'] + '", "share": ' + result[i]['total_count'] + '},';
+            if(req.query['type'] === "location")
+            {
+                data = getCountryName(result[i]['data']);
+            }
+            else
+            {
+                data = result[i]['data'];
+            }
+            formatted_result += '"' + data + '":' + result[i]['total_count'] + ',';
+
+            formatted_result += '{"name": "' + data + '", "share": ' + result[i]['total_count'] + '},';
         }
-        formatted_result += '{"name": "' + result[result.length - 1]['data'] + '", "share": ' + result[result.length - 1]['total_count'] + "}]";
+        if(req.query['type'] === "location")
+        {
+            data = getCountryName(result[result.length - 1]['data']);
+        }
+        else
+        {
+            data = result[result.length - 1]['data'];
+        }
+        formatted_result += '{"name": "' + data + '", "share": ' + result[result.length - 1]['total_count'] + "}]";
         let json_format = JSON.parse(formatted_result);
         res.json(json_format);
     }
