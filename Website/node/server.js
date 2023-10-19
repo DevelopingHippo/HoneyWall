@@ -134,8 +134,6 @@ app.get('/get-pie-data', cors(corsOptions), async function (req, res) {
                 data = result[i]['data'];
             }
             formatted_result += '{"name": "' + data + '", "share": ' + result[i]['total_count'] + '},';
-
-            formatted_result += '{"name": "' + data + '", "share": ' + result[i]['total_count'] + '},';
         }
         if(req.query['type'] === "location")
         {
