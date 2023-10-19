@@ -133,7 +133,7 @@ app.get('/get-pie-data', cors(corsOptions), async function (req, res) {
             {
                 data = result[i]['data'];
             }
-            formatted_result += '"' + data + '":' + result[i]['total_count'] + ',';
+            formatted_result += '{"name": "' + data + '", "share": ' + result[i]['total_count'] + '},';
 
             formatted_result += '{"name": "' + data + '", "share": ' + result[i]['total_count'] + '},';
         }
