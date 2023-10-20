@@ -25,6 +25,10 @@ header {
     color: #ffffff;
     user-select: none;
 }
+.connection-status {
+    position: relative;
+}
+
 .navigation a {
     position: relative;
     font-size: 1.1em;
@@ -133,4 +137,7 @@ footer {
 }
 #connections-attempted {
     color: red;
+}
+#slash {
+    color: white;
 }
