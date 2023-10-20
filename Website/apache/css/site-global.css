@@ -25,9 +25,6 @@ header {
     color: #ffffff;
     user-select: none;
 }
-.connection-status {
-    position: relative;
-}
 
 .navigation a, h3 {
     position: relative;
@@ -130,14 +127,4 @@ footer {
     z-index: 10;
     background-color: black;
     background-size: cover;
-}
-
-#connections-successful {
-    color: green;
-}
-#connections-attempted {
-    color: red;
-}
-#slash {
-    color: white;
 }
