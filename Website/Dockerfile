@@ -26,7 +26,7 @@ COPY ./node /var/www/node
 COPY ./apache /var/www/apache
 
 RUN chown -R www-data:www-data /var/www/apache
-RUN chown -R www-data:www-data /var/www/node/api
+RUN chown -R www-data:www-data /var/www/node/
 
 EXPOSE 443
 

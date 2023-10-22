@@ -25,6 +25,7 @@ header {
     color: #ffffff;
     user-select: none;
 }
+
 .navigation a {
     position: relative;
     font-size: 1.1em;
@@ -33,6 +34,15 @@ header {
     font-weight: 500;
     margin-left: 40px;
 }
+
+.navigation h3 {
+    position: relative;
+    font-size: 1.1em;
+    color: #ffffff;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
 .navigation a::after {
     content: '';
     position: absolute;
