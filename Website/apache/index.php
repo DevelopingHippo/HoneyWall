@@ -1,5 +1,6 @@
 <?php
 session_start();
+ini_set('display_errors', 0);
 if (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] == "false")
  {
      $_SESSION["loggedIn"] = "false";

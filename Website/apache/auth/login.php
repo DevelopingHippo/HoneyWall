@@ -4,10 +4,8 @@ if (!isset($_SESSION["loggedIn"]))
 {
     $_SESSION["loggedIn"] = "";
 }
+ini_set('display_errors', 0);
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
