@@ -22,10 +22,16 @@ def getIPLocation(ip):
         return getIPLocation(ip)
 
 
-def convert_timezone(utc_time_string):
+def convert_timezone(time_string):
+    # Fix Time Stamp Format
+    time_array = time_string.split("T")
+    utc_time_string = str(time_array[0]) + " " + str(time_array[1])
+    time_array = utc_time_string.split(".")
+    utc_time_string = str(time_array[0]) + " UTC"
+
     # Define UTC and EST timezones
     utc_timezone = pytz.timezone('UTC')
-    est_timezone = pytz.timezone('America/Detroit')
+    est_timezone = pytz.timezone(time_zone_env)
 
     # Parse the input UTC string to a datetime object
     utc_time = datetime.datetime.strptime(utc_time_string, '%Y-%m-%d %H:%M:%S %Z')
@@ -42,42 +48,42 @@ def convert_timezone(utc_time_string):
 
 # connection to the database to actually push the data
 def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, location):
-    db = mysql.connector.connect(
+    db_conn = mysql.connector.connect(
         host=db_host,
         user=db_user,
         password=db_password,
         database=db_database
     )
-    cursor = db.cursor()
+    db_cursor = db_conn.cursor()
     global data_id
     data_id += 1
     query = "INSERT INTO connections VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
     data = (data_id, dst_ip, dst_port, src_ip, src_port, timestamp, service, location)
-    cursor.execute(query, data)
-    db.commit()
-    db.close()
+    db_cursor.execute(query, data)
+    db_conn.commit()
+    db_conn.close()
 
 
 def query_login(username, password):
-    db = mysql.connector.connect(
+    db_conn = mysql.connector.connect(
         host=db_host,
         user=db_user,
         password=db_password,
         database=db_database
     )
-    cursor = db.cursor()
+    db_cursor = db_conn.cursor()
     global data_id
 
     query = "INSERT INTO logins VALUES (%s, %s, %s)"
     data = (data_id, username, password)
-    cursor.execute(query, data)
-    db.commit()
-    db.close()
+    db_cursor.execute(query, data)
+    db_conn.commit()
+    db_conn.close()
 
 
 # read/write the file, send contents to the database connection method, clear the file
 def logparse(service_name):
-    if os.path.isfile(logpath + service_name + ".log") == True:
+    if os.path.isfile(logpath + service_name + ".log"):
         filelog = open((logpath + service_name + ".log"), 'r+')
         for line in filelog:
             x = json.loads(line)
@@ -91,12 +97,7 @@ def logparse(service_name):
                 dest_port = x["dest_port"]
                 src_ip = x["src_ip"]
                 src_port = x["src_port"]
-                timeformat = x["timestamp"]
-                timeformat = timeformat.split("T")
-                timestamp = str(timeformat[0]) + " " + str(timeformat[1])
-                timeformat = timestamp.split(".")
-                timestamp = str(timeformat[0]) + " UTC"
-                timestamp = convert_timezone(timestamp)
+                timestamp = convert_timezone(x["timestamp"])
                 location = getIPLocation(src_ip)
                 query_connection(dest_ip, dest_port, src_ip, src_port, service_name, timestamp, location)
             else:
