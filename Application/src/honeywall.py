@@ -17,14 +17,11 @@ def getIPLocation(ip):
     res = DbIpCity.get(ip, api_key="free")
     return res.country
 
-def convertTime():
-def convert_utc_to_est(utc_time):
+def convert_time(utc_time):
   #fetch the timezone information
   est = pytz.timezone('US/Eastern')
-
   #convert utc to est
   converted_time = utc_time.astimezone(est)
-
   #return the converted value
   return converted_time
 
@@ -82,7 +79,7 @@ def logparse(service_name):
                 timeformat = x["timestamp"]
                 timeformat = timeformat.split("T")
                 timestamp = str(timeformat[0]) + " " + str(timeformat[1])
-
+                timestamp = convert_time(timestamp)
                 location = getIPLocation(src_ip)
                 query_connection(dest_ip, dest_port, src_ip, src_port, service_name, timestamp, location)
             else:
