@@ -158,4 +158,5 @@ while True:
     logparse("http")
     logparse("https")
     logparse("telnet")
+    logparse("rdp")
     time.sleep(10)
