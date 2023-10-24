@@ -118,7 +118,7 @@ db_host = 'db_honey'
 db_database = 'honeywall'
 
 # executing command to start the honeypots, root doesnt matter because it will be root in the container
-os.system("python3 -m honeypots --setup ssh,http,https,telnet --config honeypotconfig.json")
+os.system("python3 -m honeypots --setup ftp,ssh,telnet,http,https,rdp --config honeypotconfig.json")
 
 time.sleep(10)
 
