@@ -15,7 +15,7 @@ import datetime
 def getIPLocation(ip):
     try:
         response = requests.get(f'https://ipapi.co/{ip}/json/').json()
-        return response.get("country_name")
+        return response.get("country_code")
     except Exception as e:
         print(e)
         time.sleep(5)
