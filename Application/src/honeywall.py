@@ -112,7 +112,6 @@ logpath = "/var/log/honeypots/"
 
 db_password = os.getenv('DB_PASSWORD')
 time_zone_env = os.getenv('TZ')
-time_zone = pytz.timezone(time_zone_env)
 
 db_user = 'honey'
 db_host = 'db_honey'
