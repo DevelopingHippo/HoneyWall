@@ -8,9 +8,6 @@ import mysql.connector
 import time
 import json
 from ip2geotools.databases.noncommercial import DbIpCity
-import tzlocal
-
-
 
 
 def getIPLocation(ip):
@@ -19,6 +16,7 @@ def getIPLocation(ip):
         return res.country
     except Exception as e:
         print(e)
+        time.sleep(5)
         return getIPLocation(ip)
 
 # connection to the database to actually push the data
