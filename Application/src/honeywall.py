@@ -14,8 +14,12 @@ import tzlocal
 
 
 def getIPLocation(ip):
-    res = DbIpCity.get(ip, api_key="free")
-    return res.country
+    try:
+        res = DbIpCity.get(ip, api_key="free")
+        return res.country
+    except Exception as e:
+        print(e)
+        return getIPLocation(ip)
 
 # connection to the database to actually push the data
 def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, location):
