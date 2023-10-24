@@ -21,9 +21,12 @@ def getIPLocation(ip):
         return getIPLocation(ip)
 
 def convertTime(utc):
+
+    print('\nPreconversion: ',utc)
     format = '%Y-%m-%d %H:%M:%S'
     date_obj = datetime.strptime(utc, format)
     converted_time = date_obj.astimezone(time_zone).strftime(format)
+    print('\nPost Conversion: ',converted_time)
     return converted_time
 
 
