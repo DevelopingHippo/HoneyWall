@@ -14,13 +14,11 @@ RUN apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y && apt autor
 #WORKDIR /opt
 #RUN git clone "https://github.com/DevelopingHippo/HoneyWall.git"
 #RUN cd ./HoneyWall/Application/
-#RUN mkdir -p /api
-#RUN mv /opt/HoneyWall/Application/src /api
+#RUN mkdir -p /app
+#RUN mv /opt/HoneyWall/Application/src /app
 #RUN rm -r /opt/HoneyWall/
 
 COPY ./src ./
 RUN pip install --upgrade pip
-#RUN pip install --upgrade wheel
-#RUN pip install --upgrade setuptools
 RUN pip install -r requirements.txt
 CMD ["python3", "/app/honeywall.py"]
