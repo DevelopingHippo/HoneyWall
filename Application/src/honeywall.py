@@ -115,6 +115,8 @@ while not db.is_connected():
         database=db_database
     )
 
+print("Successful Connection to Database")
+
 cursor = db.cursor()
 cursor.execute("SELECT max(id) as last_id FROM connections LIMIT 1")
 result = cursor.fetchone()
