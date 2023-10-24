@@ -8,7 +8,8 @@ import mysql.connector
 import time
 import json
 from ip2geotools.databases.noncommercial import DbIpCity
-
+import pytz
+from datetime import datetime
 
 def getIPLocation(ip):
     try:
@@ -18,6 +19,14 @@ def getIPLocation(ip):
         print(e)
         time.sleep(5)
         return getIPLocation(ip)
+
+def convertTime(utc):
+
+    format = '%Y-%m-%d %H:%M:%S'
+    date_obj = datetime.strptime(utc, format)
+    converted_time = date_obj.astimezone(time_zone).strftime(format)
+    return converted_time
+
 
 # connection to the database to actually push the data
 def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, location):
@@ -86,6 +95,8 @@ data_id = 0
 logpath = "/var/log/honeypots/"
 
 db_password = os.getenv('DB_PASSWORD')
+time_zone_env = os.getenv('TZ')
+time_zone = pytz.timezone(time_zone_env)
 
 db_user = 'honey'
 db_host = 'db_honey'
