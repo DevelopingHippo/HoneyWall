@@ -9,12 +9,32 @@
   "sniffer_filter": "",
   "sniffer_interface": "",
   "honeypots": {
+    "ftp": {
+      "port": 21,
+      "ip": "0.0.0.0",
+      "username": "ftp",
+      "password": "ftpadmin123",
+      "log_file_name": "ftp.log",
+      "max_bytes": 10000,
+      "backup_count": 10,
+      "options":["capture_commands"]
+    },
     "ssh": {
       "port": 22,
       "ip": "0.0.0.0",
       "username": "ssh",
       "password": "sshadmin123",
       "log_file_name": "ssh.log",
+      "max_bytes": 10000,
+      "backup_count": 10,
+      "options":["capture_commands"]
+    },
+    "telnet": {
+      "port": 23,
+      "ip": "0.0.0.0",
+      "username": "telnet",
+      "password": "telnetadmin123",
+      "log_file_name": "telnet.log",
       "max_bytes": 10000,
       "backup_count": 10,
       "options":["capture_commands"]
@@ -39,12 +59,12 @@
       "backup_count": 10,
       "options":["capture_commands"]
     },
-    "telnet": {
-      "port": 23,
+    "rdp": {
+      "port": 3389,
       "ip": "0.0.0.0",
-      "username": "telnet",
-      "password": "telnetadmin123",
-      "log_file_name": "telnet.log",
+      "username": "rdp",
+      "password": "rdpadmin123",
+      "log_file_name": "rdp.log",
       "max_bytes": 10000,
       "backup_count": 10,
       "options":["capture_commands"]

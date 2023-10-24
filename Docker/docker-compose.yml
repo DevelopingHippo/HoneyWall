@@ -46,6 +46,7 @@ services:
       - DB_PASSWORD=P@ssw0rd #Example For Passing Through ENV Variables
       - TZ=America/Detroit
     ports: # List of Open Ports Being Honeypotted by the Application
+      - "2121:21"
       - "2222:22"
       - "2323:23"
       - "8700:80"

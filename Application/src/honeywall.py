@@ -153,6 +153,7 @@ db.close()
 
 # while loop to constantly run through each protocol push and wait 30 seconds
 while True:
+    logparse("ftp")
     logparse("ssh")
     logparse("http")
     logparse("https")
