@@ -11,6 +11,7 @@ from ip2geotools.databases.noncommercial import DbIpCity
 import pytz
 from datetime import datetime
 
+
 def getIPLocation(ip):
     try:
         res = DbIpCity.get(ip, api_key="free")
@@ -20,8 +21,8 @@ def getIPLocation(ip):
         time.sleep(5)
         return getIPLocation(ip)
 
-def convertTime(utc):
 
+def convertTime(utc):
     print('\nPreconversion: ',utc)
     format = '%Y-%m-%d %H:%M:%S'
     date_obj = datetime.strptime(utc, format)
@@ -41,12 +42,12 @@ def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, loc
     cursor = db.cursor()
     global data_id
     data_id += 1
-
     query = "INSERT INTO connections VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
     data = (data_id, dst_ip, dst_port, src_ip, src_port, timestamp, service, location)
     cursor.execute(query, data)
     db.commit()
     db.close()
+
 
 def query_login(username, password):
     db = mysql.connector.connect(
