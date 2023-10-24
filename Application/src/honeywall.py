@@ -82,6 +82,7 @@ def logparse(service_name):
                 timeformat = x["timestamp"]
                 timeformat = timeformat.split("T")
                 timestamp = str(timeformat[0]) + " " + str(timeformat[1])
+                timestamp = convertTime(timestamp)
                 location = getIPLocation(src_ip)
                 query_connection(dest_ip, dest_port, src_ip, src_port, service_name, timestamp, location)
             else:
