@@ -30,4 +30,4 @@ RUN npm install
 
 EXPOSE 443
 
-CMD service apache2 start
+CMD service apache2 start && node /var/www/node/server.js
