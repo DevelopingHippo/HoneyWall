@@ -21,7 +21,7 @@ RUN service apache2 restart
 # Setup the NodeJS App
 WORKDIR /var/www/node
 COPY ./node /var/www/node
-COPY package*.json /var/www/node/package.json
+COPY package*.json /var/www/node/
 
 RUN chown -R www-data:www-data /var/www/apache
 RUN chown -R www-data:www-data /var/www/node
