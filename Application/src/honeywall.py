@@ -12,14 +12,28 @@ import pytz
 import datetime
 
 
-def getIPLocation(ip):
+def getIPLocationBackup(ip):
     try:
         response = requests.get(f'https://ipapi.co/{ip}/json/').json()
-        return response.get("country_code")
+        if response.get("country_code") == "":
+            return getIPLocationBackup(ip)
+        else:
+            return response.get("country_code")
     except Exception as e:
         print(e)
-        time.sleep(5)
-        return getIPLocation(ip)
+        return ""
+
+
+def getIPLocation(ip):
+    try:
+        response = requests.get(f'https://api.iplocation.net/?cmd=ip-country&ip=').json()
+        if response.get("country_code2") == "":
+            return getIPLocationBackup(ip)
+        else:
+            return response.get("country_code2")
+    except Exception as e:
+        print(e)
+        getIPLocationBackup(ip)
 
 
 def convert_timezone(time_string):
