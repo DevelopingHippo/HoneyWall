@@ -29,8 +29,8 @@ services:
       - "8442:80"
       - "8443:443"
     volumes:
-      - "../Website/node/api:/var/www/node/api/"
-      - "../Website/apache:/var/www/apache"
+      - "../Website/node/:/var/www/node/"
+      - "../Website/apache/:/var/www/apache/"
     networks:
       - web_data
     restart: unless-stopped
