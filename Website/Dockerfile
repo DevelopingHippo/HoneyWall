@@ -22,10 +22,10 @@ WORKDIR /var/www/node
 # Move Web Page Files into their Directories
 COPY ./node /var/www/node
 COPY ./apache /var/www/apache
-COPY ./package.json /var/www/node
+COPY package.json /var/www/node/package.json
 
 RUN chown -R www-data:www-data /var/www/apache
-RUN chown -R www-data:www-data /var/www/node/
+RUN chown -R www-data:www-data /var/www/node
 RUN npm install
 
 EXPOSE 443
