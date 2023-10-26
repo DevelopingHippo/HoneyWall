@@ -24,10 +24,10 @@ RUN service apache2 restart
 WORKDIR /var/www/node
 COPY ./node /var/www/node
 COPY package*.json /var/www/node/
+RUN npm install
 
 RUN chown -R www-data:www-data /var/www/apache
 RUN chown -R www-data:www-data /var/www/node
-RUN npm install
 
 EXPOSE 443
 
