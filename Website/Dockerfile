@@ -10,10 +10,12 @@ WORKDIR /var/www/apache
 RUN a2enmod ssl && a2enmod rewrite && a2enmod proxy && a2enmod proxy_http && a2enmod proxy_balancer
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 RUN mkdir -p /etc/apache2/ssl
+
 COPY ./config/certs/honeywall.key /etc/apache2/ssl/honeywall.key
 COPY ./config/certs/honeywall.pem /etc/apache2/ssl/honeywall.pem
 COPY ./config/honeywall-apache.conf /etc/apache2/sites-available/honeywall-apache.conf
 COPY ./apache /var/www/apache
+
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 RUN a2dissite 000-default && a2ensite honeywall-apache
 RUN service apache2 restart
