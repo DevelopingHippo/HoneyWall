@@ -27,7 +27,7 @@ def getIPLocationBackup(ip):
 def getIPLocation(ip):
     try:
         response = requests.get(f'https://api.iplocation.net/?cmd=ip-country&ip=' + ip).json()
-        if response.get("country_code2") == "":
+        if response.get("country_code2") == "" or response.get("country_code2") == "None":
             return getIPLocationBackup(ip)
         else:
             return response.get("country_code2")
