@@ -10,18 +10,24 @@ import json
 import requests
 import pytz
 import datetime
+from ip2geotools.databases.noncommercial import DbIpCity
+
+
+def getIPLocationBackup2(ip):
+    res = DbIpCity.get(ip, api_key="free")
+    return res.country
 
 
 def getIPLocationBackup(ip):
     try:
         response = requests.get(f'https://ipapi.co/{ip}/json/').json()
         if response.get("country_code") == "":
-            return getIPLocationBackup(ip)
+            return getIPLocationBackup2(ip)
         else:
             return response.get("country_code")
     except Exception as e:
         print(e)
-        return ""
+        return getIPLocationBackup2(ip)
 
 
 def getIPLocation(ip):
