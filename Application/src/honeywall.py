@@ -112,9 +112,8 @@ def logparse(service_name):
                 username = x["username"]
                 password = ""
                 if "password" in x:
-                {
                     password = x["password"]
-                }
+
                 query_login(username, password)
             elif action == "connection":
                 dest_ip = x["dest_ip"]
