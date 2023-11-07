@@ -2,7 +2,7 @@ version: "3.7"
 services:
   db_honey:
     container_name: db_honey
-    image: mysql
+    image: mysql:latest
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: P@ssw0rd123!

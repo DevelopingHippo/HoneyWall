@@ -4,7 +4,7 @@ FROM python:3.11.4-slim-bullseye
 RUN apt-get update && apt-get install -y tzdata
 ENV TZ=America/Detroit
 ENV DB_PASSWORD=P@ssw0rd
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+#RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 WORKDIR /app
 
