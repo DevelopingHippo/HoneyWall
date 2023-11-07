@@ -17,6 +17,8 @@ services:
       - web_data
       - honeywall_data
     restart: unless-stopped
+    logging:
+      driver: none
 
   web_honey:
     container_name: web_honey
