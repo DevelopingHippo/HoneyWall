@@ -2,7 +2,7 @@ version: "3.7"
 services:
   db_honey:
     container_name: db_honey
-    image: mysql
+    image: mysql:latest
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: P@ssw0rd123!
@@ -17,18 +17,21 @@ services:
       - web_data
       - honeywall_data
     restart: unless-stopped
+    logging:
+      driver: none
 
   web_honey:
     container_name: web_honey
     build:
       context: ../Website
       dockerfile: ../Website/Dockerfile
+    environment:
+      TZ: America/Detroit
     ports:
       - "8442:80"
       - "8443:443"
     volumes:
-      - "../Website/node/api:/var/www/node/api/"
-      - "../Website/apache:/var/www/apache"
+      - "../Website/apache/:/var/www/apache/"
     networks:
       - web_data
     restart: unless-stopped
@@ -41,15 +44,18 @@ services:
       context: ../Application
       dockerfile: Dockerfile
     environment:
-      DB_PASSWORD: P@ssw0rd #Example For Passing Through ENV Variables
+      - DB_PASSWORD=P@ssw0rd #Example For Passing Through ENV Variables
+      - TZ=America/Detroit
     ports: # List of Open Ports Being Honeypotted by the Application
+      - "2121:21"
       - "2222:22"
       - "2323:23"
       - "8700:80"
       #- "4443:443"
+      - "3389:3389"
     depends_on:
       - db_honey
-    #restart: unless-stopped
+    restart: unless-stopped
     networks:
       - honeywall_data
     logging:
