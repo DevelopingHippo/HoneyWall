@@ -20,10 +20,10 @@
     <link rel="stylesheet" href="../css/site-global.css" type="text/css">
     <script src="build_stats.js"></script>
 </head>
+<body>
 <?php
 printHeader();
 ?>
-<body>
 <?php
 printPreloader();
 ?>
