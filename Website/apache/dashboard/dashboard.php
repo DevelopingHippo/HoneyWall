@@ -1,12 +1,5 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
-<?php
-require_once "../php/web_functions.php";
-loginCheck();
-?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,6 +23,7 @@ loginCheck();
 <?php
 printHeader();
 ?>
+<body>
 <?php
 printPreloader();
 ?>
