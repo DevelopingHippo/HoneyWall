@@ -22,9 +22,8 @@
 </head>
 <body>
 <?php
+require('../php/web_functions.php');
 printHeader();
-?>
-<?php
 printPreloader();
 ?>
 <section class="graphs-section">
