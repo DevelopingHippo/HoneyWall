@@ -8,5 +8,5 @@ setcookie("vert-1-selection", "username");
 setcookie("vert-2-selection", "password");
 setcookie("vert-3-selection", "src_ip");
 setcookie("vert-4-selection", "location");
-header("location: /auth/login.php");
+header("location: /dashboard/dashboard.php");
 exit();
