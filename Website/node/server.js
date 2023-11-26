@@ -474,7 +474,8 @@ function getCountryName (countryCode) {
         'EH' : 'Western Sahara',
         'YE' : 'Yemen',
         'ZM' : 'Zambia',
-        'ZW' : 'Zimbabwe'
+        'ZW' : 'Zimbabwe',
+        '-1' : 'Local IP'
     };
 
     if (isoCountries.hasOwnProperty(countryCode)) {
