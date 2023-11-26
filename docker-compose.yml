@@ -1,0 +1,61 @@
+version: "3.7"
+services:
+  db_honey:
+    container_name: db_honey
+    image: devhippo/honeywall-db:latest
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: P@ssw0rd123! #CHANGE ME
+    volumes:
+      - "./data:/var/lib/mysql"
+    ports:
+      - "3308:3306"
+    networks:
+      - web_data
+      - honeywall_data
+    restart: unless-stopped
+    logging:
+      driver: none
+
+  web_honey:
+    container_name: web_honey
+    image: devhippo/honeywall-www:latest
+    environment:
+      TZ: America/Detroit
+    ports:
+      - "8442:80"
+      - "8443:443"
+    networks:
+      - web_data
+    restart: unless-stopped
+    depends_on:
+      - db_honey
+
+  application_honey:
+    container_name: app_honey
+    image: devhippo/honeywall-app:latest
+    environment:
+      - DB_PASSWORD=P@ssw0rd #Example For Passing Through ENV Variables
+      - TZ=America/Detroit
+    ports: # List of Open Ports Being Honeypotted by the Application
+      - "2121:21"
+      - "2222:22"
+      - "2323:23"
+      - "8700:80"
+      - "4443:443"
+      - "3389:3389"
+    depends_on:
+      - db_honey
+    restart: unless-stopped
+    networks:
+      - honeywall_data
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  honeywall_data:
+    driver: bridge
+  web_data:
+    driver: bridge

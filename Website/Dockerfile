@@ -11,8 +11,6 @@ RUN a2enmod ssl && a2enmod rewrite && a2enmod proxy && a2enmod proxy_http && a2e
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 RUN mkdir -p /etc/apache2/ssl
 
-COPY ./config/certs/honeywall.key /etc/apache2/ssl/honeywall.key
-COPY ./config/certs/honeywall.pem /etc/apache2/ssl/honeywall.pem
 COPY ./config/honeywall-apache.conf /etc/apache2/sites-available/honeywall-apache.conf
 COPY ./apache /var/www/apache
 
