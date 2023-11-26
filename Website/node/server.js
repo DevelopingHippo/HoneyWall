@@ -16,7 +16,7 @@ const cors = require('cors');
 const db_config = {
     host: "db_honey",
     user: "web",
-    password: "P@ssw0rd",
+    password: "xDQKd4wKWJO8YOCT7VALbdCX905DS1p",
     database: "honeywall"
 };
 
