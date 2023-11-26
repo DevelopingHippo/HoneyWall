@@ -9,7 +9,6 @@ services:
     volumes:
       - "../Database/data:/var/lib/mysql"
       - "../Database/init-sql/build_honeywall_db.sql:/docker-entrypoint-initdb.d/1.sql"
-      - "../Database/init-sql/build_www_db.sql:/docker-entrypoint-initdb.d/2.sql"
       - "../Database/init-sql/permissions.sql:/docker-entrypoint-initdb.d/3.sql"
     ports:
       - "3306:3306"
@@ -28,7 +27,6 @@ services:
     environment:
       TZ: America/Detroit
     ports:
-      - "8442:80"
       - "8443:443"
     volumes:
       - "../Website/apache/:/var/www/apache/"
@@ -44,14 +42,13 @@ services:
       context: ../Application
       dockerfile: Dockerfile
     environment:
-      - DB_PASSWORD=P@ssw0rd #Example For Passing Through ENV Variables
       - TZ=America/Detroit
     ports: # List of Open Ports Being Honeypotted by the Application
       - "2121:21"
       - "2222:22"
       - "2323:23"
       - "8700:80"
-      #- "4443:443"
+      - "4443:443"
       - "3389:3389"
     depends_on:
       - db_honey
