@@ -475,7 +475,7 @@ function getCountryName (countryCode) {
         'YE' : 'Yemen',
         'ZM' : 'Zambia',
         'ZW' : 'Zimbabwe',
-        '-1' : 'Local IP'
+        '-' : 'Local IP'
     };
 
     if (isoCountries.hasOwnProperty(countryCode)) {
