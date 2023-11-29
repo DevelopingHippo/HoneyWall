@@ -1,16 +1,12 @@
 // Constants
 const express = require('express');
 const mysql = require('mysql');
-//const http2 = require('http2')
-//const { readFileSync } = require('fs')
-
 
 const PORT = 3000;
 const HOST = '0.0.0.0';
 
 // App
 const app = express();
-const path = require("path");
 const cors = require('cors');
 
 const db_config = {
@@ -22,11 +18,6 @@ const db_config = {
 
 const db_pool = mysql.createPool(db_config);
 
-// const options = {
-//     key: readFileSync('key.key'),
-//     cert: readFileSync('cert.pem'),
-//     allowHTTP1: true
-// }
 const corsOptions = {
     origin: 'http://localhost:8443',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
@@ -195,7 +186,7 @@ app.get('/get-chart-data', cors(corsOptions), async function (req, res) {
     res.setHeader('Content-Type', 'application/json');
     try {
         let query;
-        query = "select DATE(date_time) AS time, COUNT(id) as total_connections FROM connections GROUP BY DATE(connections.date_time) ORDER BY time DESC LIMIT 7;";
+        query = "select DATE(date_time) AS time, COUNT(id) as total_connections FROM connections GROUP BY DATE(connections.date_time) ORDER BY time DESC LIMIT 30;";
         const result = await db_query(query);
         let formatted_result = '[';
         for (let i = result.length - 1; i > 0 ; i--) {
@@ -497,9 +488,6 @@ function closeConnection() {
     });
 }
 
-
-// const server = http2.createSecureServer(options, app)
-// server.listen(PORT)
 app.listen(PORT, HOST, () => {
     console.log(`Running on http://${HOST}:${PORT}`);
 });
