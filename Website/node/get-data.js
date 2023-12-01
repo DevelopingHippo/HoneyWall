@@ -436,3 +436,5 @@ function db_query(sql, db_pool) {
         });
     });
 }
+
+module.exports = { get_map_data, get_chart_data, get_vert_data, get_latest_data, get_pie_data};

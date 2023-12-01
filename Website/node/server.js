@@ -167,7 +167,7 @@ setInterval(() => {
     get_vert_data('src_ip', db_pool).then((data) => {
         srcIP_vert_data = data;
     });
-}, 30000);
+}, 10000);
 
 
 app.listen(PORT, HOST, () => {
