@@ -1,5 +1,4 @@
-import { get_chart_data, get_map_data, get_pie_data, get_vert_data, get_latest_data} from "./get-data";
-
+const { get_chart_data, get_map_data, get_pie_data, get_vert_data, get_latest_data } = require('./get-data');
 // Constants
 const express = require('express');
 const mysql = require('mysql');
