@@ -1,4 +1,4 @@
-export async function get_map_data(db_pool)
+async function get_map_data(db_pool)
 {
     try {
         let query = "SELECT location, count(location) AS total_connections FROM connections GROUP BY location;";
@@ -16,7 +16,7 @@ export async function get_map_data(db_pool)
     }
 }
 
-export async function get_chart_data(range, db_pool)
+async function get_chart_data(range, db_pool)
 {
     try {
         let query;
@@ -38,7 +38,7 @@ export async function get_chart_data(range, db_pool)
     }
 }
 
-export async function get_vert_data(type, db_pool)
+async function get_vert_data(type, db_pool)
 {
     try {
         let query;
@@ -90,7 +90,7 @@ export async function get_vert_data(type, db_pool)
     }
 }
 
-export async function get_pie_data(type, db_pool)
+async function get_pie_data(type, db_pool)
 {
     try {
         let query;
@@ -141,7 +141,7 @@ export async function get_pie_data(type, db_pool)
     }
 }
 
-export async function get_latest_data(range, db_pool)
+async function get_latest_data(range, db_pool)
 {
     try {
         let query;
