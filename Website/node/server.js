@@ -96,10 +96,7 @@ app.get('/get-pie-data', cors(corsOptions), async function (req, res) {
 
 app.get('/get-latest-connection', cors(corsOptions), async function (req, res){
     res.setHeader('Content-Type', 'application/json');
-
     res.json(latest_data);
-
-
 });
 
 
