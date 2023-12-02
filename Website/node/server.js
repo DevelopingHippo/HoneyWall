@@ -29,6 +29,7 @@ const corsOptions = {
 
 let map_data = {};
 let chart_data = {};
+let latest_data = {};
 
 let service_vert_data = {};
 let location_vert_data = {};
@@ -95,9 +96,10 @@ app.get('/get-pie-data', cors(corsOptions), async function (req, res) {
 
 app.get('/get-latest-connection', cors(corsOptions), async function (req, res){
     res.setHeader('Content-Type', 'application/json');
-    get_latest_data('25', db_pool).then((data) => {
-        res.json(data);
-    });
+
+    res.json(latest_data);
+
+
 });
 
 
@@ -125,6 +127,9 @@ setInterval(() => {
     get_map_data(db_pool).then((data) => {
         map_data = data;
     });
+    get_latest_data('25', db_pool).then((data) => {
+        latest_data = data;
+    });
     get_pie_data('location', db_pool).then((data) => {
         location_pie_data = data;
     });
@@ -143,7 +148,6 @@ setInterval(() => {
     get_pie_data('src_ip', db_pool).then((data) => {
         srcIP_pie_data = data;
     });
-
     get_vert_data('location', db_pool).then((data) => {
         location_vert_data = data;
     });
