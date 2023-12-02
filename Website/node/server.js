@@ -32,19 +32,15 @@ let chart_data = {};
 
 let service_vert_data = {};
 let location_vert_data = {};
-let port_vert_data = {};
 let username_vert_data = {};
 let password_vert_data = {};
-let ip_vert_data = {};
 let dstPort_vert_data = {};
 let srcIP_vert_data = {};
 
 let service_pie_data = {};
 let location_pie_data = {};
-let port_pie_data = {};
 let username_pie_data = {};
 let password_pie_data = {};
-let ip_pie_data = {};
 let dstPort_pie_data = {};
 let srcIP_pie_data = {};
 
@@ -99,7 +95,7 @@ app.get('/get-pie-data', cors(corsOptions), async function (req, res) {
 
 app.get('/get-latest-connection', cors(corsOptions), async function (req, res){
     res.setHeader('Content-Type', 'application/json');
-    get_latest_data(25, db_pool).then((data) => {
+    get_latest_data('25', db_pool).then((data) => {
         res.json(data);
     });
 });
