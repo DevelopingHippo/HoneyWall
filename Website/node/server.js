@@ -76,15 +76,15 @@ app.get('/get-vert-data', cors(corsOptions), async function (req, res) {
 app.get('/get-pie-data', cors(corsOptions), async function (req, res) {
     res.setHeader('Content-Type', 'application/json');
     if (req.query['type'] === "location") {
-        res.json(password_pie_data);
+        res.json(location_pie_data);
     } else if (req.query['type'] === "dst_port") {
-        res.json(password_pie_data);
+        res.json(dstPort_pie_data);
     } else if (req.query['type'] === "service") {
-        res.json(password_pie_data);
+        res.json(service_pie_data);
     } else if (req.query['type'] === "src_ip") {
-        res.json(password_pie_data);
+        res.json(srcIP_pie_data);
     } else if (req.query['type'] === "username") {
-        res.json(password_pie_data);
+        res.json(username_pie_data);
     } else if (req.query['type'] === "password") {
         res.json(password_pie_data);
     }
