@@ -37,7 +37,7 @@ async def websocket_task(websocket, path):
     cursor = conn.cursor()
     while True:
         ret = []
-        cursor.execute("select id,src_ip,src_port,dst_ip as dest_ip, dst_port as dest_port, latitude, longitude, location, service date_time from connections where date_time >= '" + timestamp + "' LIMIT 25")
+        cursor.execute("select id,src_ip,src_port,dst_ip as dest_ip, dst_port as dest_port, latitude, longitude, location, service, date_time from connections where date_time >= '" + timestamp + "' LIMIT 25")
         time_stamp = datetime.datetime.now()
         time_stamp = time_stamp.strftime('%Y-%m-%dT%H:%M:%S.%f')
         timestamp = convert_timezone(time_stamp)
