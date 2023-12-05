@@ -93,6 +93,7 @@ def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, loc
     db_cursor = db_conn.cursor()
     global data_id
     data_id += 1
+    print(f'{data_id} {dst_ip} {dst_port} {src_ip} {src_port} {timestamp} {service} {location} {longitude} {latitude}\n')
     query = "INSERT INTO connections VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
     data = (data_id, dst_ip, dst_port, src_ip, src_port, timestamp, service, location, longitude, latitude)
     db_cursor.execute(query, data)
