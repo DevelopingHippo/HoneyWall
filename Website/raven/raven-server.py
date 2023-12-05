@@ -97,7 +97,7 @@ def convert_timezone(time_string):
 
 
 def ip_lookup():
-    ip = request.urlopen('https://ident.me').read().decode('utf8')
+    ip = urlopen('https://ident.me').read().decode('utf8')
     res = DbIpCity.get(ip, api_key="free")
     global latitude
     global longitude
