@@ -42,6 +42,8 @@ services:
     build:
       context: ../Application
       dockerfile: Dockerfile
+    volumes:
+      - "../Application/src:/app/"
     environment:
       - TZ=America/Detroit
     ports: # List of Open Ports Being Honeypotted by the Application
