@@ -24,8 +24,8 @@ db_user = "web"
 db_password = 'xDQKd4wKWJO8YOCT7VALbdCX905DS1p'
 db = "honeywall"
 time_zone_env = 'America/Detroit'
-latitude = "38.97093068774403";
-longitude = "-100.94153698531862";
+latitude = "38.97093068774403"
+longitude = "-100.94153698531862"
 
 
 
@@ -43,26 +43,7 @@ async def websocket_task(websocket, path):
         time_stamp = time_stamp.strftime('%Y-%m-%dT%H:%M:%S.%f')
         timestamp = convert_timezone(time_stamp)
         result = cursor.fetchall()
-        for num in range(0,1):
-            # parameters = {
-            #     "function": "marker",
-            #     "object": {
-            #         "from": "{}:{}".format(item[1], item[2]),
-            #         "to": "{}:{}".format(item[3], item[4])
-            #     },
-            #     "color": {
-            #         "line": {
-            #             "from": "#{:06x}".format(randint(255, 16777216)),
-            #             "to": "#{:06x}".format(randint(255, 16777216))
-            #         }
-            #     },
-            #     "timeout": 1000,
-            #     "options": [
-            #         "line",
-            #         "single-output",
-            #         "multi-output"
-            #     ]
-            # }
+        for item in result:
             parameters = {
                 "function":"marker",
                 "method": "name",
