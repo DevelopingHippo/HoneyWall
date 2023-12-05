@@ -44,18 +44,18 @@ async def websocket_task(websocket, path):
         result = cursor.fetchall()
         for item in result:
             service = format(item[8])
-            color = randint(255, 16777216)
-
-            if service == "rdp":
-                color = "#0051d4" # Blue
-            elif service == "ssh":
-                color = "#f2001c" # Red
-            elif service == "ftp":
-                color = "#00ff62" # Green
-            elif service == "telnet":
-                color = "#ffcc00" # Orange
-            elif service == "http":
-                color = "#fff700" # Yellow
+            # color = randint(255, 16777216)
+            #
+            # # if service == "rdp":
+            # #     color = "#0051d4" # Blue
+            # # elif service == "ssh":
+            # #     color = "#f2001c" # Red
+            # # elif service == "ftp":
+            # #     color = "#00ff62" # Green
+            # # elif service == "telnet":
+            # #     color = "#ffcc00" # Orange
+            # # elif service == "http":
+            # #     color = "#fff700" # Yellow
 
             if item[5] == "" or item[6] == "":
                 parameters = {
@@ -67,8 +67,8 @@ async def websocket_task(websocket, path):
                     },
                     "color": {
                         "line": {
-                            "from": "{}".format(color),
-                            "to": "{}".format(color)
+                            "from": "#{:06x}".format(randint(255, 16777216)),
+                            "to": "#{:06x}".format(randint(255, 16777216))
                         }
                     },
                     "timeout": 1000,
@@ -88,10 +88,10 @@ async def websocket_task(websocket, path):
                     },
                     "color": {
                         "line": {
-                            "from": "{}".format(color),
-                            "to": "{}".format(color)
-                            #"from": "#{:06x}".format(randint(255, 16777216)),
-                            #"to": "#{:06x}".format(randint(255, 16777216))
+                            # "from": "{}".format(color),
+                            # "to": "{}".format(color)
+                            "from": "#{:06x}".format(randint(255, 16777216)),
+                            "to": "#{:06x}".format(randint(255, 16777216))
                         }
                     },
                     "timeout": 1000,
