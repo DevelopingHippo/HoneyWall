@@ -3,7 +3,7 @@ from random import randint
 import datetime
 from http import HTTPStatus
 from mimetypes import guess_type
-from urllib.parse import urljoin, urlparse, request
+from urllib.parse import urljoin, urlparse
 from os import path, getcwd, getenv
 from contextlib import suppress
 from asyncio import sleep as asleep
@@ -13,7 +13,7 @@ from websockets import serve
 from json import dumps
 import pytz
 from ip2geotools.databases.noncommercial import DbIpCity
-
+import urllib.request
 
 IP = '0.0.0.0'
 WEBSOCKET_PORT = 5678
