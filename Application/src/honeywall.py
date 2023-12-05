@@ -52,7 +52,7 @@ def getIPLocation(ip):
         if response.get("continent").get("code") == "":
             return getIPLocationBackup2(ip)
         else:
-            return [response.get("continent").get("code"), response.get("location").get("latitude"), response.get("location").get("longitude")]
+            return [response.get("country").get("names").get("en"), response.get("location").get("latitude"), response.get("location").get("longitude")]
     except Exception as e:
         print(e)
         return getIPLocationBackup2(ip)
