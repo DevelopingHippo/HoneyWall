@@ -21,7 +21,7 @@ def ip_lookup_3(ip):
 
 def ip_lookup_4(ip):
     response = requests.get(f'https://api.findip.net/{ip}/?token=dbf072f44b924b36ae00d1b074945b40').json()
-    return [response.get("continent").get("code"), response.get("location").get("latitude"), response.get("location").get("longitude")]
+    return [response.get("country").get("names").get("en"), response.get("location").get("latitude"), response.get("location").get("longitude")]
 
 
 ip_addr = "47.6.19.10"

@@ -28,17 +28,17 @@ latitude = "38.97093068774403"
 longitude = "-100.94153698531862"
 
 
-
 async def websocket_task(websocket, path):
     WEBSOCKETS.add(websocket)
     time_stamp = datetime.datetime.now()
     time_stamp = time_stamp.strftime('%Y-%m-%dT%H:%M:%S.%f')
     timestamp = convert_timezone(time_stamp)
-    conn = connect(host=db_host, user=db_user, password=db_password, database=db,autocommit=True)
+    conn = connect(host=db_host, user=db_user, password=db_password, database=db, autocommit=True)
     cursor = conn.cursor()
     while True:
-        ret = [] # longitude, latitude,
-        cursor.execute("select id,src_ip,src_port,dst_ip as dest_ip, dst_port as dest_port, latitude, longitude, location, date_time from connections where date_time >= '" + timestamp + "'")
+        ret = []
+        cursor.execute(
+            "select id,src_ip,src_port,dst_ip as dest_ip, dst_port as dest_port, latitude, longitude, location, date_time from connections where date_time >= '" + timestamp + "'")
         time_stamp = datetime.datetime.now()
         time_stamp = time_stamp.strftime('%Y-%m-%dT%H:%M:%S.%f')
         timestamp = convert_timezone(time_stamp)
@@ -47,7 +47,7 @@ async def websocket_task(websocket, path):
 
             if item[5] == "None" or item[6] == "None":
                 parameters = {
-                    "function":"marker",
+                    "function": "marker",
                     "method": "name",
                     "object": {
                         "from": "0,{}".format(item[7]),
@@ -68,7 +68,7 @@ async def websocket_task(websocket, path):
                 }
             else:
                 parameters = {
-                    "function":"marker",
+                    "function": "marker",
                     "method": "name",
                     "object": {
                         "from": "{},{}".format(item[5], item[6]),
@@ -95,6 +95,7 @@ async def websocket_task(websocket, path):
                     await gather(ws.send(dumps(ret)), return_exceptions=False)
         await asleep(randint(1, 2))
     WEBSOCKETS.remove(websocket)
+
 
 def convert_timezone(time_string):
     # Fix Time Stamp Format
