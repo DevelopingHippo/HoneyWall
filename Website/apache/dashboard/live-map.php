@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Raven Test</title>
+    <title>Live Map</title>
     <link rel="stylesheet" href="../css/site-global.css" type="text/css">
     <link rel="stylesheet" href="live-map.css" type="text/css">
 </head>
-
  <body>
 <?php
 require('../php/web_functions.php');
@@ -49,12 +47,3 @@ printHeader();
   </div>
   </body>
  </html>
-
-
-
-
-
-
-
-
-
