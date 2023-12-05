@@ -38,32 +38,56 @@ async def websocket_task(websocket, path):
     cursor = conn.cursor()
     while True:
         ret = [] # longitude, latitude,
-        cursor.execute("select id,src_ip,src_port,dst_ip as dest_ip, dst_port as dest_port, latitude, longitude, date_time from connections where date_time >= '" + timestamp + "'")
+        cursor.execute("select id,src_ip,src_port,dst_ip as dest_ip, dst_port as dest_port, latitude, longitude, location, date_time from connections where date_time >= '" + timestamp + "'")
         time_stamp = datetime.datetime.now()
         time_stamp = time_stamp.strftime('%Y-%m-%dT%H:%M:%S.%f')
         timestamp = convert_timezone(time_stamp)
         result = cursor.fetchall()
         for item in result:
-            parameters = {
-                "function":"marker",
-                "method": "name",
-                "object": {
-                    "from": "{},{}".format(item[5], item[6]),
-                    "to": "{},{}".format(latitude, longitude)
-                },
-                "color": {
-                    "line": {
-                        "from": "#{:06x}".format(randint(255, 16777216)),
-                        "to": "#{:06x}".format(randint(255, 16777216))
-                    }
-                },
-                "timeout": 1000,
-                "options": [
-                    "line",
-                    "single-output",
-                    "multi-output"
-                ]
-            }
+
+            if item[5] == "None" or item[6] == "None":
+                parameters = {
+                    "function":"marker",
+                    "method": "name",
+                    "object": {
+                        "from": "0,{}".format(item[7]),
+                        "to": "{},{}".format(latitude, longitude)
+                    },
+                    "color": {
+                        "line": {
+                            "from": "#{:06x}".format(randint(255, 16777216)),
+                            "to": "#{:06x}".format(randint(255, 16777216))
+                        }
+                    },
+                    "timeout": 1000,
+                    "options": [
+                        "line",
+                        "single-output",
+                        "multi-output"
+                    ]
+                }
+            else:
+                parameters = {
+                    "function":"marker",
+                    "method": "name",
+                    "object": {
+                        "from": "{},{}".format(item[5], item[6]),
+                        "to": "{},{}".format(latitude, longitude)
+                    },
+                    "color": {
+                        "line": {
+                            "from": "#{:06x}".format(randint(255, 16777216)),
+                            "to": "#{:06x}".format(randint(255, 16777216))
+                        }
+                    },
+                    "timeout": 1000,
+                    "options": [
+                        "line",
+                        "single-output",
+                        "multi-output"
+                    ]
+                }
+
             ret.append(parameters)
         if len(ret) > 0:
             for ws in WEBSOCKETS:

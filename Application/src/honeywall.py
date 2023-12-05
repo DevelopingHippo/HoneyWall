@@ -9,21 +9,53 @@ import datetime
 from ip2geotools.databases.noncommercial import DbIpCity
 
 
+def getIPLocationBackup3(ip):
+    try:
+        response = requests.get(f'https://api.iplocation.net/?cmd=ip-country&ip=' + ip).json()
+        if response.get("country_code2") == "" or response.get("country_code2") == "None":
+            return ['No Data', 'No Data', 'No Data']
+        else:
+            return response.get("country_code2")
+    except Exception as e:
+        print(e)
+        return ['No Data', 'No Data', 'No Data']
+
+
+def getIPLocationBackup2(ip):
+    try:
+        res = DbIpCity.get(ip, api_key="free")
+        if res.country == "" or res.latitude == "" or res.longitude == "":
+            return getIPLocationBackup3(ip)
+        else:
+            return [res.country, res.latitude, res.longitude]
+    except Exception as e:
+        print(e)
+        return getIPLocationBackup3(ip)
+
+
 def getIPLocationBackup(ip):
-    res = DbIpCity.get(ip, api_key="free")
-    return [res.country, res.latitude, res.longitude]
+    try:
+        response = requests.get(f'https://ipapi.co/{ip}/json/').json()
+        if response.get("country_code") == "":
+            return getIPLocationBackup2(ip)
+        else:
+            return [response.get("country_code"), response.get("latitude"), response.get("longitude")]
+    except Exception as e:
+        print(e)
+        return getIPLocationBackup2(ip)
 
 
 def getIPLocation(ip):
     try:
-        response = requests.get(f'https://ipapi.co/{ip}/json/').json()
-        if response.get("country_code") == "":
-            return getIPLocationBackup(ip)
+        response = requests.get(f'https://api.findip.net/{ip}/?token=dbf072f44b924b36ae00d1b074945b40').json()
+
+        if response.get("continent").get("code") == "":
+            return getIPLocationBackup2(ip)
         else:
-            return [response.get("country_code"), response.get("latitude") , response.get("longitude")]
+            return [response.get("continent").get("code"), response.get("location").get("latitude"), response.get("location").get("longitude")]
     except Exception as e:
         print(e)
-        return getIPLocationBackup(ip)
+        return getIPLocationBackup2(ip)
 
 
 def convert_timezone(time_string):
@@ -108,7 +140,8 @@ def logparse(service_name):
                 location = location_data[0]
                 latitude = location_data[1]
                 longitude = location_data[2]
-                query_connection(dest_ip, dest_port, src_ip, src_port, service_name, timestamp, location, latitude, longitude)
+                query_connection(dest_ip, dest_port, src_ip, src_port, service_name, timestamp, location, latitude,
+                                 longitude)
             else:
                 continue
         filelog.truncate(0)
