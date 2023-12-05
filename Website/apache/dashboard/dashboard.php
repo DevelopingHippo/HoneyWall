@@ -152,6 +152,10 @@ printPreloader();
         <div class="live-map">
             <div id="world-map" style="width: 750px; height: 325px;margin: auto;padding: 10px"></div>
         </div>
+        <div class="raven-map">
+            <iframe id="raven-iframe" src="./raven/raven.html"></iframe>
+        </div>
+
         <div id="latest-logs-container">
             <h1>Most Recent Logs</h1>
         </div>
@@ -167,6 +171,36 @@ printPreloader();
             build_vert(getCookie("vert-3-selection"), 3);
             build_vert(getCookie("vert-4-selection"), 4);
             build_latest_logs();
+
+            let base_url = window.location.host;
+            base_url = "ws://" + base_url + "/raven";
+            document.getElementById('raven-iframe').addEventListener("load", function() {
+            let raven_options = {
+                'world_type': null,
+                'selected_countries': [],
+                'remove_countries': ['aq'],
+                'height': window.innerHeight,
+                'width': window.innerWidth,
+                'backup_background_color': '#212222',
+                'orginal_country_color': '#737373',
+                'clicked_country_color': '#6c4242',
+                'selected_country_color': '#ff726f',
+                'attack_output': true,
+                'global_timeout': 2000,
+                'global_stats_limit': 10,
+                'db_length': 1000,
+                'location': 'scripts',
+                'panels': ['multi-output', 'single-output','tooltip', 'random', 'insert','taskbar'],
+                'disable': [],
+                'websocket':{'server':'ws://10.0.1.55:5678',
+                    'request_timeout':3000},
+                'verbose': false
+            };
+            window['raven'] = document.getElementById('raven-iframe').contentWindow.raven;
+            window['raven'].init_all(raven_options);
+            window['raven'].init_world();
+            window['raven'].fetch_data_from_server();
+            });
         </script>
     </div>
 </section>

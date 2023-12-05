@@ -1,0 +1,26 @@
+APP_PATH="/var/www/node"
+APP_SCRIPT="server.js"
+
+case "$1" in
+  start)
+    echo "Starting API application"
+    cd $APP_PATH
+    node $APP_SCRIPT >> /var/log/api.log 2>&1 &
+    ;;
+  stop)
+    echo "Stopping my Node.js application"
+    pkill -f "node $APP_SCRIPT"
+    ;;
+  restart)
+    echo "Restarting API application"
+    $0 stop
+    sleep 2
+    $0 start
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart}"
+    exit 1
+    ;;
+esac
+
+exit 0

@@ -1,0 +1,26 @@
+APP_PATH="/app"
+APP_MODULE="raven-server.py"
+
+case "$1" in
+  start)
+    echo "Starting Raven application"
+    cd $APP_PATH
+    python3 $APP_MODULE >> /var/log/raven.log 2>&1 &
+    ;;
+  stop)
+    echo "Stopping my Python application"
+    pkill -f "python3 $APP_MODULE"
+    ;;
+  restart)
+    echo "Restarting Raven application"
+    $0 stop
+    sleep 2
+    $0 start
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart}"
+    exit 1
+    ;;
+esac
+
+exit 0

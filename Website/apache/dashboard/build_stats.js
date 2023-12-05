@@ -266,6 +266,10 @@ function getCookie(cname) {
     return "";
 }
 
+//function build_raven_map():
+//{
+//}
+
 
 async function apiCall(url) {
     const response = await fetch(url);

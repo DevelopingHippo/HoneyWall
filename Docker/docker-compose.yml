@@ -10,8 +10,6 @@ services:
       - "../Database/data:/var/lib/mysql"
       - "../Database/init-sql/build_honeywall_db.sql:/docker-entrypoint-initdb.d/1.sql"
       - "../Database/init-sql/permissions.sql:/docker-entrypoint-initdb.d/3.sql"
-    ports:
-      - "3306:3306"
     networks:
       - web_data
       - honeywall_data
@@ -25,11 +23,14 @@ services:
       context: ../Website
       dockerfile: ../Website/Dockerfile
     environment:
-      TZ: America/Detroit
+      - TZ=America/Detroit
+      - DB_PASSWORD=xDQKd4wKWJO8YOCT7VALbdCX905DS1p
     ports:
       - "8443:443"
+      - "5678:5678"
     volumes:
       - "../Website/apache/:/var/www/apache/"
+      - "../Website/raven:/app/"
     networks:
       - web_data
     restart: unless-stopped

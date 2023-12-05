@@ -2,6 +2,7 @@ CREATE DATABASE IF NOT EXISTS honeywall;
 use honeywall;
 
 # Connections Table
+
 create table connections(
     id INT NOT NULL,
     dst_ip VARCHAR(15),
@@ -11,8 +12,11 @@ create table connections(
     date_time DATETIME,
     service VARCHAR(30),
     location VARCHAR(2),
+    latitude VARCHAR(32),
+    longitude VARCHAR(32),
     primary key (id)
 );
+
 create table logins(
     id INT NOT NULL,
     username VARCHAR(64),

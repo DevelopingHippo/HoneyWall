@@ -20,8 +20,6 @@ const db_config = {
 const db_pool = mysql.createPool(db_config);
 // Function to execute database queries
 
-
-
 const corsOptions = {
     origin: 'http://localhost:8443',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204

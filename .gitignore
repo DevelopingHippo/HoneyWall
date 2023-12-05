@@ -2,3 +2,4 @@
 /Website/node_modules
 /.idea
 /Website/package-lock.json
+/Application/venv

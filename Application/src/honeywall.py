@@ -1,7 +1,3 @@
-# TODO
-# convert ip address to geolocation
-# make sure that the data is sent to db properly
-
 # imports for the program
 import os
 import mysql.connector
@@ -13,33 +9,21 @@ import datetime
 from ip2geotools.databases.noncommercial import DbIpCity
 
 
-def getIPLocationBackup2(ip):
-    res = DbIpCity.get(ip, api_key="free")
-    return res.country
-
-
 def getIPLocationBackup(ip):
-    try:
-        response = requests.get(f'https://ipapi.co/{ip}/json/').json()
-        if response.get("country_code") == "":
-            return getIPLocationBackup2(ip)
-        else:
-            return response.get("country_code")
-    except Exception as e:
-        print(e)
-        return getIPLocationBackup2(ip)
+    res = DbIpCity.get(ip, api_key="free")
+    return [res.country, res.latitude, res.longitude]
 
 
 def getIPLocation(ip):
     try:
-        response = requests.get(f'https://api.iplocation.net/?cmd=ip-country&ip=' + ip).json()
-        if response.get("country_code2") == "" or response.get("country_code2") == "None":
+        response = requests.get(f'https://ipapi.co/{ip}/json/').json()
+        if response.get("country_code") == "":
             return getIPLocationBackup(ip)
         else:
-            return response.get("country_code2")
+            return [response.get("country_code"), response.get("latitude") , response.get("longitude")]
     except Exception as e:
         print(e)
-        getIPLocationBackup(ip)
+        return getIPLocationBackup(ip)
 
 
 def convert_timezone(time_string):
@@ -67,7 +51,7 @@ def convert_timezone(time_string):
 
 
 # connection to the database to actually push the data
-def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, location):
+def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, location, longitude, latitude):
     db_conn = mysql.connector.connect(
         host=db_host,
         user=db_user,
@@ -77,8 +61,8 @@ def query_connection(dst_ip, dst_port, src_ip, src_port, service, timestamp, loc
     db_cursor = db_conn.cursor()
     global data_id
     data_id += 1
-    query = "INSERT INTO connections VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
-    data = (data_id, dst_ip, dst_port, src_ip, src_port, timestamp, service, location)
+    query = "INSERT INTO connections VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    data = (data_id, dst_ip, dst_port, src_ip, src_port, timestamp, service, location, longitude, latitude)
     db_cursor.execute(query, data)
     db_conn.commit()
     db_conn.close()
@@ -93,7 +77,6 @@ def query_login(username, password):
     )
     db_cursor = db_conn.cursor()
     global data_id
-
     query = "INSERT INTO logins VALUES (%s, %s, %s)"
     data = (data_id, username, password)
     db_cursor.execute(query, data)
@@ -121,8 +104,11 @@ def logparse(service_name):
                 src_ip = x["src_ip"]
                 src_port = x["src_port"]
                 timestamp = convert_timezone(x["timestamp"])
-                location = getIPLocation(src_ip)
-                query_connection(dest_ip, dest_port, src_ip, src_port, service_name, timestamp, location)
+                location_data = getIPLocation(src_ip)
+                location = location_data[0]
+                latitude = location_data[1]
+                longitude = location_data[2]
+                query_connection(dest_ip, dest_port, src_ip, src_port, service_name, timestamp, location, latitude, longitude)
             else:
                 continue
         filelog.truncate(0)
