@@ -173,7 +173,7 @@ printPreloader();
             build_latest_logs();
 
             let base_url = window.location.host;
-            base_url = "ws://" + base_url + "/raven";
+            base_url = "wss://" + base_url + "/raven";
             document.getElementById('raven-iframe').addEventListener("load", function() {
             let raven_options = {
                 'world_type': null,
@@ -192,7 +192,7 @@ printPreloader();
                 'location': 'scripts',
                 'panels': ['multi-output', 'single-output','tooltip', 'random', 'insert','taskbar'],
                 'disable': [],
-                'websocket':{'server':'ws://10.0.1.55:5678',
+                'websocket':{'server':base_url,
                     'request_timeout':3000},
                 'verbose': false
             };
