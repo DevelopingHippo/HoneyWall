@@ -45,7 +45,7 @@ async def websocket_task(websocket, path):
         result = cursor.fetchall()
         for item in result:
 
-            if item[5] == "None" or item[6] == "None":
+            if item[5] == "" or item[6] == "":
                 parameters = {
                     "function": "marker",
                     "method": "name",
