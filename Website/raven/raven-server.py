@@ -13,7 +13,7 @@ from websockets import serve
 from json import dumps
 import pytz
 from ip2geotools.databases.noncommercial import DbIpCity
-import urllib.request
+from urllib.request import urlopen
 
 IP = '0.0.0.0'
 WEBSOCKET_PORT = 5678

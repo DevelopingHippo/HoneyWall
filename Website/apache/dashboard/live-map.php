@@ -16,8 +16,10 @@ printHeader();
 <div class="container">
 <iframe id="raven-iframe" src="./raven/raven.html" frameborder="0" width="100%" height="100%" scrolling="auto"></iframe>
     <script type="text/javascript">
+        let base_url = window.location.host;
+        base_url = "wss://" + base_url + "/raven";
         document.getElementById('raven-iframe').addEventListener("load", function() {
-            var raven_options = {
+        let raven_options = {
             'world_type': null,
             'selected_countries': [],
             'remove_countries': ['aq'],
@@ -34,13 +36,15 @@ printHeader();
             'location': 'scripts',
             'panels': ['multi-output', 'single-output','tooltip', 'random', 'insert','taskbar'],
             'disable': [],
-            'verbose': true
-            }
-            window['raven'] = document.getElementById('raven-iframe').contentWindow.raven
-            window['raven'].init_all(raven_options)
-            window['raven'].init_world()
+            'websocket':{'server':base_url,
+                'request_timeout':3000},
+            'verbose': false
+        };
+        window['raven'] = document.getElementById('raven-iframe').contentWindow.raven;
+        window['raven'].init_all(raven_options);
+        window['raven'].init_world();
+        window['raven'].fetch_data_from_server();
         });
-        raven.add_to_data_to_table({'from':'seattle,wa,us','to':'delhi,in'},{'line':{'from':null,'to':null}},2000,['line','multi-output','single-output'])
     </script>
   </div>
   </body>
