@@ -48,10 +48,10 @@ def getIPLocationBackup(ip):
 def getIPLocation(ip):
     try:
         response = requests.get(f'https://api.findip.net/{ip}/?token=dbf072f44b924b36ae00d1b074945b40').json()
-        if response.get("country").get("names").get("en") == "":
+        if response.get("country").get("iso_code") == "":
             return getIPLocationBackup2(ip)
         else:
-            return [response.get("country").get("names").get("en"), response.get("location").get("latitude"), response.get("location").get("longitude")]
+            return [response.get("country").get("iso_code"), response.get("location").get("latitude"), response.get("location").get("longitude")]
     except Exception as e:
         print(e)
         return getIPLocationBackup2(ip)
