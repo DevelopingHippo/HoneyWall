@@ -67,8 +67,8 @@ async def websocket_task(websocket, path):
                     },
                     "color": {
                         "line": {
-                            "from": "#{}".format(color),
-                            "to": "#{}".format(color)
+                            "from": "{}".format(color),
+                            "to": "{}".format(color)
                         }
                     },
                     "timeout": 1000,
@@ -88,8 +88,8 @@ async def websocket_task(websocket, path):
                     },
                     "color": {
                         "line": {
-                            "from": "#{}".format(color),
-                            "to": "#{}".format(color)
+                            "from": "{}".format(color),
+                            "to": "{}".format(color)
                             #"from": "#{:06x}".format(randint(255, 16777216)),
                             #"to": "#{:06x}".format(randint(255, 16777216))
                         }
