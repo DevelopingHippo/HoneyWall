@@ -157,7 +157,7 @@ printPreloader();
         </div>
 
         <div id="latest-logs-container">
-            <h1>Most Recent Logs</h1>
+            <h1>Most Recent Attacks</h1>
         </div>
         <script>
             build_bar_chart();
