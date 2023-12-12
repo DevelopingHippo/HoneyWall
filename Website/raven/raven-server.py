@@ -56,18 +56,18 @@ async def websocket_task(websocket: WebSocketServerProtocol, path):
             try:
                 while True:
                     ret = []
-
                     result = await fetch_data(cursor, timestamp)
+                    
+                    time_stamp = datetime.datetime.now()
+                    time_stamp = time_stamp.strftime('%Y-%m-%dT%H:%M:%S.%f')
+                    timestamp = convert_timezone(time_stamp)
 
                     for item in result:
                         parameters = create_parameters(item)
                         ret.append(parameters)
-
                     if ret:
                         await gather(*(ws.send(dumps(ret)) for ws in WEBSOCKETS if not ws.closed), return_exceptions=False)
-
                     await asleep(randint(1, 2))
-
             except Exception as e:
                 print(f"Error in WebSocket task: {e}")
 
