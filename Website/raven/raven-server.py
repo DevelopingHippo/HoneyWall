@@ -143,6 +143,7 @@ def create_parameters(item):
                 "multi-output"
             ]
         }
+        return parameters
 
 
 def ip_lookup():
