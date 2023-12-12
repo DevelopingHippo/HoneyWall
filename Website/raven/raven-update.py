@@ -97,7 +97,7 @@ def convert_timezone(time_string):
     new_time_str = str(new_time.strftime('%Y-%m-%d %H:%M:%S'))
 
     return new_time_str
-
+    
 
 def create_parameters(item):
     for item in result:
@@ -144,7 +144,7 @@ def create_parameters(item):
                     "multi-output"
                 ]
             }
-
+            
 
 def ip_lookup():
     ip = urlopen('https://ident.me').read().decode('utf8')
