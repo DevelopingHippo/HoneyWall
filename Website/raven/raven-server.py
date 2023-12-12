@@ -100,50 +100,49 @@ def convert_timezone(time_string):
 
 
 def create_parameters(item):
-    for item in result:
-        service = format(item[8])
-        if item[5] == "" or item[6] == "":
-            parameters = {
-                "function": "marker",
-                "method": "name",
-                "object": {
-                    "from": "0,{}".format(item[7]),
-                    "to": "{},{}".format(latitude, longitude)
-                },
-                "color": {
-                    "line": {
-                        "from": "#{:06x}".format(randint(255, 16777216)),
-                        "to": "#{:06x}".format(randint(255, 16777216))
-                    }
-                },
-                "timeout": 1000,
-                "options": [
-                    "line",
-                    "single-output",
-                    "multi-output"
-                ]
-            }
-        else:
-            parameters = {
-                "function": "marker",
-                "method": "name",
-                "object": {
-                    "from": "{},{}".format(item[5], item[6]),
-                    "to": "{},{}".format(latitude, longitude)
-                },
-                "color": {
-                    "line": {
-                        "from": "#{:06x}".format(randint(255, 16777216)),
-                        "to": "#{:06x}".format(randint(255, 16777216))
-                    }
-                },
-                "timeout": 1000,
-                "options": [
-                    "line",
-                    "single-output",
-                    "multi-output"
-                ]
-            }
+    service = format(item[8])
+    if item[5] == "" or item[6] == "":
+        parameters = {
+            "function": "marker",
+            "method": "name",
+            "object": {
+                "from": "0,{}".format(item[7]),
+                "to": "{},{}".format(latitude, longitude)
+            },
+            "color": {
+                "line": {
+                    "from": "#{:06x}".format(randint(255, 16777216)),
+                    "to": "#{:06x}".format(randint(255, 16777216))
+                }
+            },
+            "timeout": 1000,
+            "options": [
+                "line",
+                "single-output",
+                "multi-output"
+            ]
+        }
+    else:
+        parameters = {
+            "function": "marker",
+            "method": "name",
+            "object": {
+                "from": "{},{}".format(item[5], item[6]),
+                "to": "{},{}".format(latitude, longitude)
+            },
+            "color": {
+                "line": {
+                    "from": "#{:06x}".format(randint(255, 16777216)),
+                    "to": "#{:06x}".format(randint(255, 16777216))
+                }
+            },
+            "timeout": 1000,
+            "options": [
+                "line",
+                "single-output",
+                "multi-output"
+            ]
+        }
 
 
 def ip_lookup():
